@@ -1,0 +1,46 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+\fi
+\begin{Def}
+Soit $M$ une variété différentielle. \\
+Un champ de vecteurs sur $M$ est une application $X : U \subset M \to TM$ telle que $\forall x \in U,X(x)\in T_xX$.
+\end{Def}
+\begin{Def}
+On associe à un champ de vecteur $X$ sur $M$ la dérivation $L_X : f \in \Ccal^\infty(M)  \mapsto (x \mapsto X\cdot f(x):=d_xf(X(x))) \in \Ccal^\infty(M)$.
+\end{Def}
+\begin{Def}
+On appelle crochet de deux champs de vecteurs $X$ et $Y$ le champ de vecteur associé à $L_X \circ L_Y-L_Y \circ L_X$.
+\end{Def}
+
+\begin{Defthm}
+Soit $f : M \to \R$ une application lisse. Soit $a \in M$ tel que $d_af=0$. Soit $u,v \in T_aM$ et $X$ et $Y$ deux champs de vecteurs tels que $X(a)=u$ et $Y(a)=v$. \\
+Posons $H_af(u,v):=\left[X.df(Y)\right](a)$.
+Cette valeur ne dépend pas des champs de vecteurs $X$ et $Y$ choisis et l'application $H_af:(u,v) \mapsto H_af(u,v)$ est une forme bilinéaire symétrique de $T_aM$.
+\end{Defthm}
+\begin{proof}
+Montrons, tout d'abord, que $\left[X.df(Y)\right](a)=\left[Y.df(X)\right](a)$ $(*)$ : \\
+$\left[X.df(Y)-Y.df(X)\right](a)=\left[X.df(Y)-Y.df(X)\right](a)=\left[X.L_Y(f)-Y.L_X(f)\right](a)=\left[L_X \circ L_Y-L_Y \circ L_X\right](f)(a)=[X,Y].f(a)=d_af([X,Y](a))=0$. \\
+Le terme à gauche de $(*)$, comme fonction de $X$,  ne dépend que de $X(a)=u$ et de même, le terme à droite de $(*)$,comme fonction de $Y$, ne dépend que de $Y(a)=v$.
+On en déduit que $H_af(u,v)$ ne dépend pas ni de $X$ ni de $Y$ mais seulemenent de $u$ et $v$. \\
+Avec $(*)$, on voit que $H_af$ est symétrique. La bilinéarité est immédiate.
+\end{proof}
+L'application $H_af$ est appelé hessienne de $f$ en $a$.
+
+
+
+
+
+
+
+\ifwhole
+ \end{document}
+\fi

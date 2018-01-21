@@ -12,14 +12,14 @@
 
 \fi
 \section{Espaces projectifs}
-On considérera ici seulement des espaces projectifs sur $\R$ mais on peut en définir pour n'importe quel corps (non nécessairement commutatifs).
+On considérera ici seulement des espaces projectifs sur $\R$ mais on peut en définir pour n'importe quel corps (non nécessairement commutatif).
 \begin{Def}
 Soit $E$ un $\R$-espace vectoriel non réduit à $\{0\}$. \\
 On appelle espace projectif associé à $E$ l'espace quotient $E \setminus \{0\}/\Rcal$ où $x \Rcal y \Leftrightarrow \exists \lambda \in \R^*,y=\lambda x$. On le note $P(E)$ 
 \end{Def}
 On peut voir $P(E)$ comme l'ensemble des droites vectorielles de $E$. En effet, les classes d'équivalence de $\Rcal$ sont ces droites vectorielles.
 
-Si $E=\R^{n+1}$, l'espace projectif $P(\R^{n+1})$ est noté $P^{n}(R)$ ou $\R P^{n}$.
+Si $E=\R^{n+1}$, l'espace projectif $P(\R^{n+1})$ est noté $P^{n}(\R)$ ou $\R P^{n}$.
 \begin{Not}La classe d'équivalence de $(x_0,\ldots,x_n)$ est noté $[x_0,\ldots,x_n]$.\end{Not}
 
 \subsection{ Topologie de l'espace projectif}
@@ -32,7 +32,8 @@ $\R P^n$ est compact et connexe par arcs.
 Comme $\pi(S^n)=\R P^n$ et que la sphère $S^n$ est (quasi-)compacte et connexe par arcs. alors $\R P^n$ est quasi-compact et connexe par arcs.
 Il faut montrer que $\R P^n$ est séparé. 
 Soient $x \neq y \in \R P^n$ et $\alpha$ et $\beta$ tels que $|\alpha|=|\beta|, x=\pi(\alpha)$ et $y=\pi(\beta)$ 
-On remarque que $U=\pi(B(\alpha,|\alpha-\beta|/3))\ni x$ et $V=\pi(B(\beta,|\alpha-\beta|/3)) \ni y$ sont disjoints
+Par construction, les ensembles saturés de $B(\alpha,|\alpha-\beta|/3)$ et $B(\beta,|\alpha-\beta|/3) $ sont disjoints et donc les ouverts $\pi(B(\alpha,|\alpha-\beta|/3)) \ni x$ et $\pi(B(\beta,|\alpha-\beta|/3)) \ni y$ sont disjoints
+
 \end{proof}
 On peut aller un peu plus loin en montrant que $\R P^{n}$ est homéomorphe à $S^n/\{\pm Id\}$ % peut-être difféomorphe ?
 %Démo à faire (peut-être...)

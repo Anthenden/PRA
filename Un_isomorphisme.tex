@@ -1,0 +1,99 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+
+\fi
+$\H$ est une $\R$-algèbre non commutative ($ij \neq ji$). \\
+$\H$ s'identifie à $\R^4$ grâce au choix de la base $(1,i,j,k)$. On munit $\H$ de la norme euclienne i.e. $|a+bi+cj+dk|=\sqrt{a^2+b^2+c^2+d^2}$ 
+\begin{Prop}
+Le centre $Z(\H)$ de $\H$ est $\R$
+\end{Prop}
+\begin{proof}
+On a clairement $\R \subset Z(\H)$. Montrons l'inclusion réciproque : \\
+Soit $x=a+bi+cj+dk \in Z(\H)$. Alors $\forall u \in \H, xu=ux$.\\
+En particulier, pour $u=i$, $ai-b-ck+dj=ai-b+ck-dj$ et donc $c=d=0$, et pour $u=j$, $aj-bk=aj+bk$ i.e. $b=0$. Cela montre que $x=a \in \R$
+\end{proof}
+\begin{Def}[Conjugaison]
+Le conjugué du quaternion $a+bi+cj+dk$ est $\overline{a+bi+cj+dk}=a-bi-cj-dk$
+\end{Def}
+\begin{Propte} 
+\begin{enumerate}  
+	\item la conjugaison est involutive
+	\item $\forall x,y \in \H,\overline{xy}=\overline{y}\;\overline{x}$
+\end{enumerate}
+\end{Propte}
+\begin{proof}
+\begin{enumerate}
+	\item Evident
+	\item Calculs
+\end{enumerate}
+\end{proof}
+
+
+\begin{Propte}[de la norme sur les quaternions] 
+\begin{enumerate}
+	\item $\forall q \in \H, |q|^2=q\overline{q}$ 
+	\item $\forall x,y \in \H,|xy|=|x||y|$
+	\item $|\cdot |$ est un morphisme de groupes $(\H^*, \cdot) \to (\R^*_+,\cdot)$
+\end{enumerate}
+\end{Propte}
+\begin{proof}
+\begin{enumerate} 
+	\item On développe le produit.
+	\item Soit $x,y \in \H$. 
+	$|xy|=xy\overline{xy}=xy\overline{y}\overline{x}=|x||y|$
+	\item Découle du point précédent
+\end{enumerate}
+
+\end{proof}
+\begin{Thm}
+$SO(4) \simeq S^3 \times S^3/\pm(1,1)$ (en tant que groupes )  %topologiques/ de Lie ?
+\end{Thm}
+\begin{proof}
+Soit $\varphi : (u,v) \in S^3 \times S^3 \mapsto (x \mapsto uxv^{-1}=ux\overline{v}) \in \GL(\H)$  où on a identifié $\R^4$ et $\H$. \\
+$\varphi$ est clairement un morphisme de groupes de classe $\Ccal^\infty$ (bien défini car $\varphi(u,v)$ est bijective d'inverse $\varphi(u^{-1},v^{-1})$)
+Déterminons maintenant son noyau et son image. \\
+\textbf{Noyau de $\varphi$ :} \\
+Soit $(u,v) \in \Ker(\varphi)$. Alors, pour tout $x \in \H$, $uxv^{-1}=x \;(*)$.\\ 
+En particulier, en prenant $x=1$, on a $u=v$. Maintenant, $(*)$ nous dit que $u \in Z(\H)=\R$. Comme $u \in S^3$, on déduit que $u=\pm 1$. \\
+Réciproquement, $\pm (1,1) \in \Ker(\varphi)$. \\
+On obtient : $\Ker(\varphi)=\pm(1,1)$. \\
+\textbf{Image de $\varphi$ :} \\
+Soient $(u,v) \in S^3 \times S^3$ et $x \in \H$.\\
+$|\varphi(u,v)(x)|=|uxv^{-1}|=|u||x||v^{-1}|=|x|$. Ce qui montre que $\varphi(u,v) \in O(4)$ et donc $Im(\varphi) \subset O(4)$.\\
+On peut affiner cela en disant que, comme $S^3 \times S^3$ est connexe, $Id \in Im(\varphi)$ et $\varphi$ est continu alors $Im(\varphi)$ est inclus dans la composante connexe de $O(4)$ contenant $Id$ i.e. $SO(4)$. On peut donc considérer que l'ensemble d'arrivée de $\varphi$ est $SO(4)$. \\
+Montrons maintenant que $\varphi$ est un difféomorphisme local. Pour cela, il suffit de le montrer en $(1,1)$ (les translations sont des difféomorphismes) et grâce au théorème d'inversion locale, il suffit de montrer que $d_{(1,1)} \varphi : T_{(1,1)} S^3 \times S^3 \to \sfrak\ofrak(4)$ est un isomorphisme. \\
+$\varphi$ étant bilinéaire, on sait que, pour tout $(\delta,\varepsilon) \in T_{(1,1)} S^3 \times S^3=\{ x+y+z+t=0,x'+y'+z'+t'=0\}$,
+$\forall x \in \H, d_{(1,1)} \varphi(\delta,\varepsilon)(x)=\delta x+x\overline{\varepsilon}$. \\
+Soit $(\delta,\varepsilon) \in \Ker(d_{(1,1)} \varphi)$. Alors $\forall x\in \H, \delta x=-x\overline{\varepsilon}$. \\
+En particulier, pour $x=1$, on obtient $\delta=-\overline{\varepsilon}$. On a donc $\forall x\in \H,\delta x=x \delta$ i.e. $\delta \in \R$. Comme, de plus, $\delta \in \{x+y+z+t=0\}$ alors $\delta=0$. Cela montre que $\Ker(d_{(1,1)}\varphi)=\{0\}$ et comme $\dim(T)=\dim(\sfrak\ofrak(4))=6$ alors $d_{(1,1)}\varphi$ est un isomorphisme. \\
+Tout cela nous permet de dire que $Im(\varphi)$ est un ouvert de $SO(4)$. \\
+$S^3 \times S^3$ est compact donc $Im(\varphi)=\varphi(S^3 \times S^3)$ est compact et est donc fermé. \\
+Par connexité de $SO(4)$, $Im(\varphi)=SO(4)$.\\
+ Le premier théorème d'isomorphisme nous permet de conclure.
+
+
+
+
+
+
+
+
+\end{proof}
+
+
+
+
+
+
+\ifwhole
+ \end{document}
+\fi

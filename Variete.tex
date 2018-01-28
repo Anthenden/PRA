@@ -1,0 +1,105 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+\fi
+cf Lafontaine
+\subsection{Variétés}
+\begin{Def}
+Une variété topologique de dimension $n$ est un espace topologique séparé dont tout point est contenu dans un ouvert homéomorphe à un ouvert de $\R^n$.
+\end{Def}
+\begin{Def}
+Un carte locale d'une variété $X$ est la donnée d'un couple $(U,\varphi)$ où $U$ est un ouvert de $X$ et $\varphi : U \to \varphi(U) \subset \R^n$ est un homéomorphisme. 
+\end{Def}
+\begin{Def}
+Un atlas de classe $\Ccal^k$ sur $X$ est une famille de cartes dont les ouverts recouvrent $X$ et telle que, pour tout couple de cartes $(U,\varphi)  $, $(V,\psi)$ tels que $U \cap V \neq \emptyset$, l'application, dite de changement de cartes, $ \psi \circ \varphi^{-1} : \varphi(U \cap V) \to \psi(U \cap V)$ est un difféomorphisme de classe $\Ccal^k$.
+\end{Def}
+
+\begin{Def}
+On dit que deux atlas  $\{(U_i,\varphi_i),i \in I\},\{(V_j,\psi_j),j \in J\}$ de classe $\Ccal^k$ sont équivalents si les applications $\psi_j\circ \varphi_i^{-1} : \varphi_i(U_i \cap V_j) \to \psi_j(U_i \cap V_j)$ sont des $\Ccal^k$-difféomorphismes pour tout $i \in I$ et $j \in J$ tels que $U_i \cap V_j \neq \emptyset$.
+\end{Def}
+
+\begin{Def}
+Une variété de classe $\Ccal^k$ est un variété topologiques à bases dénombrables muni d'une classe d'équivalence d'atlas de classe $\Ccal^k$ (aussi appelée structure différentielle de la variété).
+
+\end{Def}
+
+\subsection{Applications de classe $\Ccal^k$, espaces tangents et différentielles}
+\subsubsection{Applications de classe $\Ccal^k$}
+\begin{Def}
+Soient $M,N$ deux variétés de classe $\Ccal^k$. Une application continue $f : M \to N$  est dite de classe $\Ccal^k$ si quelque soit $a \in M$, il existe une carte $(U,\varphi)$ de $M$ autour de $a$ et une carte $(V,\psi)$ autour de $f(a)$ telle que l'application $\psi \circ f \circ \varphi^{-1} : \varphi(f^{-1}(V) \cap U) \to \psi(V)$ soit de classe $\Ccal^k$
+\end{Def}
+Comme les application de changements de cartes sont de classe $\Ccal^k$,une fonction de classe $\Ccal^k$ l'est quelque soit les cartes choisies.
+
+Les définitions de difféomorphisme et de difféomorphisme local dans le cadre des variétés est la même que pour les ouverts de $\R^n$ 
+
+Dans la suite, on appelera "variété" et "applications" des variétés et des applications de classe $\Ccal^\infty$.
+
+\subsubsection{Espaces tangents et différentielles}
+Soit $M$ une variété, $m \in M$ et $\Ccal_m^M$ l'ensemble des courbes lisses $c : I \to M$ de $M$ telle que $I$ soit un intervalle ouvert contenant $0$ et telle que $c(0)=m$
+\begin{Def}
+Deux courbes $c_1 : I_1 \to M$ et $c_2 : I_2 \to M$ de $\Ccal_m$ sont tangentes en $m$ s'il existe une carte $(U,\varphi)$ autour de $m$ telle que : $(\varphi \circ c_1)'(0)=(\varphi \circ c_2)'(0)$. \\
+On dit aussi que ces courbes ont la même vitesse en $m$.
+\end{Def}
+Deux courbes sont tangentes quelle que soit la carte choisie. La tangence définit donc une relation d'équivalence sur $\Ccal_m^M$
+Les classes d'équivalences de cette relation  d'équivalence sont appelés vecteurs tangents à $M$ en $m$. 
+
+\begin{Def}
+L'espace vectoriel tangent à $M$ en $m$, noté $T_mM$, est l'ensemble des vecteurs tangents à $M$ en $m$ avec les opérations obtenues par transport de structure grâce à l'application bijective $\theta_\varphi : \overline{v} \in T_mM \mapsto (\varphi \circ c)'(0)$ (bien défini car ne dépend que de la classe d'équivalence de $\overline{v}$)
+\end{Def}
+
+\begin{Def}
+Si $X$ et $Y$ sont deux variétés, et $f : X \to Y$ une application, la différentielle de $f$ en $x \in X$, $d_xf : T_X \to T_{f(x)}Y$, est l'application déduite par passage au  quotient de l'application $c \in \Ccal_x^X \mapsto f \circ c \in \Ccal_{f(x)}^Y$
+\end{Def}
+
+\subsection{Fibrés}
+\begin{Def}
+Soient $E$ et $B$ deux variétés de classe $\Ccal^k$ ($0 \leq k \leq \infty$). Une application $p : E \to B$ de classe $\Ccal^k$ est une fibration (de base $B$ et d'espace total $E$), si pour tout $x \in B$, il existe un ouvert $U$ contenant $x$, une variété $F$ de classe $\Ccal^k$ et un difféomorphisme $\varphi : U \times F \to p^{-1}(U)$ tel que :  $\forall y \in U,\forall z \in F,p(\varphi(y,z))=y$
+\end{Def}
+On dit que $E$ est un espace fibré. Comme $p_{|p^{-1}(U)}=pr_1 \circ \varphi^{-1}$ alors la fibre en $b \in B$, $E_b:=p^{-1}(b)$, est une sous-variété fermée de dimension $dim(E)-dim(B)$. De plus, pour $b \in U$, $E_b$ est difféomorphe à $F$ qui est appelé fibre type.
+
+\begin{Lemme}
+Si $p: E \to B$ est une fibration de base connexe, les fibres $E_b$ sont difféomorphes.
+\end{Lemme}
+
+%On supposera les variétés connexes (quitte à se restreindre aux composantes connexes).
+\begin{Def}
+\begin{itemize}
+	\item La fibration triviale est celle pour laquelle $E=B \times F$ et $p=pr_1$.
+	\item Une fibration est trivialisable s'il existe un difféomorphisme $\varphi$ sur $B \times F$ telle que $p=pr_1 \varphi$
+	\itesm La condition que l'on met sur $p$ dans la définition de fibration est appelée trivialisation locale.
+\end{itemize}
+\end{Def}
+
+
+
+\subsubsection{Fibrés vectoriels, fibrés tangents}
+
+\begin{Def}
+Un fibré vectoriel réel de rang $k$ sur une variété $B$ est un espace fibré $(E,p,B)$ tel que : 
+\begin{itemize}
+	\item la fibré type $F$ et les fibres $p^{-1}=b$, $b \in B$ sont des $\R$-espaces vectoriels de dimension $k$.
+	\item pour toute trivialisation locale $\varphi$, la restriction de $\varphi$ à $p^{-1}(b)$ induit un isomorphisme d'espaces vectoriels sur $F$.
+
+\end{itemize}
+\end{Def}
+
+% A mettre fibré tangent. Peut-être quelques exemples (le cas des espaces projectifs est important)
+
+
+
+
+
+
+
+
+\ifwhole
+ \end{document}
+\fi

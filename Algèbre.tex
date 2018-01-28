@@ -1,0 +1,181 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+
+\fi
+\section{Cayley Dickson}
+Réf : Baez, McCrimmon 
+\begin{Def}
+Soit $k$ un corps commutatif. Une algèbre sur $k$ (ou une $k$-algèbre ) est la donnée d'une quadruplet $(A,+,\cdot,\times)$ tel que :
+\begin{itemize}
+	\item $(A,+,\cdot)$ est un $k$-espace vectoriel
+	\item $\times : (x,y) \in A \times A \mapsto x \times y \in A$ est une application bilinéaire
+\end{itemize}
+\end{Def}
+Une algèbre est dite unitaire (resp. associative, commutative) lorsque la loi $\times$ a un élément neutre (resp. est associative, est commutative). 
+
+ Dans la suite, "algèbre" désignera une $\R$-algèbre unitaire.
+
+\begin{Def}
+Une algèbre de composition est une algèbre munie d'une forme quadratique non dégénérée telle que $\forall x,y \in A, N(xy)=N(x)N(y)$
+\end{Def}
+
+\begin{Def}
+Une algèbre involutive est une algèbre $A$ muni d'une application $*: a \in A \mapsto a^* \in A$ qui vérifie les propriétés suivantes : 
+\begin{itemize}
+	\item $*$ est une application $\R$-linéaire
+	\item $\forall a \in A,a^{**}=a$ ($*$ est involutive) et $\forall a,b \in A, (ab)^*=b^*a^*$
+\end{itemize}
+\end{Def}
+On sous-entendra l'involution s'il n'y a pas de confusion possible.
+
+\begin{Prop}
+On peut munir une algèbre de composition d'une involution.
+\end{Prop}
+\begin{proof}
+cf Basic Algebra Jacobson p460
+\end{proof}
+Cette involution vérifie : $\forall x \in A, xx^*=N(x)$
+
+\begin{Prop}
+Soit $A$ une algèbre involutive. $*$ fixe tous les éléments de $\R$\\
+\end{Prop}
+\begin{proof}
+Il suffit de montrer que $*$ fixe $1_A$. \\
+Soit $a \in A$. On a : $a1_A^*=(1_Aa^*)^*=(a^*)^*=(a^*1_A)=1_A^*a=a$. Ce qui montre que $1_A^*$ est un élément neutre de $\times$ i.e. $1_A^*=1_A$.
+\end{proof}
+\begin{Def}
+Soit $A$ une algèbre involutive. \\
+\begin{itemize}
+	\item $A$ est dite réelle si $\forall a \in A, a^*=a$
+	\item $A$ est dite bien normée ("nicely normed") si $\forall a \in A,a+a^* \in \R$ et si $\forall a\in A, aa^*=a^*a>0$
+\end{itemize}
+\end{Def}
+Le terme "bien normée" vient du fait que $|\cdot| : a \mapsto (aa^*)^{1/2}$ est une norme sur $A$. Le cas des algèbres bien normées est intéressant car tout élément non nul est inversible (l'inverse de $a$ est $\frac{a^*}{|a|^2}$). 
+
+
+
+\subsection{Construction de Cayley-Dickson}
+
+La construction de Cayley-Dickson permet de créer, à partir d'une algèbre involutive, une nouvelle algèbre involutive de dimension (comme espace vectoriel ) double.
+
+Soit $(A,*)$ une algèbre involutive et soit $\mu \neq 0$. L'algèbre de Cayley-Dickson $A'_\mu$ associé à $A$ et $\mu$ est donnée par le quintuplet $(A \times A,+,\cdot,\times,*)$ où : \\
+\begin{itemize}
+	\item $+$ et $\cdot$ sont les sommes et les multiplications par un scalaire terme à terme,
+	\item $\forall (a,b),(c,d) \in A \times A, (a,b) \times (c,d)=(ac+\mu d^*b,da+bc^*)$,
+	\item $\forall (a,b) \in A\times A,(a,b)^*=(a^*,-b)$
+\end{itemize}
+%Si a forme quadratique associé à l'involution de $A'$ est $N : (a,b) \mapsto aa^*-\mu bb^*$
+
+A partir d'une algèbre involutive bien normée, on peut, essentiellement, construire deux algèbres involutives : $A_1$ et $A_{-1}$. Les autres sont isomorphes à une de ses deux algèbres au sens suivant : \\   % On peut peut-être enlever le bien normée
+\begin{Def}
+Une application $f : (A,*) \to (B,*)$ est un morphisme d'algèbre involutive si : 
+\begin{itemize}
+	\item $\forall x,y \in A, f(x+y)=f(x)+f(y)$
+	\item $\forall x,y \in A, f(xy)=f(x)f(y)$
+	\item $\forall x \in A,\forall \lambda \in \R, f(\lambda x)=\lambda f(x)$
+	\item $f(1_A)=1_B$
+	\item $\forall x \in A,f(x^*)=f(x)^*$
+	
+\end{itemize}
+En particulier, ces morphismes conservent la forme quadratique associé à $*$. En effet, pour tout $x \in A$, $N(x)=xx^*=f(xx^*)=f(x)f(x)^*=N(f(x))$
+\end{Def}
+\begin{Thm}
+Soit 
+$A'_\lambda \simeq A'_\mu$ si, et seulement si, $\lambda$ et $\mu$ ont le même signe.
+\end{Thm}
+
+\begin{proof}
+$\Leftarrow$ : L'application $\varphi : (a,b) \in A'_\lambda \mapsto (a,\sqrt{\frac{\lambda}{\mu}} b)\in A'_\mu$ est un isomorphisme d'algèbres involutives. \\
+$\Rightarrow$ : Supposons $A'_\lambda \simeq A'_\mu$ alors la forme quadratique associée à $A'_\lambda$ et $A'_\mu$ ont la même signature et en particulier, $\lambda$ et $\mu$ sont de même signe.
+
+\end{proof}
+
+On notera par $A_+'$ une algèbre $A'_\lambda$ avec $\lambda>0$, $A_-$ une algèbre $A'_\lambda$ avec $\lambda<0$ et par $A'_\pm$ si cela est indifférent.
+
+
+Dans les cinq propriétés suivantes, $(A,*)$ est une algèbre involutive.
+
+
+\begin{Prop}
+$A'_\pm$ n'est pas réelle.
+\end{Prop}
+\begin{Prop}
+$A$ est réelle et commutative si, et seulement si, $A'_\pm$ est commutative.
+\end{Prop}
+\begin{Prop}
+$A$ est commutative at associative si, et seulement si, $A'_\pm$ est associative.
+\end{Prop}
+
+\begin{Prop}
+$A_\mu$ est associative et bien normée si, et seulement si, $A'_-$ est alternative et bien normée
+\end{Prop}
+\begin{Prop}
+$A$ est bien normée si, et seulement si, $A'_-$ est bien normée.
+\end{Prop}
+
+% A faire : Quelques expressions à donner pour le théorème 2
+
+
+
+
+\ifwhole
+ \end{document}
+\fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

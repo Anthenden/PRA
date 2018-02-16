@@ -1,0 +1,126 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+\fi
+
+cf Milnor Caracteristic class
+
+\begin{Def}
+Soit $B$ une variété lisse. \\
+Un fibré vectoriel $\xi$ réel sur $B$ (appelé base du fibré) est la donnée : 
+\begin{itemize}
+	\item d'une variété lisse $E(\xi)$, appelée espace total ; 
+	\item d'une application lisse $\pi(\xi) : E(\xi) \to B$ appelé projection ; 
+	\item d'une structure de $\R$-espace vectoriel sur $F_b(\xi):=\pi^{-1}(b)$ pour chaque $b\in B$, appelé fibre au-dessus de $b$ 
+\end{itemize}
+qui vérifient la condition de trivialité locale suivante : \\
+Pour tout point $b$ de $B$, il existe un ouvert $U \subset B$ contenant $b$ , un entier $n \geq 0$ et un difféomorphisme $h : U\times \R^n \to \pi^{-1}(U)$ qui induit un isomorphisme d'espaces vectoriels $\R^n \to \pi^{-1}(b)$
+\end{Def}
+\subsection{Construction de fibrés vectoriels}
+\begin{Def}% A transformer en théorème 
+Soient $\xi_1$ et $\xi_2$ deux fibrés vectoriels de base respective $B_1$ et $B_2$, d'espace total $E_1$ et $E_2$ et de projection $\pi_1$ et $\pi_2$ . On définit le produit cartésien de ces deux fibrés $\xi_1 \times \xi_2$ de la façon suivante :
+\begin{itemize}
+	\item l'espace total est $E_1 \times E_2$ ; 
+	\item la projection $\pi : (x,y) \in E_1 \times E_2  \mapsto (\pi_1(x),\pi_2(y))$ ; 
+	\item la structure d'espace vectoriel sur $\pi^{-1}(b_1,b_2)=\pi_1^{-1}(b_1) \times \pi_2^{-1}(b_2)$ est la structure d'espace vectoriel produit. 
+\end{itemize}
+\end{Def}  
+\begin{Thm}
+$\xi \times \eta$ est un fibré vectoriel sur $B_1 \times B_2$
+\end{Thm}
+
+\begin{Thm}
+Soit $\xi$ un fibré vectoriel de base $B$ d'espace total $E$ et de projection $\pi$. Soit $f : B_1 \to B$ une application lisse.
+Le fibré vectoriel induit par $f$, noté $f^* \xi$,  est donné par
+\begin{itemize}
+	\item l'espace total est $E_1:=\{(b,e) \in B_1 \times E | \pi(e)=f(b) \}$ ; 
+	\item la projection $\pi : (b,e) \in B_1 \times E  \mapsto b \in E$ ; 
+	\item la structure d'espace vectoriel sur $\pi^{-1}(b)$ est définit par les opérations : $(b,e_1)+(b,e_2):=(b,e_1+e_2)$ et $\lambda (b,e_1)=(b,\lambda e_1)$
+\end{itemize}
+\end{Thm}
+
+\begin{Def}
+On appelle somme de Witney de deux fibrés vectoriels $\xi_1$ et $\xi_2$ de même base le fibré vectoriel sur $B$ $d^*(\xi_1 \times \xi_2)$ où $d : x \in B \mapsto (x,x) \in \B \times B$
+\end{Def}
+
+\subsection{Complémentaire orthogonal}
+\begin{Def}
+Un fibré vectoriel est un fibré vectoriel $\xi$ muni d'une application $E(\xi) \to \R$ dont la restriction au fibre $F_b(\xi)$ est une norme euclidienne.
+\end{Def}
+
+\begin{Def}
+Soient $\xi,\eta$ deux fibrés vectoriels de même base $B$. On dit que $\xi$ est un sous-fibré de $\eta$ si $E(\xi) \subset \E(\eta)$ et que $\pi(\xi)^{-1}(b)$ est un sous-espace vectoriel de $\pi(\eta)^{-1}(b)$ pour tout $b \in B$. On notera $\xi \subset \eta$
+\end{Def}
+
+\begin{Def}
+Soient $\xi \subset \eta$ deux fibrés vectoriels euclidiens sur $B$. On définit l'orthogonal $\xi^\bot$ de $\xi$ dans $\eta$ de la façon suivante : 
+\begin{itemize}
+	\item Pour tout $b \in B$, $F_b(\xi^\bot)$ est le complémentaire de $F_b(\xi)$ dans $F_b(\eta)$ ;
+	\item $E(\xi^\bot)=\bigcup_{b \in B} F_b(\xi^\bot)$
+	\item La projection est la restriction de celle de $\eta$ sur $E(\xi^\bot)$
+\end{itemize}
+\end{Def}
+\begin{Thm}
+$\xi^\bot$ est un fibré vectoriel sur $B$
+\end{Thm}
+\begin{Ex}
+Soit $L$ le fibré en droite tautologique sur $\R P^n$ i.e. $L=\{(x,v) \in \R P^n \times \R^{n+1} | v \in x\}$. Son orthogonal dans $\R P^n \times \R^{n+1}$ est $L^\bot=\{(x,v) \in \R P^n \times \R^{n+1} | \left\langle x,v \right\rangle=0\}$
+\end{Ex}
+
+
+\begin{Def}
+Soit $\xi$ et $\eta$ deux fibrés vectoriels réels de base respective $B_1$ et $B_2$. Une application lisse $f : E(\xi) \to E(\eta)$ est appelé morphisme de fibrés vectoriels entre $\xi$ et $\eta$ s'il existe une application $g : B_1 \to B_2$ qui fait commuter le diagramme suivant :
+  \xymatrix{
+    E(\xi) \ar[r]^f \ar[d]_{\pi(\xi)} \commutatif  & E(\eta) \ar[d]^{\pi(\eta)} \\
+    B_1 \ar[r]^g & B_2
+  } \\
+	et si les restrictions $f : \pi(\xi)^{-1}(b) \to \pi(\eta)^{-1}(g(b))$ sont linéaires.\\
+	On dit que $f$ est un isomorphisme de fibrés vectoriels si c'est un difféomorphisme.
+\end{Def}
+\begin{Not}
+On note $\Hom(\xi,\eta)$ l'ensemble des fibrés vectoriels entre $\xi$ et $\eta$
+\end{Not}
+Pour montrer que $f$ est un isomorphisme de fibrés vectoriels, il suffit de montrer que les restrictions aux fibrés sont des isomorphismes d'espaces vectoriels (cf. Milnor lemme 2.3)
+
+\begin{Thm}
+$Q\setminus P_2$ est isomorphe à $\Hom(L,L^\bot)$ comme fibré vectoriel sur $ \R P^3 (\simeq P_1 )$
+\end{Thm}
+\begin{Thm}
+$\Hom(L,L^\bot)$ est isomorphe à $T \R P^3$ comme fibré vectoriel sur $\R P^3$
+\end{Thm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\ifwhole
+ \end{document}
+\fi

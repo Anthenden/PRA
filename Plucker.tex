@@ -1,0 +1,94 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+\fi
+
+\section{Algèbre extérieure}
+Soit $E$ un espace vectoriel de dimension finie sur un corps commutatif $k$. \\
+On appelle $p$ème puissance extérieure de $E$ l'espace vectoriel $\bigwedge^p E$,quotient de $E^{\otimes p}$ par le sous-espace vectoriel $\Zcal_p=\Vect(x_{1} \otimes \ldots \otimes x_{p} | x_i \in E,\exists m \neq n, x_{m}=x_{n})$ (par convention, $\bigwedge^0 E=k$). \\
+On note $x_1 \wedge \ldots \wedge x_p$ la classe d'équivalence $x_1 \ldots \ldots \ldots x_p$. \\
+Le passage au quotient conserve les propriétés d'associativitée et de $p$-linéarité et fait que $\forall u,v \in E, u \wedge v=-v \times u$ \\
+On appelle algèbre extérieure la somme directe des puissances extérieures : $\bigwedge^* E=\bigoplus_{p \in \N} \bigwedge^p E$. On munit $\bigwedge^* E$ d'une structure d'algèbre graduée grâce au produit : $(x_1 \wedge \ldots x_p,y_1 \wedge \ldots y_q) \in \bigwedge^p E \times \bigwedge^q E \mapsto x_1 \wedge \ldots x_p \wedge y_1 \wedge \ldots y_q \in \bigwedge^{p+q} E$.
+
+
+\begin{Lemme}
+$\Zcal_p=\Vect(x_{1} \otimes \ldots \otimes x_{p} | x_i \in E, \{x_1,\ldots,x_p\} \text{ est une famille liée })$
+\end{Lemme}
+\begin{proof}
+Posons $V=\Vect(x_{1} \otimes \ldots \otimes x_{p} | x_i \in E, \{x_1,\ldots,x_p\} \text{ est une famille liée })$. \\
+On a clairement $\Zcal_p \subset V$. Réciproquement, soit $x_1 \wedge \ldots \wedge x_p \in V$ i.e.  $\{x_1,\ldots,x_p\}$ est liée. On a donc un $i\in [\![1,n]\!]$ et des $\lambda_j \in k,j \neq i$ tel que $x_i=\sum_{j \neq i} \lambda_jx_j$ et donc : \\
+ $x_1 \wedge \ldots \wedge x_i \wedge \ldots \wedge x_p=\sum_{j \neq i} \lambda_j x_1 \wedge \ldots \wedge x_j \wedge \ldots \wedge x_p \in \Zcal_p$ 
+\end{proof}
+Cela nous permet de voir que $\bigwedge^p E= \{0\}$ si $p>dim(E)$
+
+\begin{Prop}
+Soit $\Bcal=\{e_1,\ldots,e_n\}$ une base de $E$. Pour $p \leq n$,$\{e_{i_1} \wedge \ldots \wedge e_{i_p},1 \leq i_1<\ldots <i_p \leq n\}$ est une base de $\bigwedge^p E$.
+\end{Prop}
+\begin{proof}
+Comme la famille $\{e_1 \otimes \ldots \otimes e_p|e_i \in \Bcal\}$ est une base de $E^{\otimes p}$ alors le passage au quotient fait que l'espace quotient a comme base $ \{e_1 \wedge \ldots \wedge e_p|e_i \in \Bcal, i \neq j \Rightarrow e_i \neq e_j\}$. En ordonnant les $e_i$; on obtient le résultat. 
+\end{proof}
+
+\begin{Cor}
+$\dim_k \bigwedge^p E=\binom{\dim E}{p}$
+\end{Cor}
+En particulier, $\dim_k \bigwedge^{\dim E} E=1$ (cela permet de définir le déterminant)
+
+\begin{Cor}
+Soient $\{e_1,\ldots,e_m\},\{f_1,\ldots,f_m\}$ deux familles libres d'éléments de $E$. Alors $\Vect(e_1,\ldots,e_m)=\Vect(f_1,\ldots,f_m)$ si, et seulement si, $e_1 \wedge \ldots \wedge e_m$ et $f_1 \wedge \ldots \wedge f_m$ sont colinéaires.
+\end{Cor}
+
+\begin{proof}
+$\Rightarrow$ : Soit $W=\Vect(e_1,\ldots,e_m)$. Alors $e_1 \wedge \ldots \wedge e_m$, $f_1 \wedge \ldots \wedge f_m \in \bigwedge^k W$. Ce dernier ensemble étant de dimension 1 et donc $e_1 \wedge \ldots \wedge e_m$ et $f_1 \wedge \ldots \wedge f_m$ sont colinéaires.\\
+$\Leftarrow$ : Soit $W=\Vect(e_1,\ldots,e_m)$ et $W'=\Vect(f_1,\ldots,f_m)$. Si $f_i \notin W$ alors on complète $\{f_i,e_1,\ldots,e_m\}$ en une base $\{v_1,\ldots,v_n\}$ de $E$.
+Pour donner les idées, prenons $i=1$, \\
+$\lambda e_1 \wedge \ldots \wedge e_m=f_1 \wedge f_2 \wedge \ldots \wedge f_n=f_1 \wedge \sum_{j_2} a_{2j_2} v_{j_2} \wedge \ldots \wedge \sum_{j_m} a_{mj_m} v_{j_m}=\sum_{j_2}\cdots\sum_{j_m}f_1 \wedge  a_{2j_2} v_{j_2} \wedge \ldots \wedge  a_{mj_m} v_{j_m}$.
+A droite de l'égalité, $f_1$ apparait partout alors qu'à droite, il n'intervient pas. Ce qui est absurde car $\lambda \neq 0$.
+\end{proof}
+
+\section{Plongement de Plücker}
+\begin{Def}[Plongement de Plücker]
+On appelle plongement de Plücker l'application $\psi_{r,n} : G(r,n) \to P(\bigwedge^r k^n)$ qui envoie un sous-espace vectoriel $W$ de dimension $r$ de $k^n$ de base $e_1,\ldots,e_r$ sur $[e_1 \wedge \ldots \wedge e_r]$
+\end{Def}
+\begin{Cor}
+$\psi_{r,n}$ ne dépend pas du choix de la base et est injectif.
+\end{Cor}
+
+Nous allons maintenant déterminer des équations polynomiales vérifiées par $\psi_{r,n}(G(r,n))$.
+
+\begin{Lemme}
+Soit $W \in G(r,n)$ et $\{e_1,\ldots,e_r\}$ une base de $W$. Alors $W=\{x \in k^n |x \wedge (e_1 \wedge \ldots \wedge e_r)=0\}$ 
+\end{Lemme}
+\begin{proof}
+Posons $E_W=\{x \in k^n |x \wedge (e_1 \wedge \ldots \wedge e_r)=0\}$.
+On remarque aisément que $W$ est un espace vectoriel et que $W \subset E_W$. \\
+Soit $x \in E_W$ ie $x \wedge (e_1 \wedge \ldots \wedge e_r)=0$ et donc $\{x,e_1,\ldots,e_r\}$ est une famille liée. Comme $\{e_1,\ldots,e_r\}$ est une base alors $x \in \Vect(e_1,\ldots,e_r)=W$
+\end{proof}
+\begin{Lemme}
+Soit $\Lambda \in \bigwedge^r k^n$ tel que $W=\{ x \in k^n | \Lambda \wedge x=0\}$ soit de dimension $r$. Alors $\psi_{r,n}(W)=[\Lambda]$
+\end{Lemme}
+\begin{proof}
+%Pour montrer ce lemme, on peut tout d'abord remarquer que l'action de $\GL_n(k)$ commute avec $\psi_{r,n}$. $\GL_n(k)$ agit sur $P(\bigwedge^r k^n$ par $P \cdot [e_1 \wedge \ldots \wedge e_r]=[Pe_1 \wedge \ldots \wedge Pe_r]$. De plus, comme $\{Pe_1,\ldots, Pe_r\}$ est une base de $W$ alors $\psi_{r,n}(PW)=P\cdot \psi_{r,n}(W)$. \\
+Soit $\{e_1,\ldots,e_r\}$ une base de $W$. On peut compléter cette base en un base $\{e_1,\ldots,e_n\}$ de $k^n$. \\
+On peut décomposer $\Lambda$ sur la base associée de $\bigwedge^r k^n$ : \\
+$\Lambda=\sum_p \lambda_p e_{i_{1p}} \wedge \ldots \wedge e_{i_{rp}}$. \\
+Comme $\Lambda \wedge e_i=0$ alors $\Lambda=\sum_{p,i_{jp} \neq 0} \lambda_p e_1 \wedge e_{i_{1p}} \wedge \ldots \wedge e_{i_{rp}}$. \\
+Comme les $e_1 \wedge e_{i_{1p}} \wedge \ldots \wedge e_{i_{rp}}$ forment une famille libre alors les $\lambda_p$ correspondant sont nulles.
+En itérant ce processus, on trouve que les scalaires correspondant aux multi-vecteurs contenant $e_j$ pour $j>r$ sont nuls et donc $\Lambda=\lambda e_1 \wedge \ldots \wedge e_r$, ce qu'il fallait démontrer.
+\end{proof}
+
+
+
+
+
+
+\ifwhole
+ \end{document}
+\fi

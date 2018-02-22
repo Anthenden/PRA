@@ -23,14 +23,14 @@ Si $E=\R^{n+1}$, l'espace projectif $P(\R^{n+1})$ est noté $P^{n}(\R)$ ou $\R P^
 \begin{Not}La classe d'équivalence de $(x_0,\ldots,x_n)$ est noté $[x_0,\ldots,x_n]$.\end{Not}
 
 \subsection{ Topologie de l'espace projectif}
-On munit $\R P^n$ de la topologie quotient. Autrement dit, $U$ est un ouvert de $\R P^n$ si $\pi^{-1}(U)$ est un ouvert de $\R^{n+1}\setminus \{0\}$ où $\pi : \R^{n+1} \setminus \{0\} \to \R P^n$ est la projection canonique.
+On munit $\R P^n$ de la topologie quotient. Autrement dit, $U$ est un ouvert de $\R P^n$ si $\pi^{-1}(U)$ est un ouvert de $\R^{n+1}\setminus \{0\}$ où $\pi : \R^{n+1} \setminus \{0\} \to \R P^n$ est la projection canonique qui est continue par définition de la topologie quotient.
 
 \begin{Prop}
 $\R P^n$ est compact et connexe par arcs.
  \end{Prop}
 \begin{proof}
-Comme $\pi(S^n)=\R P^n$ et que la sphère $S^n$ est (quasi-)compacte et connexe par arcs. alors $\R P^n$ est quasi-compact et connexe par arcs.
-Il faut montrer que $\R P^n$ est séparé. 
+Comme $\pi(S^n)=\R P^n$ et que la sphère $S^n$ est (quasi-)compacte et connexe par arcs. alors $\R P^n$ est quasi-compact et connexe par arcs (car $\pi$ est continue). \\
+Il faut maintenant montrer que $\R P^n$ est séparé. \\
 Soient $x \neq y \in \R P^n$ et $\alpha$ et $\beta$ tels que $|\alpha|=|\beta|, x=\pi(\alpha)$ et $y=\pi(\beta)$ 
 Par construction, les ensembles saturés de $B(\alpha,|\alpha-\beta|/3)$ et $B(\beta,|\alpha-\beta|/3) $ sont disjoints et donc les ouverts $\pi(B(\alpha,|\alpha-\beta|/3)) \ni x$ et $\pi(B(\beta,|\alpha-\beta|/3)) \ni y$ sont disjoints
 
@@ -38,17 +38,17 @@ Par construction, les ensembles saturés de $B(\alpha,|\alpha-\beta|/3)$ et $B(\b
 On peut aller un peu plus loin en montrant que $\R P^{n}$ est homéomorphe à $S^n/\{\pm Id\}$ % peut-être difféomorphe ?
 %Démo à faire (peut-être...)
 \subsection{Structure de variété de l'espace projectif}
-Soient $U_i=\{[x_0:\ldots:x_n] \in \R P^n | x_i \neq 0\}$, $0 \leq i \leq n$, des ouverts de $\R P^n$ et $\varphi_i : [x_0:\ldots:x_n] \in U_i \mapsto \left(\frac{x_0}{x_i}, \ldots, \widehat{\frac{x_i}{x_i}},\ldots,\frac{x_n}{x_i}\right)$.
+Soient $U_i=\{[x_0:\ldots:x_n] \in \R P^n | x_i \neq 0\}$, $0 \leq i \leq n$, des ouverts de $\R P^n$ et $\varphi_i : [x_0:\ldots:x_n] \in U_i \mapsto \left(\frac{x_0}{x_i}, \ldots, \widehat{\frac{x_i}{x_i}},\ldots,\frac{x_n}{x_i}\right) \in \R^n$.
 
 \begin{Thm}
-$(U_i,\varphi_i)_{i \in I}$ forme un atlas de $\R P^n$.
+$(U_i,\varphi_i)_{0 \leq i \leq n}$ est un atlas de $\R P^n$.
 \end{Thm}
 \begin{proof}
 Soit $i \in [\![0,n]\!]$. \\
 $\varphi_i$ est une bijection de réciproque $\varphi_i^{-1} : (x_0,\ldots,\widehat{x_i},\ldots,x_n) \in \R^n \mapsto [x_0,\ldots,1, \ldots,x_n] \in U_i$ (le $1$ est en $i$ème position).
 $\forall (x_0,\ldots,x_n) \in \pi^{-1}(U_i), \varphi_i \circ \pi(x_0,\ldots,x_n)=\left(\frac{x_0}{x_i}, \ldots, \widehat{\frac{x_i}{x_i}},\ldots,\frac{x_n}{x_i} \right)$. On en déduit que $\varphi_i \circ \pi$ est continue et donc $\varphi_i$ aussi. \\
-$\varphi_i^{-1}=\pi(dx_0,\ldots,1,\ldots,dx_n)$ où $dx_j(x_0,\ldots,\widehat{x_i},\ldots,x_n)=x_j$, $i \neq j$. On en déduit que $\varphi_i^{-1}$ est aussi continu et donc $\varphi_i$ est un homéomorphisme. \\
-De plus, on voit que, pour tout $i \neq j$, $\varphi_i \circ \varphi_j^{-1}(x_0,\ldots,x_n)=\left(\frac{x_0}{x_i},\ldots,\frac{x_{i-1}}{x_i},\frac{x_{i+1}}{x_i},\ldots, \frac{1}{x_i},\ldots,\frac{x_n}{x_i}\right)$ pour $(x_0,\ldots,x_n) \in\varphi_j(U_i \cap U_j)$ et donc que $\varphi_i \circ \varphi_j^{-1}$ est $\Ccal^\infty$. 
+$\varphi_i^{-1}=\pi(dx_0,\ldots,1,\ldots,dx_n)$ où $dx_j(x_0,\ldots,\widehat{x_i},\ldots,x_n)=x_j$, $i \neq j$. On en déduit que $\varphi_i^{-1}$ est aussi continue et donc $\varphi_i$ est un homéomorphisme. \\
+De plus, on voit que, pour tout $i \neq j$, $\varphi_i \circ \varphi_j^{-1}(x_0,\ldots,x_n)=\left(\frac{x_0}{x_i},\ldots,\frac{x_{i-1}}{x_i},\frac{x_{i+1}}{x_i},\ldots, \frac{1}{x_i},\ldots,\frac{x_n}{x_i}\right)$ pour $(x_0,\ldots,x_n) \in\varphi_j(U_i \cap U_j)$ et donc que $\varphi_i \circ \varphi_j^{-1}$ est $\Ccal^\infty$ sur $\varphi_j(U_i \cap U_j)) $ (car c'est une fonction rationnelle dont le dénominateur ne s'annule pas) . 
 \end{proof}
 \begin{Cor}
 Muni de l'atlas $(U_i,\varphi_i)_{i \in I}$, $\R P^n$ est une variété différentielle.

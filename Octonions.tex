@@ -1,0 +1,152 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+\title{Octonions}
+\maketitle
+\fi
+
+Le but de cette annexe est de montrer, grâce aux octonions déployés, le théorème 2 du texte de B.Sévennec : 
+\begin{Thm}\label{thm2}
+Le groupe des bijections de l'union disjointe $Q\cup Q_+ \cup Q_-$ qui respectent les relations d'incidence agit surles composantes en les permutant arbitrairement.
+\end{Thm}
+
+Réf : vdBS, blogs de D.Madore, J.Baez
+
+\section{Introduction sur les octonions déployés}
+L'algèbre des octonions déployés $\Ocal$ est l'espace vectoriel $\R^8=\H \oplus \H$ muni du produit $(a,b)\times (c,d)=(ac+d^*b,da+bc^*)$ où $(a+bi+cj+dk)^*=a-bi-cj-dk$. Par analogie avec l'extension des réels par les complexes, on peut voir $\Ocal$ comme l'algèbre engendrée par $\H$ et un élément $\ell$ telle que $\ell^2=1$. \\
+
+En continuant l'analogie avec la construction des complexes, on peut définir un conjugaison $(a_0+a_1 i+a_2 j +a_3 k+a_4 \ell+a_5 i \ell+a_6 j \ell+a_7 k \ell)^*=a_0-a_1 i-a_2 j -a_3 k-a_4 \ell-a_5 i \ell-a_6 j \ell-a_7 k \ell$ ou encore en écrivant avec les quaternions, $(a,b)^*=(a^*,-b)$. En faisant les calculs, on remarque que la conjugaison inverse les produits i.e. $\forall x,y \in \Ocal, (xy)^*=y^*x^*$. \\
+On peut ensuite définir la forme quadratique $N : (a,b) \in \Ocal \mapsto (a,b)(a,b)^*=(a,b)^*(a,b)=(|a|^2-|b|^2,0) \in \R$. 
+Cette forme quadratique est multiplicative et de signature $(4,4)$. Si $N(q) \neq 0$ alors $q$ est inversible d'inverse $q^{-1}=q^*/N(q)$. On l'appelera norme dans la suite de ce texte (pour abréger semi-norme) \\  
+
+Cette algèbre n'est ni commutative (car $\H$ ne l'est pas) ni associative ($(ij)\ell=(0,k) \neq (0,-k)=i(jl)$). Mais elle vérifie les relations suivantes : Pour tout $x,y,z \in \Ocal$,\\
+$\begin{cases}
+x(x^*y)=N(x)y \\
+x(y^*z)+y(x^*z)=B(x,y)z
+\end{cases}$ \\
+ où $B : (x,y) \mapsto (xy^*+yx^*)$ est (le double de) la forme bilinéaire associée à $N$. \\
+En conjuguant ces équations, on obtient : \\
+$\begin{cases}
+(y^*x)x^*=N(x)y^* \\
+(z^*y)x^*+(z^*x)y=B(x,y)z^*
+\end{cases}$ 
+ou encore 
+$\begin{cases}
+(yx)x=N(x)y \\
+(zy)x^*+(zx)y=B(x,y)z
+\end{cases}$ 
+ 
+\section{Démonstration du théorème}
+
+Grâce à la symétrie de ces formules, on va pouvoir seulement montrer le prochains résultat pour les multiples à droite (i.e. à $a\Ocal$) d'un élément de norme nulle ; la démonstration est identique pour les multiples à gauche.
+
+\begin{Lemme}
+\label{appartenance}
+Soit $a \in \Ocal$ tel que $N(a)=0$. Alors $x \in a\Ocal$ si, et seulement si, $a^*x=0$
+\end{Lemme}
+
+\begin{proof}
+$\Rightarrow$ : Soit $x,y \in \Ocal$ tel que $x=ay$. Alors $a^*(ax)=N(a)x=0$ \\
+$\Leftarrow$ : Soit $x \in \Ocal$ tel que $a^*x=0$. \\
+Soit $c \notin a^\bot$ i.e. $B(a,b)\neq 0 $. \\
+$a(b^*x)=a(b^*x)+b(a^*x)=B(a,b)x$.\\
+D'où : $x=a\left(\frac{b^*x}{B(a,b)} \right) \in a\Ocal$
+\end{proof}
+
+\begin{Thm}
+Soit $a \in \Ocal,a \neq 0,N(a)=0$. \\
+$a\Ocal$ et $\Ocal a$ sont des sous-espaces totalement isotropes maximaux (SETIM).
+\end{Thm}
+
+\begin{proof}
+On va montrer la première partie juste pour les multiplices à droites. \\
+Comme pour tout $x \in \Ocal,N(ax)=N(a)N(x)=0$ alors $a\Ocal$ est totalement isotrope ( et donc de dimension $\leq 4$). \\
+Ensuite, comme pour tout $b \in \Ocal$ tel que $B(a,b) \neq 0$ (on peut supposer $B(a,b)=1$),$a(b^*x)+b(a^*x)=x$ et que $a\Ocal,b\Ocal \subset \Ocal$ alors $a\Ocal+b\Ocal=\Ocal$.\\
+On en déduit que : $8=\dim(\Ocal)\leq \dim(a\Ocal)+\dim(b\Ocal) \leq 8$ donc $\dim(a\Ocal)+\dim(b\Ocal)=8$.
+ \\
+$a\Ocal$ est donc un sous-espace totalement isotrope de dimension 4 ou, autrement dit, un SETIM. \\
+
+\end{proof}
+
+
+On va maintenant montrer que ce sont les seuls : 
+ 
+\begin{Thm}
+\label{Classification SETIM}
+Tout SETIM est de la forme $a\Ocal$ ou $\Ocal a$
+\end{Thm}
+
+
+Pour cela, on va s'appuyer sur les deux théorèmes suivants : 
+
+\begin{Thm}\label{produit_orth}
+Soit $t \in O(N)$. \\
+Si $t \in \SO(N)$ alors il existe $t_1,t_2 \in SO(N)$ telles que : $\forall x,y \in \Ocal, t(xy)=t_1(x)t_2(y)$. \\
+Si $t \in O^-(N)$ alors il existe $t_1,t_2 \in O^-(N)$ telles que : $\forall x,y \in \Ocal, t(xy)=t_1(y)t_2(x)$
+\end{Thm} 
+\begin{proof}
+Voir le théorème 1 et ses deux corollaires dans vdBS
+\end{proof}
+
+\begin{Thm}[Witt]
+Soit $F$ un sous-espace vectoriel d'un espace quadratique régulier $(E,q)$ et $u : F \to E$ une isométrie. Alors $u$ peut être prolongée en un automorphisme orthogonal de $(E,q)$
+\end{Thm}
+\begin{proof}
+voir Invitation aux formes quadratiques de Clément de Seguins Pazzis
+\end{proof}
+
+\begin{proof}(du théorème \ref{Classification SETIM} ) \\
+Soit $F$ un SETIM. Il existe un isomorphisme $f:a\Ocal \to F$ car $a\Ocal$ et $F$ sont de même dimension en tant qu'espace vectoriel. \\
+En outre, cet isomorphisme est une isométrie car les éléments de $F$ et $a\Ocal$ sont toujours de norme nulle. \\
+Par le théorème de Witt, il existe $t \in O(N)$ qui prolonge $f$. On a donc $t(a\Ocal)=F$ \\
+Par le théorème \ref{produit_orth}, si $t \in \SO(N)$ alors il existe $t_1,t_2 \in \SO(N)$ tels que $F=t_1(a)t_2(\Ocal)=t_1(a)\Ocal$. Si $t \in O^-(N)$ alors il existe $t_1,t_2 \in O^-(N)$ tels que $F=t_1(\Ocal)t_2(a)=\Ocal t_2(a)$
+\end{proof}
+
+Les SETIM de $\Ocal$ sont données par les deux familles $\{a\Ocal,a \neq 0,N(a)=0\}$ et $\{\Ocal b,b \neq 0,N(b)=0\}$. 
+\begin{Prop}\label{Separation}
+$a\Ocal$ et $b\Ocal$ sont égaux que dans le cas trivial $a=b=0$
+\end{Prop}
+\begin{proof}
+Si $a\Ocal=\Ocal b$ alors pour tout $x \in \Ocal$, $ax \in b \Ocal$. D'après le lemme \ref{appartenance}, $a^*(xb)=0$ et donc $B(a,x)b=B(a^*,x^*)b=a^*(xb)+x*(ab)=x^*(ab)$. On obtient donc l'égalité $\Ocal (ab)=\R b$. Si $ab \neq 0$ alors le membre de gauche est de dimension 4 tandis que celui de droite est de dimension 1. On en déduit que $ab=0$ et donc $b=0$.  \\
+\end{proof}
+
+ La démonstration du théorème \ref{Classification SETIM} et cette proposition nous montrent que chacun des deux familles correspond à $Q_+$ et $Q_-$. Plus précisément, comme le graphe de l'identité est égal à $\Ocal(1,1)$ alors $Q_+=\{\Ocal b,b \neq 0,N(b)=0\}$ et $Q_-=\{a\Ocal,a \neq 0,N(a)=0\}$. Etudions maitenant le rapport qui existe entre les relations d'incidences entre $Q,Q_+,Q_-$ et cette écriture de leurs éléments. \\
+Rappelons, tout d'abord, que $\Gamma_+ \in Q_+$ est incident à $\Gamma_- \in Q_-$ (et vice-versa) si leur intersection est maximale, c'est-à-dire si $\Gamma_+ \cap \Gamma_-$ est un plan projectif (ou encore que cette intersection est de dimension 3 dans $\R^8$) et $x \in Q$ est incident à $\Gamma_{\pm} \in Q_\pm$ si $q \in \Gamma_\pm$. Cette dernière relation a déjà été examiné dans le lemme \ref{appartenance}, ie si $\Gamma_+=\Ocal a_+$ (resp. $\Gamma_-=a_-\Ocal) $  alors $a$ est incident à $\Gamma_{\pm}$ si, et seulement si, $aa_+^*=0$  (resp. $a_-^*a=0$). Discutons maintenant du dernier cas, 
+
+\begin{Thm}
+Soient $a\Ocal$ et $\Ocal b$ deux SETIM. Leur intersection est maximale si, et seulement si, $ab=0$. 
+Les éléments de cette intersection est alors de la forme $ay$ où $B(y,b)=0$
+\end{Thm}
+\begin{proof}
+On va se concentrer sur implication réciproque (si $ab \neq 0$ alors $a \Ocal \cap \Ocal b=\R ab$). \\
+Supposons, donc, que $ab=0$. \\
+Soit $x=ay$ tel que $B(y,b)=0$. \\
+Alors, $xb^*=(ay)b^*=-(ab)y^*+B(y,b)a=0$ et donc $x \in b\Ocal$. \\
+L'argument se remonte facilement et donc $a\Ocal \cap b\Ocal=a(b^\bot)$. Calculons maitenant la dimension de cet ensemble. \\
+Soit $f : x \in b^\bot \mapsto  ax$. Cette application est linéaire et donc, par le théorème du rang, $\dim \Ker(f)+\dim Im(f)=\dim(b^\bot)$. \\
+On sait que, $Im(f)=a(b^\bot)$, $\dim(b^\bot)=7$ et que comme $\Ker(f)$ est inclus dans $a^*\Ocal$ alors $\dim \Ker(f) \leq 4$. D'où, \\
+$3 \leq \dim(a(b^\bot)) (\leq 4$ car $a(b^\bot) \subset a\Ocal)$). \\
+Si $\dim(a(b^\bot))=4$ alors $a\Ocal \cap b\Ocal=a\Ocal$ et donc $a\Ocal = b\Ocal$, ce qui contredit la proposition \ref{Separation}.
+\end{proof}
+
+Pour obtenir des équations plus esthétiques, nous allons considérer les ensembles de $\Q_{\pm}$ comme paramétrées par l'octonion qui annule,à gauche ou à droite, cet élément (par exemple, on dit que $a^*$ paramètre à gauche $a\Ocal$) . Les équations obtenus sont alors : \\
+$\begin{cases}
+aa_+=0 \text{ pour que } a \in a_+^*\Ocal \\
+aa_-=0 \text{ pour que } a \in \Ocal a_-^* \\
+a_+a_-=0 \text{ pour que } a_-^* \Ocal  \text{ soit incident à } \Ocal a_+^*
+\end{cases}$ \\
+La symétrie de ces formules nous permet d'obtenir le théorème \ref{thm2}.
+
+
+
+\ifwhole
+ \end{document}
+\fi

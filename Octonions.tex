@@ -21,7 +21,7 @@ Le groupe des bijections de l'union disjointe $Q\cup Q_+ \cup Q_-$ qui respecten
 Réf : vdBS, blogs de D.Madore, J.Baez
 
 \section{Introduction sur les octonions déployés}
-L'algèbre des octonions déployés $\Ocal$ est l'espace vectoriel $\R^8=\H \oplus \H$ muni du produit $(a,b)\times (c,d)=(ac+d^*b,da+bc^*)$ où $(a+bi+cj+dk)^*=a-bi-cj-dk$. Par analogie avec l'extension des réels par les complexes, on peut voir $\Ocal$ comme l'algèbre engendrée par $\H$ et un élément $\ell$ telle que $\ell^2=1$. \\
+L'algèbre des octonions déployés $\Ocal$ est l'espace vectoriel $\R^8=\H \oplus \H$ muni du produit $(a,b)\times (c,d)=(ac+db^*,a^*d+cb)$ où $(a+bi+cj+dk)^*=a-bi-cj-dk$. Par analogie avec l'extension des réels par les complexes, on peut voir $\Ocal$ comme l'algèbre engendrée par $\H$ et un élément $\ell$ telle que $\ell^2=1$. \\
 
 En continuant l'analogie avec la construction des complexes, on peut définir un conjugaison $(a_0+a_1 i+a_2 j +a_3 k+a_4 \ell+a_5 i \ell+a_6 j \ell+a_7 k \ell)^*=a_0-a_1 i-a_2 j -a_3 k-a_4 \ell-a_5 i \ell-a_6 j \ell-a_7 k \ell$ ou encore en écrivant avec les quaternions, $(a,b)^*=(a^*,-b)$. En faisant les calculs, on remarque que la conjugaison inverse les produits i.e. $\forall x,y \in \Ocal, (xy)^*=y^*x^*$. \\
 On peut ensuite définir la forme quadratique $N : (a,b) \in \Ocal \mapsto (a,b)(a,b)^*=(a,b)^*(a,b)=(|a|^2-|b|^2,0) \in \R$. 
@@ -67,7 +67,7 @@ $a\Ocal$ et $\Ocal a$ sont des sous-espaces totalement isotropes maximaux (SETIM
 \end{Thm}
 
 \begin{proof}
-On va montrer la première partie juste pour les multiplices à droites. \\
+On va montrer la première partie juste pour les multiples à droite. \\
 Comme pour tout $x \in \Ocal,N(ax)=N(a)N(x)=0$ alors $a\Ocal$ est totalement isotrope ( et donc de dimension $\leq 4$). \\
 Ensuite, comme pour tout $b \in \Ocal$ tel que $B(a,b) \neq 0$ (on peut supposer $B(a,b)=1$),$a(b^*x)+b(a^*x)=x$ et que $a\Ocal,b\Ocal \subset \Ocal$ alors $a\Ocal+b\Ocal=\Ocal$.\\
 On en déduit que : $8=\dim(\Ocal)\leq \dim(a\Ocal)+\dim(b\Ocal) \leq 8$ donc $\dim(a\Ocal)+\dim(b\Ocal)=8$.
@@ -118,8 +118,8 @@ $a\Ocal$ et $b\Ocal$ sont égaux que dans le cas trivial $a=b=0$
 Si $a\Ocal=\Ocal b$ alors pour tout $x \in \Ocal$, $ax \in b \Ocal$. D'après le lemme \ref{appartenance}, $a^*(xb)=0$ et donc $B(a,x)b=B(a^*,x^*)b=a^*(xb)+x*(ab)=x^*(ab)$. On obtient donc l'égalité $\Ocal (ab)=\R b$. Si $ab \neq 0$ alors le membre de gauche est de dimension 4 tandis que celui de droite est de dimension 1. On en déduit que $ab=0$ et donc $b=0$.  \\
 \end{proof}
 
- La démonstration du théorème \ref{Classification SETIM} et cette proposition nous montrent que chacun des deux familles correspond à $Q_+$ et $Q_-$. Plus précisément, comme le graphe de l'identité est égal à $\Ocal(1,1)$ alors $Q_+=\{\Ocal b,b \neq 0,N(b)=0\}$ et $Q_-=\{a\Ocal,a \neq 0,N(a)=0\}$. Etudions maitenant le rapport qui existe entre les relations d'incidences entre $Q,Q_+,Q_-$ et cette écriture de leurs éléments. \\
-Rappelons, tout d'abord, que $\Gamma_+ \in Q_+$ est incident à $\Gamma_- \in Q_-$ (et vice-versa) si leur intersection est maximale, c'est-à-dire si $\Gamma_+ \cap \Gamma_-$ est un plan projectif (ou encore que cette intersection est de dimension 3 dans $\R^8$) et $x \in Q$ est incident à $\Gamma_{\pm} \in Q_\pm$ si $q \in \Gamma_\pm$. Cette dernière relation a déjà été examiné dans le lemme \ref{appartenance}, ie si $\Gamma_+=\Ocal a_+$ (resp. $\Gamma_-=a_-\Ocal) $  alors $a$ est incident à $\Gamma_{\pm}$ si, et seulement si, $aa_+^*=0$  (resp. $a_-^*a=0$). Discutons maintenant du dernier cas, 
+ La démonstration du théorème \ref{Classification SETIM} et cette proposition nous montrent que chacun des deux familles correspond à $Q_+$ et $Q_-$. Plus précisément, comme le graphe de l'identité est égal à $(1,1)\Ocal$ alors $Q_+=\{a\Ocal ,a \neq 0,N(a)=0\}$ et $Q_-=\{b\Ocal,b \neq 0,N(b)=0\}$. Etudions maitenant le rapport qui existe entre les relations d'incidences entre $Q,Q_+,Q_-$ et cette écriture de leurs éléments. \\
+Rappelons, tout d'abord, que $\Gamma_+ \in Q_+$ est incident à $\Gamma_- \in Q_-$ (et vice-versa) si leur intersection est maximale, c'est-à-dire si $\Gamma_+ \cap \Gamma_-$ est un plan projectif (ou encore que cette intersection est de dimension 3 dans $\R^8$) et $x \in Q$ est incident à $\Gamma_{\pm} \in Q_\pm$ si $x \in \Gamma_\pm$. Cette dernière relation a déjà été examiné dans le lemme \ref{appartenance}, ie si $\Gamma_+=a_+\Ocal $ (resp. $\Gamma_-=\Ocal a_-) $  alors $a$ est incident à $\Gamma_{\pm}$ si, et seulement si, $a_+^*a=0$  (resp. $aa_-^*=0$). Discutons maintenant du dernier cas, 
 
 \begin{Thm}
 Soient $a\Ocal$ et $\Ocal b$ deux SETIM. Leur intersection est maximale si, et seulement si, $ab=0$. 
@@ -129,20 +129,21 @@ Les éléments de cette intersection est alors de la forme $ay$ où $B(y,b)=0$
 On va se concentrer sur implication réciproque (si $ab \neq 0$ alors $a \Ocal \cap \Ocal b=\R ab$). \\
 Supposons, donc, que $ab=0$. \\
 Soit $x=ay$ tel que $B(y,b)=0$. \\
-Alors, $xb^*=(ay)b^*=-(ab)y^*+B(y,b)a=0$ et donc $x \in b\Ocal$. \\
-L'argument se remonte facilement et donc $a\Ocal \cap b\Ocal=a(b^\bot)$. Calculons maitenant la dimension de cet ensemble. \\
+Alors, $xb^*=(ay)b^*=-(ab)y^*+B(y,b)a=0$ et donc $x \in \Ocal b$. \\
+L'argument se remonte facilement et donc $a\Ocal \cap \Ocal b=a(b^\bot)$. Calculons maintenant la dimension de cet ensemble. \\
 Soit $f : x \in b^\bot \mapsto  ax$. Cette application est linéaire et donc, par le théorème du rang, $\dim \Ker(f)+\dim Im(f)=\dim(b^\bot)$. \\
 On sait que, $Im(f)=a(b^\bot)$, $\dim(b^\bot)=7$ et que comme $\Ker(f)$ est inclus dans $a^*\Ocal$ alors $\dim \Ker(f) \leq 4$. D'où, \\
 $3 \leq \dim(a(b^\bot)) (\leq 4$ car $a(b^\bot) \subset a\Ocal)$). \\
-Si $\dim(a(b^\bot))=4$ alors $a\Ocal \cap b\Ocal=a\Ocal$ et donc $a\Ocal = b\Ocal$, ce qui contredit la proposition \ref{Separation}.
+Si $\dim(a(b^\bot))=4$ alors $a\Ocal \cap \Ocal b=a\Ocal$ et donc $a\Ocal = \Ocal b$, ce qui contredit la proposition \ref{Separation}.
 \end{proof}
 
-Pour obtenir des équations plus esthétiques, nous allons considérer les ensembles de $\Q_{\pm}$ comme paramétrées par l'octonion qui annule,à gauche ou à droite, cet élément (par exemple, on dit que $a^*$ paramètre à gauche $a\Ocal$) . Les équations obtenus sont alors : \\
+Pour obtenir des équations plus esthétiques, nous allons considérer les ensembles de $Q_{\pm}$ comme paramétrées par l'octonion qui annule,à gauche ou à droite, cet élément (par exemple, on dit que $a^*$ paramètre à gauche $a\Ocal$). Les équations obtenues sont alors : \\
 $\begin{cases}
-aa_+=0 \text{ pour que } a \in a_+^*\Ocal \\
+a_+a=0 \text{ pour que } a \in a_+^*\Ocal \\
 aa_-=0 \text{ pour que } a \in \Ocal a_-^* \\
-a_+a_-=0 \text{ pour que } a_-^* \Ocal  \text{ soit incident à } \Ocal a_+^*
+a_-a_+=0 \text{ pour que }  \Ocal a_-^* \text{ soit incident à } a_+^*\Ocal 
 \end{cases}$ \\
+La dernière équation vient du fait que si $a_+^*a_-^*=0$ alors, en conjuguant, on obtient $a_-a_+=0$. \\
 La symétrie de ces formules nous permet d'obtenir le théorème \ref{thm2}.
 
 

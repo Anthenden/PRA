@@ -12,13 +12,14 @@
 \title{Plongement de Plücker}
 \maketitle
 \fi
+Dans ce texte, on va expliquer comment réaliser la grassmannienne comme variété algébrique projective. \\
 Référence : H2G2 tome II
 \section{Algèbre extérieure}
 Soit $E$ un espace vectoriel de dimension finie sur un corps commutatif $k$. \\
 On appelle $p$ème puissance extérieure de $E$ l'espace vectoriel $\bigwedge^p E$,quotient de $E^{\otimes p}$ par le sous-espace vectoriel $\Zcal_p=\Vect(x_{1} \otimes \ldots \otimes x_{p} | x_i \in E,\exists m \neq n, x_{m}=x_{n})$ (par convention, $\bigwedge^0 E=k$). \\
 On note $x_1 \wedge \ldots \wedge x_p$ la classe d'équivalence de $x_1 \otimes \ldots \otimes x_p$. \\
-Le passage au quotient conserve les propriétés d'associativité et de $p$-linéarité. De plus, $\forall u,v \in E, u \wedge v=-v \wedge u$et donc $\forall \sigma \in \Sfrak_r,u_1 \wedge \ldots \wedge u_r=\varepsilon(\sigma)u_{\sigma(1)} \wedge \ldots \wedge u_{\sigma(r)}$  \\
-On appelle algèbre extérieure la somme directe des puissances extérieures : $\bigwedge^* E=\bigoplus_{p \in \N} \bigwedge^p E$. On munit $\bigwedge^* E$ d'une structure d'algèbre graduée grâce au produit : $(x_1 \wedge \ldots x_p,y_1 \wedge \ldots \wedge y_q) \in \bigwedge^p E \times \bigwedge^q E \mapsto x_1 \wedge \ldots \wedge x_p \wedge y_1 \wedge \ldots \wedge y_q \in \bigwedge^{p+q} E$.
+Le passage au quotient conserve les propriétés d'associativité et de $p$-linéarité. De plus, $\forall u,v \in E, u \wedge v=-v \wedge u$ et donc $\forall \sigma \in \Sfrak_r,u_1 \wedge \ldots \wedge u_r=\varepsilon(\sigma)u_{\sigma(1)} \wedge \ldots \wedge u_{\sigma(r)}$  \\
+On appelle algèbre extérieure la somme directe des puissances extérieures : $\bigwedge^* E=\bigoplus_{p \in \N} \bigwedge^p E$. On munit $\bigwedge^* E$ d'une structure d'algèbre graduée grâce au produit : \\ $(x_1 \wedge \ldots x_p,y_1 \wedge \ldots \wedge y_q) \in \bigwedge^p E \times \bigwedge^q E \mapsto x_1 \wedge \ldots \wedge x_p \wedge y_1 \wedge \ldots \wedge y_q \in \bigwedge^{p+q} E$.
 
 
 \begin{Lemme}
@@ -26,7 +27,7 @@ $\Zcal_p=\Vect(x_{1} \otimes \ldots \otimes x_{p} | x_i \in E, \{x_1,\ldots,x_p\
 \end{Lemme}
 \begin{proof}
 Posons $V=\Vect(x_{1} \otimes \ldots \otimes x_{p} | x_i \in E, \{x_1,\ldots,x_p\} \text{ est une famille liée })$. \\
-On a clairement $\Zcal_p \subset V$. Réciproquement, soit $x_1 \wedge \ldots \wedge x_p \in V$ i.e.  $\{x_1,\ldots,x_p\}$ est liée. On a donc un $i\in [\![1,n]\!]$ et des $\lambda_j \in k,j \neq i$ tel que $x_i=\sum_{j \neq i} \lambda_jx_j$ et donc : \\
+On a clairement $\Zcal_p \subset V$. Réciproquement, soit $x_1 \wedge \ldots \wedge x_p \in V$ i.e.  $\{x_1,\ldots,x_p\}$ est liée. On a donc un $i\in [\![1,n]\!]$ et des $\lambda_j \in k,j \neq i$ tel que $x_i=\sum_{j \neq i} \lambda_jx_j$ et donc : 
  $x_1 \wedge \ldots \wedge x_i \wedge \ldots \wedge x_p=\sum_{j \neq i} \lambda_j x_1 \wedge \ldots \wedge x_j \wedge \ldots \wedge x_p \in \Zcal_p$ 
 \end{proof}
 Cela nous permet de voir que $\bigwedge^p E= \{0\}$ si $p>dim(E)$
@@ -45,11 +46,11 @@ En particulier, $\dim_k \bigwedge^{\dim E} E=1$ (cela permet de définir le déter
 
 \begin{Cor}
 Soient $\{e_1,\ldots,e_m\},\{f_1,\ldots,f_m\}$ deux familles libres d'éléments de $E$. %Alors $\Vect(e_1,\ldots,e_m)=\Vect(f_1,\ldots,f_m)$ si, et seulement si, $e_1 \wedge \ldots \wedge e_m$ et $f_1 \wedge \ldots \wedge f_m$ sont colinéaires.
-Si$\Vect(e_1,\ldots,e_m)=\Vect(f_1,\ldots,f_m)$ alors $e_1 \wedge \ldots \wedge e_m$ et $f_1 \wedge \ldots \wedge f_m$ sont colinéaires.
+Si $\Vect(e_1,\ldots,e_m)=\Vect(f_1,\ldots,f_m)$ alors $e_1 \wedge \ldots \wedge e_m$ et $f_1 \wedge \ldots \wedge f_m$ sont colinéaires.
 \end{Cor}
 
 \begin{proof}
-$\Rightarrow$ : Soit $W=\Vect(e_1,\ldots,e_m)$. Alors $e_1 \wedge \ldots \wedge e_m$, $f_1 \wedge \ldots \wedge f_m \in \bigwedge^k W$. Ce dernier ensemble étant de dimension 1, $e_1 \wedge \ldots \wedge e_m$ et $f_1 \wedge \ldots \wedge f_m$ sont colinéaires.\\
+Soit $W=\Vect(e_1,\ldots,e_m)$. Alors $e_1 \wedge \ldots \wedge e_m$, $f_1 \wedge \ldots \wedge f_m \in \bigwedge^k W$. Ce dernier ensemble étant de dimension 1, $e_1 \wedge \ldots \wedge e_m$ et $f_1 \wedge \ldots \wedge f_m$ sont colinéaires.\\
 %$\Leftarrow$ : Soit $W=\Vect(e_1,\ldots,e_m)$ et $W'=\Vect(f_1,\ldots,f_m)$. Si $f_i \notin W$ alors on complète $\{f_i,e_1,\ldots,e_m\}$ en une base $\{v_1,\ldots,v_n\}$ de $E$.
 %Pour donner les idées, prenons $i=1$, \\
 %$\lambda e_1 \wedge \ldots \wedge e_m=f_1 \wedge f_2 \wedge \ldots \wedge f_n=f_1 \wedge \sum_{j_2} a_{2j_2} v_{j_2} \wedge \ldots \wedge \sum_{j_m} a_{mj_m} v_{j_m}=\sum_{j_2}\cdots\sum_{j_m}f_1 \wedge  a_{2j_2} v_{j_2} \wedge \ldots \wedge  a_{mj_m} v_{j_m}$.
@@ -77,7 +78,7 @@ Soit $x \in E_W$ ie $x \wedge (e_1 \wedge \ldots \wedge e_r)=0$ et donc $\{x,e_1
 \end{proof}
 L'injectivité de $\psi_{r,n}$ en découle immédiatement. \\
 
- La réciproque de la propositon \ref{InjPlucker} est vraie :
+ La réciproque de la proposition \ref{InjPlucker} est vraie :
 
 \begin{Prop}
 Soit $\Lambda \in \bigwedge^r k^n$ tel que $W=\{ x \in k^n | \Lambda \wedge x=0\}$ soit de dimension $r$. Alors $\psi_{r,n}(W)=[\Lambda]$
@@ -105,7 +106,7 @@ $\Pscr_{I,J}(X)=\sum_{i,j_i \notin I} (-1)^{i+\iota(I,j_i)} X_{I \cup \{j_i\}}X_
 \end{Not}
 
 \begin{Lemme}
-Soient $W \in G(r,n)$, $\{v_1,\ldots,v_r\}$ une base de $W$ et $P=(v_1,\ldots,v_r) \in \Mcal_{n,r}(k)$. \\
+Soient $W \in G(r,n)$, $\{v_1,\ldots,v_r\}$ une base de $W$ et $P=(v_1,\ldots,v_r) \in \Mcal_{n,r}(k)$. 
 Alors $\psi_{r,n}(W)=\sum_{K=\{k_1<\ldots < k_r\}} \Delta_{K,[\![1,r]\!]}(P) e_{k_1} \wedge \ldots \wedge e_{k_r}$, \\
 où pour $P=(p_{i,j})$, $\Delta_{I,J}(P)$ est le mineur $\det((p_{i,j})_{i \in I,j \in J})$
 \end{Lemme}
@@ -129,7 +130,7 @@ $\psi_{r,n}(G(r,n))=\{ v=(v_K)_{K \in I(r,n)} | \forall I \in I(r-1,n),\forall J
 $\subset$ : Soient $w=w_1 \wedge \ldots \wedge w_r \in \psi_{r,n}(G(r,n))$, $A=(a_{ij})$ la matrice $(w_1,\ldots w_r)$, $L_i$ les lignes de $A$, $(\Delta_{K})_{K \in I(r,n)}$ les coordonnées de $W$ dans la base canonique de $\bigwedge^rW$. \\
 Soit $I=\{i_1<\ldots<i_{r-1}$ et $j_i \in [\![1,n]\!]$. On considère $i_1<\ldots<j_i<\ldots <i_r$ où $I \cup j_r$ est écrit dans l'ordre croissant. \\
 $(-1)^{\iota(I,j_i)} \Delta_{I \cup \{v_j\}}=(-1)^{\iota(I,j_i)}\det\begin{pmatrix} L_{i_1} \\ \vdots \\ L_{j_i} \\ \vdots \\ L_{i_{r-1}} \end{pmatrix}=\det\begin{pmatrix} L_{i_1}  \\ \vdots \\ L_{i_{r-1}}\\  L_{j_i} \end{pmatrix}$. \\
-En développant sur la dernière ligne,
+En développant sur la dernière ligne, \\
 $(-1)^{\iota(I,j_i)} \Delta_{I \cup \{v_j\}}=\sum_{r=1}^s (-1)^{r+s}a_{j_i,s} \underbrace{\det((a_{i_l,m})_{1 \leq l \leq r-1,m \neq s})}_{=\Delta_{I,[\![1,r]\!] \setminus \{s\}}(A)=:\delta_s}$. \\
 $\Pscr_{I,J}(w)=\sum_{i,j_i \notin I} (-1)^{i} \Delta_{J \setminus \{j_i\}} \sum_{s=1}^r a_{j_i,s}\delta_s=\sum_{s=1}^r(-1)^r\delta_s\sum_{i=1}^{r+1} (-1)^{i+s} \Delta_{J \setminus \{j_i\}}  a_{j_i,s}$. (on a pu étendre pour tous les éléments de $J$ car les valeurs supplémentaires sont nulles)\\
 De plus, \\
@@ -147,7 +148,7 @@ On va montrer que $\Delta_K(A)=v_K$ par récurrence sur le nombre d'éléments de $
 	\item Si $Card( L \cap K^c)=1$ alors $K$ est de la forme $\{1<\ldots<i-1<i+1<\ldots<r<l\}$ et donc : \\
 	$\Delta_K(A)=\det\begin{pmatrix} I_{i-1}& &0_{r-i+1}\\0_r &&I_{n-r} \\ a_{k,1} & \ldots & a_{k,r} \end{pmatrix}=(-1)^{r+1} a_{li}=v_{L \setminus \{l\} \cup \{i\}}=v_K$
 	\item Soit $s\geq 2$ et supposons la propriété vraie au rang $s-1$. Soit $K=\{k_1<\ldots <k_r\}$ tel que $Card(L \cap K^c)=s$. \\
-	Alors,en développant le déterminant sur la $k_r$ ème ligne, $\Delta_K(A)=\sum_{i=1}^{r} (-1)^{r+i} a_{k_r,i} \underbrace{\Delta_{K \setminus \{k_r\},[\![1,r]\!] \setminus \{i\}}(A)}_{=: m_{k_r,i}}$. \\
+	Alors,en développant le déterminant sur la $k_r$ ème ligne,\\ $\Delta_K(A)=\sum_{i=1}^{r} (-1)^{r+i} a_{k_r,i} \underbrace{\Delta_{K \setminus \{k_r\},[\![1,r]\!] \setminus \{i\}}(A)}_{=: m_{k_r,i}}$. \\
 	De plus, si $1 \leq i \leq r$, on obtient, en développant par rapport à la $i$ème ligne (qui est de la forme $( 0 \ldots 1,0\ldots 0)$ où le 1 est à la $i$ème ligne),   \\
 	$\Delta_{I \cup \{i\}}=(-1)^{\iota(I,i)}(-1)^{r+i}m_{k_r,i}$\; ( le $(-1)^{\iota(I,i)}$ permet de réordonner la matrice) \\ 
 		où $I=K \setminus \{k_r\}$  \\

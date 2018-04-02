@@ -1,0 +1,47 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+\newcommand{\ff}{\prod \hspace{-0.42cm}\coprod}
+\newcommand{\ffdiag}{\prod \hspace{-0.32cm}\coprod}
+\fi
+
+Soient $M$ une hypersurface de $\R P^n$, $p \in M$ et une équation locale $f=0$ de $M$ au voisinage de $p$ ($f$ est une submersion en $p$ i.e. $d_pf \neq 0$). \\
+En calculant dans les cartes de $\R P^n$, on peut voir que $T_pM$ coïncide avec $T_p H$ où $H$ est l'hyperplan $Ker(d_pf)$ auquel on a rajouté ses points à l'infini. \\
+Comme $d_p f_{|H}=(d_p f)_{T_p H}=0$ alors $p$ est un point critique de $f$ et donc on peut définir une hessienne sur $T_p H \times T_p H=T_p M \times T_p M$. On définit $\ff_p$ comme l'application faisant commuter le diagramme suivant : \\
+  $\xymatrix{
+    T_pM \times T_pM\ar[r]^{-H_pf}  \ar[rd]_{\ffdiag_p} & \R  \\
+    & N_pM:=T_p \R P^n/T_pM \ar[u]_{\overline{d_pf}}
+  }$ \\
+	où $\overline{d_pf}$ est l'isomorphisme induit par $d_pf$. \\
+	Autrement dit, $\ff_p=-\overline{d_pf}^{-1} \circ H_pf$. \\
+Si on change l'équation locale de $M$ en $p$ en $g=0$ alors $\Ker(d_pf)=\Ker(d_pg)$ (car $f$ et $g$ correspondent au même hyperplan projectif $H$) et $d_pg=\frac{d_pg(x)}{d_pf(x)} d_pf$ où $d_pf(x) \neq 0$ i.e. $d_pf$ et $d_pg$ ne diffèrent que d'un facteur multiplicatif. On en déduit que la hessienne change du même coefficient (c.f. la formule de la hessienne). $\ff_p$ ne dépend donc pas de l'équation locale choisie. On l'appelle deuxième fondamentale de $S$ au point $p$. \\
+On peut maintenant définir la structure pseudo-conforme projective de $M$ en $p$ comme l'ensemble des applications bilinéaires $\ff_p \circ \varphi$, où $\varphi : N_pM \to \R$ est un isomorphisme (linéaire). \\
+On va étudier l'exemple de l'hypersurface $M=\{(x,t) \in \R^n \times \R | t=q(x)\} \subset \R^{n+1} \subset \R P^{n+1}$ où $q$ est une forme quadratique non dégénérée de $\R^n$ : \\
+Soit $f: (x,t) \mapsto t-q(x)$. $f=0$ est une équation globale de $M$. La hessienne de $f$ en tout point est $2b$ où $b$ est la forme bilinéaire associée à $f$.
+On peut identifier $M$ avec $\R^n$ grâce à la projection $(x,t) \mapsto x$ puis $N_pM$ avec $\{0_{\R^n}\} \times \R$. Avec cette identification, $\ff_p=(0,2b)$ en tout point $p$ de $M$. La structure pseudo-conforme projective de $M$ en tout point est $\{ (0,2\lambda b) | \lambda \in \R^*\}$. \\
+On peut compactifier $M$ en ajoutant ses points à l'infini. On obtient alors la quadrique projective (lisse) $Q=\{ [s : x : t] | q(x)-st=0\}\subset \R P^{n+1}$ (par construction, $Q=\{[1 : x : t ] | q(x)=t  \} \cup \{[0 : x : 1 ] | q(x)=0  \}=M \cup \{[0 : x : 1 ] | q(x)=0  \}$). Cette compactification est conforme dans le sens où il existe un isomorphisme $\varphi$ tel que le diagramme suivant commute : \\
+
+$\xymatrix@!C{
+    T_pM \times T_pM\ar[r]^{d_p i \times d_p i}  \ar[d]_{\ffdiag_p^M} & T_{i(p)}Q \times T_{i(p)}Q \ar[d]_{\ffdiag_p^Q}  \\
+    N_pM \ar[r]^\varphi & N_{i(p)}Q
+  }$ \\
+	où $i: M \hookrightarrow Q$ est l'inclusion et $\ff^M,\ff^Q$ sont les deuxièmes formes fondamentales de $M$, $Q$.
+	Ici, $\varphi$ est l'identité. \\
+	En résumé, on peut compactifier $\R^p \oplus \R^q$ muni de la métrique $dx^2-dy^2$ en une quadrique projective lisse, dont la forme quadratique est de signature $(p+1,q+1)$, dans $\R P^{p+q+1}$
+
+
+
+
+
+
+\ifwhole
+ \end{document}
+\fi

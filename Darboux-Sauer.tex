@@ -1,0 +1,52 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+\fi
+
+\begin{Def}
+On dit qu'une immersion $f : S \to \R^3$ est infinitésimalement rigide si toute déformation infinitésimale $g$ est un déplacement infinitésimale $g$ est un déplacement infinitésimal $g=a \times f+b$, $a,b \in \R^3$
+\end{Def}
+
+\begin{Lemme}
+Une immersion $f :S \to \R^3$ est infinitésimalement rigide si, et seulement si, toute immersion totalement isotrope $\varphi : S \to Q$ relevant $f$, i.e. telle que $\pi \circ \varphi =f : S \to \R^3$ est telle que $\varphi_+$ est constante.
+\end{Lemme}
+\begin{proof}
+$\Rightarrow : $ Déjà fait. \\
+$\Leftarrow : $ Soit $\varphi =(f : 1 : g: -f\cdot g) : S \to Q$ telle que $df \cdot dg=0$ et $\varphi_+$ est constante. \\
+Alors il existe $h :S \to \R^3$ telle que $dg=h \times df$. \\
+$d\varphi=(df:0:dg:-df\dot g-dg\cdot f)=(df : 0 : h \times dg : -df \cdot(g+f\times h))$ (grâce à la formule du produit triple) \\
+On en déduit que $d\varphi=(h,g+f \times h)_+(df,0)$. Et donc $\varphi_+=(h,g+f \times h)_+$. 
+Comme $\varphi_+$ est constante alors $h$ et $g+f \times h$ aussi, c'est-à-dire, $g=-h \times f+b$, $b \in \R^3$.
+\end{proof}
+
+
+\begin{Thm}[Darboux-Sauer]
+La rigidité infinétésimale est projectivement invariante : si $f : S \to \R^3 \subset \R P^3$ est une immersion, et $A \in \PGL_4(\R)=Aut(\R P^3)$ est une transformation projective telle que $A \circ f(S) \subset \R^3$, alors $A \circ f$ est infinitésimalement rigide si, et seulement si, $f$ l'est.
+\end{Thm}
+\begin{proof}
+On peut commencer par remarquer qu'il suffit de montrer qu'un sens car il suffit de considérer $A^{-1}$. \\
+$\PGL_4(\R)$ agit sur $\R P^7$ par $A \cdot (u : v)=( Au : {}^t A^{-1} v)$ où $u,v \in \R^4, A \in \PGL_4(\R)$. \\
+Cette action laisse stable $Q$ : \\ $\forall (u:v) \in Q, \forall A \in \PGL_4(\R),q(A\cdot (u:v))=q(Au : {}^t A^{-1} v)=Au \cdot {}^t A^{-1} v=u\cdot v=0$. Elle laisse stable aussi $P_1$ et $P_2$. \\
+Cette action commute avec $\pi_1 : Q \setminus P_2 \to P_1$ (sur $Q \setminus P_2$) : \\
+$\forall (u:v) \in Q, \forall A \in \PGL_4(\R),\pi_1(A \cdot (u,v))=(Au : 0)=A(u \oplus 0)=A(\pi(u : v))$.
+Par conséquent, pour $A \in \PGL_4(\R)$ et $\varphi$ une immersion totalement isotrope relevant $f$ : $\pi_1(A \circ \varphi)=A(\pi_1(\varphi))=A \circ f$ i.e. $A \circ \varphi$ relève $A \circ f$ \\ 
+Comme, de plus, pour tout $p \in S$, $d_p(A \circ \varphi)=d_{\varphi(p)} A \circ d_p \varphi=A \circ d_p \varphi$, alors $\tau_p (A \circ \varphi)=A \tau_p \varphi$ et donc $A(\varphi_+)=(A \circ \varphi)_+$, ce qui est le résultat voulu. 
+
+\end{proof}
+
+
+
+
+
+
+\ifwhole
+ \end{document}
+\fi

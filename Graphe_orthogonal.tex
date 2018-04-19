@@ -1,0 +1,35 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+
+\fi
+
+
+\begin{Thm}
+Soit $F \subset \R^4 \oplus \R^4$ un sous-espace vectoriel totalement isotrope de dimension $k \leq 4$. Alors $E$ est le graphe d'une application orthogonale $\widetilde{F} \to \R^4$ où $\widetilde{F}$ est un sous-espace vectoriel de $\R^4$ de dimension $k$. \\
+Réciproquement, tout graphe d'une application orthogonale est totalement isotrope.   
+\end{Thm}
+
+\begin{proof}
+Soient $x \oplus y, x \oplus y' \in F$ Alors leur différence $0 \oplus (y-y')$ est dans $F$. Par conséquent, $|y-y'|=0$ et donc $y=y'$. \\
+On peut donc définir une application $f : \widetilde{F} \subset \R^4 \to \R^4$ définie de la façon suivante : \\
+Si $x \oplus y \in F$ alors $f(x):=y$.  \\
+On peut, de plus, remarquer que $\widetilde{F}$ est un espace vectoriel et que $f$ est une application linéaire orthogonale (car $|x|=|f(x)|$, par isotropie de $F$) injective et dont le graphe est $F$ (par construction). Par conséquent, $k=\dim(F)=\rg(f)=\dim(\widetilde{F})$. \\
+Réciproquement, si $Q$ est une application orthogonale, $\forall x \in \widetilde{F}, q(x,Q(x))=|x|-|Q(x)|=0$
+\end{proof}
+En particulier, les sous-espaces vectoriels totalement isotropes maximaux sont les graphes des éléments de $O(4)$.
+
+
+
+
+\ifwhole
+ \end{document}
+\fi

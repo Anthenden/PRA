@@ -14,18 +14,29 @@
 
 
 \begin{Thm}
-Soit $F \subset \R^4 \oplus \R^4$ un sous-espace vectoriel totalement isotrope de dimension $k \leq 4$. Alors $E$ est le graphe d'une application orthogonale $\widetilde{F} \to \R^4$ où $\widetilde{F}$ est un sous-espace vectoriel de $\R^4$ de dimension $k$. \\
+Soit $F \subset \R^4 \oplus \R^4$ un sous-espace vectoriel totalement isotrope de dimension $k \leq 4$. Alors $E$ est le graphe d'une application orthogonale $\widetilde{E} \to \R^4$ où $\widetilde{F}$ est un sous-espace vectoriel de $\R^4$ de dimension $k$. \\
 Réciproquement, tout graphe d'une application orthogonale est totalement isotrope.   
 \end{Thm}
 
 \begin{proof}
 Soient $x \oplus y, x \oplus y' \in F$ Alors leur différence $0 \oplus (y-y')$ est dans $F$. Par conséquent, $|y-y'|=0$ et donc $y=y'$. \\
-On peut donc définir une application $f : \widetilde{F} \subset \R^4 \to \R^4$ définie de la façon suivante : \\
+On peut donc définir une application $f : \widetilde{E} \subset \R^4 \to \R^4$ définie de la façon suivante : \\
 Si $x \oplus y \in F$ alors $f(x):=y$.  \\
-On peut, de plus, remarquer que $\widetilde{F}$ est un espace vectoriel et que $f$ est une application linéaire orthogonale (car $|x|=|f(x)|$, par isotropie de $F$) injective et dont le graphe est $F$ (par construction). Par conséquent, $k=\dim(F)=\rg(f)=\dim(\widetilde{F})$. \\
-Réciproquement, si $Q$ est une application orthogonale, $\forall x \in \widetilde{F}, q(x,Q(x))=|x|-|Q(x)|=0$
+On peut, de plus, remarquer que $\widetilde{E}$ est un espace vectoriel et que $f$ est une application linéaire orthogonale (car $|x|=|f(x)|$, par isotropie de $F$) injective et dont le graphe est $F$ (par construction). Par conséquent, $k=\dim(F)=\rg(f)=\dim(\widetilde{E})$. \\
+Réciproquement, si $Q$ est une application orthogonale, $\forall x \in \widetilde{E}, q(x,Q(x))=|x|-|Q(x)|=0$
 \end{proof}
 En particulier, les sous-espaces vectoriels totalement isotropes maximaux sont les graphes des éléments de $O(4)$.
+
+\begin{Cor}
+Soit $V$ un sous-espace totalement isotrope de dimension $3$ de $\R^4 \oplus \R^4$. Il existe deux sous-espaces totalement isotropes maximaux contenant $V$.
+\end{Cor}
+\begin{proof}
+Soient $f : \widetilde{E} \to \R^4$ l'application orthogonale dont le graphe est $V$ et $\Bcal$ une base orthonormée de $\widetilde{E}$. \\
+Il existe deux vecteurs complétant $\Bcal$ en une base orthonormée de $\R^4$. En effet, $\widetilde{E}^\perp$ est de dimension 1 et donc a deux générateurs unitaires opposés. $f$ a deux prolongements en une application orthogonale de $O(4)$, un dans $\SO(4)$ et un dans $O^-(4)$.
+\end{proof}
+\begin{Cor}
+$V^\perp/V$ est de dimension 2 et a deux droites totalement isotropes.
+\end{Cor}
 
 
 

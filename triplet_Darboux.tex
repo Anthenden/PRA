@@ -12,9 +12,9 @@
 
 \fi
 
-\begin{Thm}
+\begin{Prop}
 Soit $E$ un espace de dimension 2 et $L_1 : E \to \R^3$ une application linéaire injective. Soit $L_2 : E \to \R^3$ une application linéaire telle que $\forall u \in E,  L_1(u) \cdot L_2(u) =0$. Alors il existe un unique $h \in \R^3$ tel que $L_2=h \times L_1$ \;$(*)$
-\end{Thm}
+\end{Prop}
 
 \begin{proof}
 Soit $\Bcal=(w_1=L_1(v_1),w_2=L_1(v_2))$ une base orthonormée de $Im(L_1)$ (qui est de dimension 2 par le théorème du rang). Posons $u_1=L_2(v_1)$ et $u_2=L_2(v_2)$. \\
@@ -30,6 +30,75 @@ Les mêmes calculs nous montre que $\mu=(w_1,u_1,w_2)$ convient. \\
 L'unicité de $h$ découle du fait que l'ensemble de solution est l'intersection de deux droites non confondues (car $w_1 \neq w_2$).
 
 \end{proof}
+
+En particulier, si $f : S \to \R^3$ est une immersion et $g : S \to \R^3$ une application telle que $df \cdot dg=0$ alors il existe une application lisse $h : S \to \R^3$ telle que : 
+\begin{equation}\label{eq-Darboux}
+forall p \in S, d_pg= h(p) \times d_pf\]
+\end{eqnarray}
+
+	
+
+\begin{Def}
+On appelera triplet de Darboux un triplet $(f,g,h)$ d'applications lisses $S \to \R^3$ vérifiant l'identité \ref{eq-Darboux}
+\end{Def}
+
+Maintenant, on va construire de nouveaux triplets de Darboux à partir d'un triplet $(f,g,h)$ donné :  \\
+Si $g$ est aussi une immersion, grâce à la symétrie de la formule $df=dg=0$ alors il existe une application lisse $h^* : S \to \R^3$ telle que $df=h^* \times dg$. On notera $D(f,g,h)$ le triplet $D(g,f,h^*)$ qui est de Darboux. \\
+Une autre façon de construire un triplet de Darboux est de poser, comme Darboux lui-même, $\widetilde{g}=g-h \times f$ alors on a $d\widetilde{g}=dg-dh \times f-h \times df=f \times dh$ et donc $(\widetilde{g},h,f)$ est un triplet de Darboux que l'on notera $A(f,g,h)$.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

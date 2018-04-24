@@ -1,0 +1,275 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+
+\fi
+
+\part{ Octonions}
+
+Dans les parties précédentes, nous avons étudié les immersions totalement isotropes $\varphi : S \to Q \subset P(\R^8)$ pour une forme quadratique $N$ de signature $(4,4)$. Il existe une structure d'algèbre naturelle sur $\R^8$ qui rend $N$ multiplicative. Nous allons maintenant voir comment cette structure permet de simplifier notre étude.
+
+Réf : vdBS, blogs de D.Madore, J.Baez
+
+\section{Introduction sur les octonions déployés}
+L'algèbre des octonions déployés $\Ocal$ est l'espace vectoriel $\R^8=\H \oplus \H$ muni du produit $(a,b)\times (c,d)=(ac+db^*,a^*d+cb)$ où $(a+bi+cj+dk)^*=a-bi-cj-dk$. Par analogie avec l'extension des réels par les complexes, on peut voir $\Ocal$ comme l'algèbre engendrée par $\H$ et un élément $\ell$ telle que $\ell^2=1$. \\
+
+En continuant l'analogie avec la construction des complexes, on peut définir une conjugaison $(a_0+a_1 i+a_2 j +a_3 k+a_4 \ell+a_5 i \ell+a_6 j \ell+a_7 k \ell)^*=a_0-a_1 i-a_2 j -a_3 k-a_4 \ell-a_5 i \ell-a_6 j \ell-a_7 k \ell$ ou encore en écrivant avec les quaternions, $(a,b)^*=(a^*,-b)$. 
+
+En faisant les calculs, on remarque que la conjugaison inverse les produits i.e. $\forall x,y \in \Ocal, (xy)^*=y^*x^*$, autrement dit, c'est un anti-automorphisme de $\Ocal$\\
+On peut ensuite définir la forme quadratique $N : (a,b) \in \Ocal \mapsto (a,b)(a,b)^*=(a,b)^*(a,b)=(|a|^2-|b|^2,0) \in \R$. 
+Cette forme quadratique est multiplicative et de signature $(4,4)$. Si $N(q) \neq 0$ alors $q$ est inversible d'inverse $q^{-1}=q^*/N(q)$. On l'appelera norme dans la suite de ce texte (pour abréger semi-norme) \\  
+
+ \label{Formules}
+Cette algèbre n'est ni commutative (car $\H$ ne l'est pas) ni associative ($(ij)\ell=(0,k) \neq (0,-k)=i(jl)$). Mais elle vérifie les relations suivantes : Pour tout $x,y,z \in \Ocal$,\\
+$\begin{cases}
+x(x^*y)=N(x)y \\
+x(y^*z)+y(x^*z)=2B(x,y)z
+\end{cases}$ \\
+ où $\left\langle x,y\right\rangle=(xy^*+yx^*)/2$ est la forme bilinéaire associée à $N$. \\
+En conjuguant ces équations, on obtient : \\
+$\begin{cases}
+(y^*x)x^*=N(x)y^* \\
+(z^*y)x^*+(z^*x)y=2B(x,y)z^*
+\end{cases}$ 
+ou encore 
+$\begin{cases}
+(yx)x=N(x)y \\
+(zy)x^*+(zx)y=2B(x,y)z
+\end{cases}$ 
+
+
+Grâce à ces formules et la multiplicativité de $N$, nous allons montrer deux résultats qui nous serons utiles pour la suite. Tout d'abord, nous allons montrer que la multiplication à gauche (resp. à droite) par un octonion $a$ est adjointe à la multiplication à gauche (resp. à droite) par son conjugué $\overline{a}$ puis que si $ba=0$, $L_a \circ R_{\overline{b}}$ et $R_b \circ L_{\overline{a}}$ sont de rang $1$.
+
+
+\begin{Lemme}
+Soit $a \in \H$. $L_a,L_{\overline{a}}$ (resp. $R_a,R_{\overline{a}}$) sont adjoints. 
+\end{Lemme}
+\begin{proof}
+Soit $x,y \in \Ocal$. \\
+En polarisant $\left\langle L_a(x),y \right\rangle=\left\langle ax,y \right\rangle$, on obtient : \\
+	\[\left\langle L_a(x),y \right\rangle=\frac{N(ax+y)-N(ax)-N(y)}{2}
+\]
+Puis, par multiplicativité de $N$, on a : 
+\[\left\langle L_a(x),y \right\rangle=N(a)\frac{N(x+a^{-1}y)-N(x)-N(a^{-1}y)}{2}
+\]
+\[\left\langle L_a(x),y \right\rangle=N(a) \left\langle x,a^{-1}y\right\rangle=\left\langle x,\overline{a}y\right\rangle=\left\langle x,L_{\overline{a}}(y)\right\rangle
+\]
+\end{proof}
+\begin{Prop}
+Soit $a \in \Ocal$. $L_a,L_{\overline{a}}$ (resp. $R_a,R_{\overline{a}}$) sont adjoints. 
+De plus, $L_a \circ L_{\overline{a}}=N(a)Id=R_{\overline{a}} \circ R_a$.
+\end{Prop}
+\begin{proof}
+Soit $a=a_1+\ell a_2 \in \Ocal$ et $x=x_1+\ell x_2,y \in \Ocal$. \\
+En utilisant le lemme précédent, $\ell x_1=\overline{x_1} \ell$ puis que $\ell x=\ell x_1+x_2$ (et donc que $\left\langle x, \cdot \right\rangle=-\left\langle \ell x, \cdot \right\rangle$, on obtient : 
+$\left\langle ax,y\right\rangle=\left\langle a_1x,y\right\rangle+\left\langle \overline{a_2}\ell x,y\right\rangle=\left\langle x,\overline{a_1}y\right\rangle+\left\langle \ell x,a_2y\right\rangle=\left\langle x,\overline{a_1}y\right\rangle+\left\langle x,-a_2y\right\rangle=\left\langle x,\overline{a}y\right\rangle$.
+Grâce aux identités de la sous-section \ref{Formules}, on a : $a(\overline{a}x)=N(a)x=(x \overline{a})a$ et donc $L_a \circ L_{\overline{a}}=N(a) Id=R_{\overline{a}}\circ R_a$
+\end{proof}
+
+\begin{Prop}
+Soient $a,b \in \Ocal \setminus \{0\}$ tels que : $ba=0$. Alors, $a (\Ocal \overline{b})=\R \overline{b}$ et $(\overline{a} \Ocal) b=\R \overline{a}$
+\end{Prop}
+
+\begin{proof}
+Soit $x \in \Ocal$. Le résultat découle des équations de \ref{Formules}:  
+	\[a(x \overline{b})=2\left\langle a,\overline{x}\right\rangle \overline{b}-x\underbrace{(\overline{a} \overline{b})}_{=0} 
+\]
+et 
+\[(\overline{a}x)b=2\left\langle x,b\right\rangle \overline{a}-\underbrace{(\overline{a} \overline{b})}_{=0}x 
+\]
+
+\end{proof}
+\section{Symétries entre $Q_+,Q_-$ et $Q$}
+
+Le but de cette section est de montrer, grâce aux octonions déployés, le 
+\begin{Thm}\label{thm2}
+Le groupe des bijections de l'union disjointe $Q\cup Q_+ \cup Q_-$ qui respectent les relations d'incidence agit sur les composantes en les permutant arbitrairement.
+\end{Thm}
+Pour cela, nous allons montrer que chaque élément de $Q_+$ (resp. $Q_-$) est paramétré par un octonion déployé grâce à la multiplication à gauche (resp. à droite) puis que les relations d'incidence entre $Q,Q_+,Q_-$ se traduisent avec ses octonions. La symétrie des formules obtenues permettent de montrer le théorème.
+
+
+
+\begin{Lemme}
+\label{appartenance}
+Soit $a \in \Ocal$ tel que $N(a)=0$. Alors $x \in a\Ocal$ si, et seulement si, $a^*x=0$
+\end{Lemme}
+
+\begin{proof}
+Grâce à la symétrie des formules de \ref{Formules}, on va pouvoir seulement montrer le prochains résultat pour les multiples à droite (i.e. à $a\Ocal$) d'un élément de norme nulle ; la démonstration est identique pour les multiples à gauche.  \\
+$\Rightarrow$ : Soit $x,y \in \Ocal$ tel que $x=ay$. Alors $a^*(ax)=N(a)x=0$ \\
+$\Leftarrow$ : Soit $x \in \Ocal$ tel que $a^*x=0$. \\
+Soit $c \notin a^\bot$ i.e. $\left\langle a,b\right\rangle\neq 0 $. \\
+	\[a(b^*x)=a(b^*x)+b(a^*x)=2\left\langle a,b\right\rangle x
+\]
+D'où : 
+	\[x=a\left(\frac{b^*x}{2\left\langle a,b\right\rangle} \right) \in a\Ocal
+\]
+\end{proof}
+
+\begin{Thm}
+Soit $a \in \Ocal,a \neq 0,N(a)=0$. \\
+$a\Ocal$ et $\Ocal a$ sont des sous-espaces totalement isotropes maximaux (SETIM).
+\end{Thm}
+
+\begin{proof}
+On va montrer la première partie juste pour les multiples à droite. \\
+Comme pour tout $x \in \Ocal,N(ax)=N(a)N(x)=0$ alors $a\Ocal$ est totalement isotrope ( et donc de dimension $\leq 4$). \\
+Ensuite, comme pour tout $b \in \Ocal$ tel que $\left\langle a,b\right\rangle\neq 0$ (on peut supposer $2\left\langle a,b\right\rangle=1$),$a(b^*x)+b(a^*x)=x$ et que $a\Ocal,b\Ocal \subset \Ocal$ alors $a\Ocal+b\Ocal=\Ocal$.\\
+On en déduit que : 
+	\[8=\dim(\Ocal)\leq \dim(a\Ocal)+\dim(b\Ocal) \leq 8
+\]
+ Et donc : 
+	 \[\dim(a\Ocal)+\dim(b\Ocal)=8
+ \]
+ .
+ \\
+$a\Ocal$ est donc un sous-espace totalement isotrope de dimension 4 ou, autrement dit, un SETIM. \\
+
+\end{proof}
+
+On va maintenant montrer que ce sont les seuls : 
+ 
+\begin{Thm}
+\label{Classification SETIM}
+Tout SETIM est de la forme $a\Ocal$ ou $\Ocal a$
+\end{Thm}
+
+
+Pour cela, on va s'appuyer sur les deux théorèmes suivants : 
+
+\begin{Thm}\label{produit_orth}
+Soit $t \in O(N)$. \\
+Si $t \in \SO(N)$ alors il existe $t_1,t_2 \in SO(N)$ telles que : 
+	\[\forall x,y \in \Ocal, t(xy)=t_1(x)t_2(y)
+\]
+. \\
+Si $t \in O^-(N)$ alors il existe $t_1,t_2 \in O^-(N)$ telles que :
+	\[ \forall x,y \in \Ocal, t(xy)=t_1(y)t_2(x)
+\]
+
+\end{Thm} 
+\begin{proof}
+Voir le théorème 1 et ses deux corollaires dans vdBS
+\end{proof}
+
+\begin{Thm}[Witt]
+Soit $F$ un sous-espace vectoriel d'un espace quadratique régulier $(E,q)$ et $u : F \to E$ une isométrie. Alors $u$ peut être prolongée en un automorphisme orthogonal de $(E,q)$
+\end{Thm}
+\begin{proof}
+voir Invitation aux formes quadratiques de Clément de Seguins Pazzis
+\end{proof}
+
+\begin{proof}(du théorème \ref{Classification SETIM} ) \\
+Soit $F$ un SETIM. Il existe un isomorphisme $f:a\Ocal \to F$ car $a\Ocal$ et $F$ sont de même dimension en tant qu'espace vectoriel. \\
+En outre, cet isomorphisme est une isométrie car les éléments de $F$ et $a\Ocal$ sont toujours de norme nulle. \\
+Par le théorème de Witt, il existe $t \in O(N)$ qui prolonge $f$. On a donc $t(a\Ocal)=F$ \\
+Par le théorème \ref{produit_orth}, si $t \in \SO(N)$ alors il existe $t_1,t_2 \in \SO(N)$ tels que :
+	\[F=t_1(a)t_2(\Ocal)=t_1(a)\Ocal
+	\]
+	. 
+Si $t \in O^-(N)$ alors il existe $t_1,t_2 \in O^-(N)$ tels que : 
+	\[F=t_1(\Ocal)t_2(a)=\Ocal t_2(a)
+\]
+\end{proof}
+
+Les SETIM de $\Ocal$ sont donnés par les deux familles $\{a\Ocal,a \neq 0,N(a)=0\}$ et $\{\Ocal b,b \neq 0,N(b)=0\}$. 
+\begin{Prop}\label{Separation}
+$a\Ocal$ et $b\Ocal$ sont égaux que dans le cas trivial $a=b=0$
+\end{Prop}
+\begin{proof}
+Si $a\Ocal=\Ocal b$ alors pour tout $x \in \Ocal$, $ax \in b \Ocal$. D'après le lemme \ref{appartenance}, $a^*(xb)=0$ et donc $\left\langle a,x\right\rangle b=\left\langle a^*,x^*\right\rangle b=a^*(xb)+x*(ab)=x^*(ab)$. On obtient donc l'égalité $\Ocal (ab)=\R b$. Si $ab \neq 0$ alors le membre de gauche est de dimension 4 tandis que celui de droite est de dimension 1. On en déduit que $ab=0$ et donc $b=0$.  \\
+\end{proof}
+
+ La démonstration du théorème \ref{Classification SETIM} et cette proposition nous montrent que chacun des deux familles correspond à $Q_+$ et $Q_-$. Plus précisément, comme le graphe de l'identité est égal à $(1,1)\Ocal$ alors $Q_+=\{a\Ocal ,a \neq 0,N(a)=0\}$ et $Q_-=\{b\Ocal,b \neq 0,N(b)=0\}$. Etudions maitenant le rapport qui existe entre les relations d'incidences entre $Q,Q_+,Q_-$ et cette écriture de leurs éléments. \\
+Rappelons, tout d'abord, que $\Gamma_+ \in Q_+$ est incident à $\Gamma_- \in Q_-$ (et vice-versa) si leur intersection est maximale, c'est-à-dire si $\Gamma_+ \cap \Gamma_-$ est un plan projectif (ou encore que cette intersection est de dimension 3 dans $\R^8$) et $x \in Q$ est incident à $\Gamma_{\pm} \in Q_\pm$ si $x \in \Gamma_\pm$. Cette dernière relation a déjà été examiné dans le lemme \ref{appartenance}, ie si $\Gamma_+=a_+\Ocal $ (resp. $\Gamma_-=\Ocal a_-) $  alors $a$ est incident à $\Gamma_{\pm}$ si, et seulement si, $a_+^*a=0$  (resp. $aa_-^*=0$). Discutons maintenant du dernier cas, 
+
+\begin{Thm}
+Soient $a\Ocal$ et $\Ocal b$ deux SETIM. Leur intersection est maximale si, et seulement si, $ab=0$. 
+Les éléments de cette intersection sont alors de la forme $ay$ où $\left\langle y,b\right\rangle=0$
+\end{Thm}
+\begin{proof}
+On va se concentrer sur implication réciproque (si $ab \neq 0$ alors $a \Ocal \cap \Ocal b=\R ab$, vdbs \ref{}). \\
+Supposons, donc, que $ab=0$. \\
+Soit $x=ay$ tel que $B(y,b)=0$. Alors,
+	\[ xb^*=(ay)b^*=-(ab)y^*+2\left\langle y,b\right\rangle a=0
+\]
+Et donc : $x \in \Ocal b$. \\
+L'argument se remonte facilement et donc $a\Ocal \cap \Ocal b=a(b^\bot)$. Calculons maintenant la dimension de cet ensemble. \\
+Soit $f : x \in b^\bot \mapsto  ax$. Cette application est linéaire et donc, par le théorème du rang, $\dim \Ker(f)+\dim Im(f)=\dim(b^\bot)$. \\
+On sait que, $Im(f)=a(b^\bot)$, $\dim(b^\bot)=7$ et que comme $\Ker(f)$ est inclus dans $a^*\Ocal$ alors $\dim \Ker(f) \leq 4$. D'où, \\
+$3 \leq \dim(a(b^\bot)) (\leq 4$ car $a(b^\bot) \subset a\Ocal)$). \\
+Si $\dim(a(b^\bot))=4$ alors $a\Ocal \cap \Ocal b=a\Ocal$ et donc $a\Ocal = \Ocal b$, ce qui contredit la proposition \ref{Separation}.
+\end{proof}
+
+Pour obtenir des équations plus esthétiques, nous allons considérer les ensembles de $Q_{\pm}$ comme paramétrées par l'octonion qui annule,à gauche ou à droite, cet élément (par exemple, on dit que $a^*$ paramètre à gauche $a\Ocal$). Les équations obtenues sont alors : \\
+$\begin{cases}
+a_+a=0 \text{ pour que } a \in a_+^*\Ocal \\
+aa_-=0 \text{ pour que } a \in \Ocal a_-^* \\
+a_-a_+=0 \text{ pour que }  \Ocal a_-^* \text{ soit incident à } a_+^*\Ocal 
+\end{cases}$ \\
+La dernière équation vient du fait que si $a_+^*a_-^*=0$ alors, en conjuguant, on obtient $a_-a_+=0$. \\
+La symétrie de ces formules nous permet d'obtenir le théorème \ref{thm2}.
+
+
+
+%\part{Lemme 7}
+%
+%Soit $a \in \Ocal$. Posons $\Re(a)=\left\langle a,1\right\rangle$ et $\overline{a}=2\Re(a)-a$. 
+%
+%Cette conjugaison prolonge celle de $\H$ car la restriction de $\left\langle \cdot,\cdot\right\rangle$ est la norme euclidienne sur $\H$.
+%En faisant les calculs, on obtient que $\overline{(a,b)}=(\overline{a},-b)$ pour tout $(a,b) \in \Ocal$
+%
+%\begin{Lemme}
+%$a \mapsto \overline{a}$ est un anti-automorphisme involutif de $\Ocal$.
+%\end{Lemme}
+%\begin{proof}
+%Par bilinéarité de $\left\langle \cdot,\cdot\right\rangle$, la conjugaison est linéaire. \\
+%Soit $a \in \Ocal$. \\
+%$\overline{\overline{a}}=2\left\langle \overline{a},1\right\rangle-\overline{a}=2\left\langle 2\left\langle a,1\right\rangle-a ,1\right\rangle-2\Re(a)+a$. \\
+%Comme $\left\langle 1,1\right\rangle=0$ alors, $\overline{\overline{a}}=a$.
+%Montrons que la conjugaison renverse les produits : \\
+%Soient $a=(x,y),b=(x',y') \in \Ocal$. \\
+%$\overline{ab}=(\overline{x'}\overline{x}+y\overline{y'},-\overline{x}y'-\overline{y}\overline{x'})=\overline{b}\;\overline{a}$
+%\end{proof}
+
+
+
+\section{Matrices de Zorn}
+
+Afin de faire des calculs de manière plus simple avec les octonions déployés , on va considérer le modèle des matrices de Zorn défini de la façon suivante : \\
+La $\R$-algèbre (unitaire, non commutative, non associative) des matrices de Zorn est $\Zcal=\left\{ \begin{pmatrix} a & x \\ y & b \end{pmatrix} | a,b \in \R, x,y \in \R^3   \right\}$ muni de la somme et la multiplication par un scalaire composantes par composantes  i.e. 
+	\[\begin{pmatrix} a & x \\ y & b \end{pmatrix}+\lambda \begin{pmatrix} a' & x' \\ y' & b' \end{pmatrix}=\begin{pmatrix} a+\lambda a' & x+\lambda x' \\ y+\lambda y' & b+\lambda b' \end{pmatrix}
+	\]
+	et du produit : \\
+	\[\begin{pmatrix} a & x \\ y & b \end{pmatrix} \times \begin{pmatrix} a' & x' \\ y' & b' \end{pmatrix}=\begin{pmatrix} aa'+x \cdot y' & ax'+b'x-y \times y' \\ ay'+by'+x \times x' & bb'+x' \cdot y \end{pmatrix}.
+	\] 
+L'algèbre des matrices de Zorn est isomorphe à celle des octonions déployés grâce à l'application $\varphi : z=(a+x,b+y) \in \Ocal \mapsto \begin{pmatrix} a+b & x+y \\ -x+y & a-b \end{pmatrix} \in \Zcal$ où on a identifié $bi+cj+dk$ avec le vecteur $(b,c,d)$. \\
+On peut transporter la (pseudo)-norme de $\Ocal$ à $\Zcal$ en posant $N(\varphi(z))=q(z)$ pour $z \in \Ocal$. On obtient alors que $N$ est le "déterminant" de $\Zcal$ i.e. $N\left(\begin{pmatrix} a & x \\ y & b \end{pmatrix}\right)=ab-x\cdot y$. 
+
+On va maintenant traduire les espaces $(u,v)_-$ et $(u,v)_+$ avec les matrices de Zorn : \\ %A réécrire
+Tout d'abord, rappelons que $(u,v)_-=\{ (x,s,y,t) | x \in \R^3,t \in \R,y=u\times x+vt, s=-v \cdot x\}$. De ces deux égalités, on peut en obtenir deux autres : $su-(u \cdot v)x-y \times v=0$ et $y \cdot u+tu \cdot v=0$ i.e. \\$(x,s,y,t) \in (u,v)_-$ si, et seulement si, $\begin{pmatrix} s & x \\ y & -t \end{pmatrix} \times \begin{pmatrix} 1 & u \\ v & -u \cdot v \end{pmatrix}=0$.\\
+ De la même façon,\\ $(x,s,y,t) \in (u,v)_-$ si, et seulement si, $\begin{pmatrix} u \cdot v & -u \\ -v & 1 \end{pmatrix}\times\begin{pmatrix} s & x \\ y & -t \end{pmatrix} =0$ \\
+(on peut remarquer que la matrice $\begin{pmatrix} u \cdot v & -u \\ -v & 1 \end{pmatrix}$ est la matrice conjuguée (par transport de celle de $\Ocal$) de $\begin{pmatrix} 1 & u \\ v &-u \cdot v  \end{pmatrix}$). \\
+Plus généralement, on peut identifier les éléments $(x:s:y:t)$ de $Q$ aux annulateurs à gauche (resp. à droite) de $Z=\begin{pmatrix} s & x \\ y & -t \end{pmatrix}$ dans $Q_+$ (resp. $Q_-$) (on remarque $N(Z)=0$ et donc ce sont bien des SETIM).On notera ces annulateurs $\Ker(L_Z)$ (resp. $\Ker(R_Z)$) où $L_Z$ est la multiplication à gauche par $Z$ et $R_Z$ est la multiplication à droite par $Z$. \\
+On a l'analogue des formules de la section précédente dans l'algèbre des octonions déployés : 
+\begin{Thm}
+La relation d'incidence $\dim(\Ker(L_{Z_+}) \cap \Ker(R_{Z_-}))=3$ entre $Q_+$ et $Q_-$ équivaut à $Z_-Z_+=0$
+\end{Thm}
+ 
+
+
+
+
+
+
+\ifwhole
+ \end{document}
+\fi

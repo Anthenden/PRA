@@ -1,0 +1,89 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+\fi
+
+
+Soit $a \in \Ocal$. Posons $\Re(a)=\left\langle a,1\right\rangle$ et $\overline{a}=2\Re(a)-a$. 
+
+Cette conjugaison prolonge celle de $\H$ car la restriction de $\left\langle \cdot,\cdot\right\rangle$ est la norme euclidienne sur $\H$.
+En faisant les calculs, on obtient que $\overline{(a,b)}=(\overline{a},-b)$ pour tout $(a,b) \in \Ocal$
+
+\begin{Lemme}
+$a \mapsto \overline{a}$ est un anti-automorphisme involutif de $\Ocal$.
+\end{Lemme}
+\begin{proof}
+Par bilinéarité de $\left\langle \cdot,\cdot\right\rangle$, la conjugaison est linéaire. \\
+Soit $a \in \Ocal$. \\
+$\overline{\overline{a}}=2\left\langle \overline{a},1\right\rangle-\overline{a}=2\left\langle 2\left\langle a,1\right\rangle-a ,1\right\rangle-2\Re(a)+a$. \\
+Comme $\left\langle 1,1\right\rangle=0$ alors, $\overline{\overline{a}}=a$.
+Montrons que la conjugaison renverse les produits : \\
+Soient $a=(x,y),b=(x',y') \in \Ocal$. \\
+$\overline{ab}=(\overline{x'}\overline{x}+y\overline{y'},-\overline{x}y'-\overline{y}\overline{x'})=\overline{b}\;\overline{a}$
+\end{proof}
+
+\begin{Lemme}
+Soit $a \in \H$. $L_a,L_{\overline{a}}$ (resp. $R_a,R_{\overline{a}}$) sont adjoints. 
+\end{Lemme}
+\begin{proof}
+Soit $x,y \in \Ocal$. \\
+En polarisant $\left\langle L_a(x),y \right\rangle=\left\langle ax,y \right\rangle$, on obtient : \\
+	\[\left\langle L_a(x),y \right\rangle=\frac{N(ax+y)^2-N(ax)^2-N(y)^2}{2}
+\]
+Puis, par multiplicativité de $N$, on a : 
+\[\left\langle L_a(x),y \right\rangle=|a|^2\frac{N(x+a^{-1}y)^2-N(x)^2-N(a^{-1}y)^2}{2}
+\]
+\[\left\langle L_a(x),y \right\rangle=|a|^2 \left\langle x,a^{-1}y\right\rangle=\left\langle x,\overline{a}y\right\rangle=\left\langle x,L_{\overline{a}}(y)\right\rangle
+\]
+\end{proof}
+\begin{Prop}
+Soit $a \in \Ocal$. $L_a,L_{\overline{a}}$ (resp. $R_a,R_{\overline{a}}$) sont adjoints. 
+De plus, $L_a \circ L_{\overline{a}}=N(a)Id=R_{\overline{a}} \circ R_a$.
+\end{Prop}
+\begin{proof}
+Soit $a=a_1+\ell a_2 \in \Ocal$ et $x=x_1+\ell x_2,y \in \Ocal$. \\
+En utilisant le lemme précédent, $\ell x_1=\overline{x_1} \ell$ puis que $\ell x=\ell x_1+x_2$ (et donc que $\left\langle x, \cdot \right\rangle=-\left\langle \ell x, \cdot \right\rangle$, on obtient : 
+$\left\langle ax,y\right\rangle=\left\langle a_1x,y\right\rangle+\left\langle \overline{a_2}\ell x,y\right\rangle=\left\langle x,\overline{a_1}y\right\rangle+\left\langle \ell x,a_2y\right\rangle=\left\langle x,\overline{a_1}y\right\rangle+\left\langle x,-a_2y\right\rangle=\left\langle x,\overline{a}y\right\rangle$.
+Grâce aux identités \ref{}, on a : $a(\overline{a}x)=N(a)x=(x \overline{a})a$ et donc $L_a \circ \L_{\overline{a}}=N(a) Id=R_{\overline{a}}\circ R_a$
+\end{proof}
+
+\begin{Prop}
+Soit $a,b \in \Ocal \setminus \{0\}$ tels que : $ba=0$. Alors, $a (\Ocal \overline{b})=\R \overline{b}$ et $(\overline{a} \Ocal b)=\R \overline{a}$
+\end{Prop}
+
+\begin{proof}
+Soit $x \in \Ocal$. Le résultat découle des équations \ref{}:  
+	\[a(x \overline{b})=2\left\langle a,\overline{x}\right\rangle \overline{b}-x\underbrace{(\overline{a} \overline{b})}_{=0} 
+\]
+et 
+\[(\overline{a}x)b=2\left\langle x,b\right\rangle \overline{a}-\underbrace{(\overline{a} \overline{b})}_{=0}x 
+\]
+
+\end{proof}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\ifwhole
+ \end{document}
+\fi

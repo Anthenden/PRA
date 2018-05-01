@@ -1,0 +1,105 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+\fi
+
+
+
+\begin{Lemme}\label{lem_calcul}
+Soit $T=(f,g,h)$ un triplet de Darboux avec $f$ une immersion. Alors,
+	\begin{equation}\label{eq}
+	\theta_+ \circ (\varphi_T)_+=(h:-h \cdot \widetilde{g} : \widetilde{g} : 1)=c \circ \varphi_T
+\end{equation}
+où $c : \Ocal \to \Ocal$ est l'application définie par : $c(x:s:y:t)=(x : t: y :s)$
+\end{Lemme}
+
+\begin{proof}
+$c$ est la transformation projective induite par $\rho$ par la conjugaison de $\Zcal$ : 
+\begin{eqnarray*}
+c(x:s:y:t)&=&\rho^{-1} \circ \overline{\;\cdot\;} \circ \rho(x :s :y :t)=\rho^{-1}\overline{\begin{pmatrix} s & x \\ y &  -t\end{pmatrix}} \\
+          &=&\rho^{-1}\begin{pmatrix} -t & -x \\ -y & s\end{pmatrix}=(x :t: y : s)
+\end{eqnarray*}
+On sait,d'après la calcul de $(\varphi_T)_+(=(h,\widetilde{g})_+)$ dans le théorème \ref{} et l'identification par $\rho$ de $(a,b)_+$ avec $\Ker(L_Z)$ où $Z=\begin{pmatrix} a \cdot b& -a \\ -b & 1\end{pmatrix}$ vu dans le théorème \ref{}, que :
+	\[\rho_+((\varphi_T)_+)=\begin{pmatrix} h \cdot \widetilde{g} & -h \\ -\widetilde{g} & 1\end{pmatrix}
+\]
+On peut remarquer que :  
+	\[\begin{pmatrix} h \cdot \widetilde{g} & -h \\ -\widetilde{g} & 1\end{pmatrix}=\overline{\begin{pmatrix}  1& h \\ \widetilde{g} & h \cdot \widetilde{g}\end{pmatrix}}=\rho(h:1: \widetilde{g}:h \cdot \widetilde{g})=\rho(c \circ \varphi_{A(T)})
+\]
+On obtient le résultat voulu en composant avec $\rho^{-1}$ à gauche.
+
+\end{proof}
+
+\begin{Prop}\label{transformation}
+Il existe des applications $a$ et $d$ de l'ensemble des immersions totalement isotropes $\varphi : S \to Q$  vers les applications totalement isotropes de $S$ dans $Q$, telles que si $T=(f,g,h)$ est un triplet de Darboux pour lequel $\varphi_T$ est une immersion (i.e. $f$ est une immersion), $a(\varphi_T)=\varphi_{A(T)}$ et que si, de plus, $D(T)$ est défini, $d(\varphi_T)=\varphi(D(T))$
+\end{Prop}
+
+\begin{proof}
+On posant $a=c \circ \theta_+ \circ \varphi_+$ et $d : (x : s :y :t) \mapsto (y : s : x :t)$
+\end{proof}
+
+Dans la suite, on identifiera $Q$ et $Q_\pm$ et sous-entendra les applications $\theta_\pm$.
+
+\begin{Prop}\label{composition}
+Si $\varphi : S \to Q$ est une immersion totalement isotrope telle que $\varphi_+$ soit une immersion, on a $\varphi_{++}=\varphi_-$ et $\varphi_{+-}=\varphi$. De même, si $\varphi$ est une immersion, on a $\varphi_{--}=\varphi_+$ et $\varphi_{-+}=\varphi$
+\end{Prop}
+
+\begin{proof}
+D'après la trialité différentielle du théorème \ref{}, $\psi_+,d\psi_+ \in \Ker(L_{\psi_-}) \cap \Ker(R_{\psi}) $. Ce dernier ensemble est un espace vectoriel totalement isotrope de dimension 3 car $\psi\psi_-=0$. On en conclut que $(\varphi_+)_+=\varphi_-$ et $(\varphi_+)_-=\varphi$. En effet, $V:=\Ker(L_{\psi_-}) \cap \Ker(R_{\psi}) $ est inclus dans $\Ker(L_{\psi_-})$ et $\Ker(R_{\psi}) $ ; ces deux espaces sont les deux SETIM contenant $V$. $\Ker(L_{\psi_-})$ est le SETIM correspondant à un rotation de $\SO(4)$ et $\Ker(R_{\psi})$ est le SETIM correspondant à un rotation de $O^-(4)$. \\
+Le même raisonnement fonctionne pour $\varphi_-$.
+\end{proof}
+
+De la même, on montre que si $\sigma$ est un anti-automorphisme de $\Zcal$ (c'est-à-dire $\forall x,y \in \Zcal, \sigma(xy)=\sigma(y)\sigma(x)$ alors $(\sigma \circ \varphi)_+=c \circ \varphi_-$ et si c'est un automorphisme, $(\sigma \circ \varphi)_+=c \circ \varphi_+$. Maintenant, on peut montrer le
+
+\begin{Thm}[Darboux]
+La transformation $(D \circ A)^6$ est l'identité sur l'ensemble des immersions totalement isotropes $\varphi : S \to Q$ telles que $\varphi_{\pm}$ soient aussi des immersions
+\end{Thm}
+
+\begin{proof}
+Soit $T=(f,g,h)$ un triplet de Darboux telle que $(\varphi_T)_{\pm}$ soient aussi des immersions. \\
+On notera $\varphi_T$ par $\varphi$. \\
+En utilisant les propositions \ref{transformation} et \ref{composition} et la remarque que l'on a faite avant l'énoncé du théorème,on obtient :
+	\[d \circ a(\varphi)=\sigma \circ c \circ \varphi_+ ; (d \circ a)^2(\varphi)=\varphi_- ; (d \circ a)^3(\varphi)=\sigma \circ c \circ \varphi
+\]
+\[(d \circ a)^4(\varphi)= \varphi_+ ; (d \circ a)^5(\varphi)=\sigma \circ c \circ \varphi_- ; (d \circ a)^6(\varphi)=\varphi
+\]
+\end{proof}
+Ainsi le groupe engendré par $a$ et $d$ est le groupe diédral à 12 éléments. Les six autres éléments sont :
+
+\[a(\varphi)=c \circ \varphi_+  ; a \circ d \circ a(\varphi)=\sigma \circ \varphi_- ; a \circ (d \circ a)^2(\varphi)=c \circ \varphi ; 
+\]
+\[a \circ (d \circ a)^3(\varphi)=\varphi_+ ; a \circ (d \circ a)^4(\varphi)= c \circ \varphi_- ; d=a \circ (d \circ a)^5(\varphi)=\sigma \circ \varphi ; 
+\]
+
+
+\ifwhole
+ \end{document}
+\fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{proof}
+
+\end{proof}

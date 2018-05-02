@@ -11,7 +11,26 @@
 \input{enonce}
 \fi
 
+Grâce à la trialité différentielle, on a vu que les applications $\varphi,\varphi_+$ et $\varphi_-$ jouent des rôles symétriques. De ce fait, les espaces $Q,Q_+$ et $Q_-$ jouent aussi des rôles symétriques. Ainsi, on va se donner des isomorphismes permettant de les identifier : \\
 
+Tout d'abord, on peut identifier $Q,Q_+$ et $Q_-$ avec la quadrique $Q_0=\{N=0\}$ inclus dans $P(\Zcal)$ avec les isomorphismes suivants : \\
+$\begin{array}{ccccc}
+\rho & : & Q & \to & Q_0 \\
+ & & (x:s:y:t) & \mapsto & \left[\begin{pmatrix}s & x \\ y& -t\end{pmatrix}\right] \\
+\end{array}$ ; 
+$\begin{array}{ccccc}
+\rho_+ & : & Q_+ & \to & Q_0 \\
+ & & \rho^{-1}(\Ker(L_{Z_+})) & \mapsto & [Z_+] \\
+\end{array}$ ; \\
+$\begin{array}{ccccc}
+\rho_- & : & Q_- & \to & Q_0 \\
+ & & \rho^{-1}(\Ker(R_{Z_-})) & \mapsto & [Z_-] \\
+\end{array}$ ; \\
+Puis $\theta_\pm = \rho^{-1}\circ \rho$ identifie $Q_{\pm}$ avec $Q$.
+
+Pour un triplet de Darboux $T=(f,g,h)$, on notera $\varphi_T$ l'application $(f : 1 : g : -f \dot g)$. 
+
+Nous allons commencer par étudier comment les transformations $A$ et $D$ sur les triplets induit une transformation $a$ et $d$ sur les applications $\varphi$. Ensuite, grâce aux identifications faites juste précédemment, on étudiera l'itération des opérations $(\cdot)_\pm$ sur $\varphi$. Ce qui nous permettra de décrire le groupe engendré par $a$ et $d$.
 
 \begin{Lemme}\label{lem_calcul}
 Soit $T=(f,g,h)$ un triplet de Darboux avec $f$ une immersion. Alors,
@@ -38,7 +57,7 @@ On obtient le résultat voulu en composant avec $\rho^{-1}$ à gauche.
 \end{proof}
 
 \begin{Prop}\label{transformation}
-Il existe des applications $a$ et $d$ de l'ensemble des immersions totalement isotropes $\varphi : S \to Q$  vers les applications totalement isotropes de $S$ dans $Q$, telles que si $T=(f,g,h)$ est un triplet de Darboux pour lequel $\varphi_T$ est une immersion (i.e. $f$ est une immersion), $a(\varphi_T)=\varphi_{A(T)}$ et que si, de plus, $D(T)$ est défini, $d(\varphi_T)=\varphi(D(T))$
+Il existe des applications $a$ et $d$ de l'ensemble des immersions totalement isotropes $\varphi : S \to Q$  vers les applications totalement isotropes de $S$ dans $Q$, telles que si $T=(f,g,h)$ est un triplet de Darboux pour lequel $\varphi_T$ est une immersion (i.e. $f$ est une immersion), $a(\varphi_T)=\varphi_{A(T)}$ et que si, de plus, $D(T)$ est défini, $d(\varphi_T)=\varphi_{D(T)}$
 \end{Prop}
 
 \begin{proof}

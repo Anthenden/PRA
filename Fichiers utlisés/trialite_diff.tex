@@ -11,6 +11,44 @@
 \input{enonce}
 \fi
 
+Soit $\varphi : S \to Q \subset \R P^7$ une immersion totalement isotrope. Comme on l'a vu dans la section précédente, on peut supposer que $Q$ est inclus dans le projectivisé de l'algèbre d'octonions déployés $\Ocal$ (ou $\Zcal$). \\
+On peut relever cette application en une application $\psi : S \to \Ocal\setminus \{0\}$ de deux façons différentes : \\
+\begin{itemize}
+	\item Soit on restreint $S$ afin que l'image de $\varphi$ soit dans $\{[x_1 : \ldots : x_8] | x_1 \neq 0\}$ et on peut identifier cette ensemble comme un sous-ensemble de $\Ocal\setminus \{0\}$
+	\item Soit on peut passer par un revêtement double : \\
+	 $\xymatrix{
+    \varphi^* S^7 \ar[r]^{pr_2} \ar[d]^{pr_1}  & S^7 \subset \Ocal \setminus\{0\} \ar[d]^{\pi} \\
+    S \ar[r]^\varphi & \R P^7
+  }$ \\
+	où $\varphi^* S^7=\{(x,y) \in S \times S^7 | \varphi(x)=\pi(y) \}$
+\end{itemize}
+On remplacera $S$ par un ensemble adéquat. \\
+Soit $V_p=\R \psi(p) \oplus Im(d_p \psi)$ pour $p \in S$. Dans la section \ref{}, on a expliqué pourquoi cet ensemble est un sous-espace totalement isotrope de dimension 3 et que son projectivisé est l'espace tangent de $\varphi(S)$ en $\varphi(p)$. % cf section 6 \\
+Les deux sous-espaces totalement isotropes maximaux contenant $V_p$ sont de la forme $\Ker(L_{\psi_+(p)})$ et $\Ker(R_{\psi_-(p)})$. On définit ainsi des applications $\varphi : S \to \Ocal \setminus \{0\}$. On en déduit 
+\begin{Propte}
+	\begin{equation} \label{psi_+}
+	\psi_+\psi =0 ; \psi_+ d\psi=0
+	\end{equation}
+	\begin{equation} \label{psi_-}
+	\psi_-\psi =0 ; \psi_- d\psi=0
+	\end{equation}
+	\begin{equation} \label{+-}
+	\psi_-\psi_+ =0 
+	\end{equation}
+	\begin{equation} \label{d+}
+	(d\psi_+)\psi =0 
+	\end{equation}
+\end{Propte}
+\begin{proof}
+Les égalités \ref{psi_+} (resp. \ref{psi_-}) vienent du fait que pour tous $p \in S$ et $h \in T_pS$, $\psi(p),d_p\psi(h) \in \Ker(L_{\psi_+(p)})$ (resp. $\psi(p),d_p\psi(h) \in \Ker(L_{\psi_-(p)})$. L'équation $\ref{+-}$ vient du fait que l'intersection $\Ker(L_{\psi_+(p)})\cap \Ker(R_{\psi_-(p)})$ est de dimension 3.
+Pour l'équation \ref{d+}, on différencie $\psi_+\psi =0$ grâce à la formule de Leibniz : 
+	\[0=d(\psi_+\psi)=(d\psi_+) \psi+\psi_+ d\psi=(d\psi_+) \psi
+\]
+\end{proof}
+
+Il nous reste plus qu'à montrer les égalités $(d \psi_-) \psi_+=\psi_- d \psi_+=0$ pour avoir la trialité différentielle :
+
+
 \begin{Lemme}\label{tril_nulle}
 Soit $f : E^3 \to E$ une application trilinéaire symétrique sur les deux premières variables (i.e. en $X$ et $Y$) et antisymétriques sur les deux dernières (i.e. en $Y,Z$).
 \end{Lemme}
@@ -54,7 +92,9 @@ D'après les identités \ref{}, on sait que $\psi_+ (Y \psi)=0$ et donc en dérivan
 Ainsi, $\psi(p)$ et $Y\psi(p)$ sont dans le noyau $\Ker(L_{X\psi_+(p)})$ mais aussi dans $\Ker(R_{\psi_-(p)})$. On en déduit que leur intersection est de dimension 3 (car de dimension impaire c.f. \ref{}) et donc $\psi_-(p)X\psi_+(p)=0$.
 \end{proof}
 
+On en déduit que pour tout $p \in S$, les points du plan projectif tangent $\tau_p \varphi_+$ (resp. $\tau_p \varphi_-$,resp. $\tau_p \varphi$) sont incidents à $\varphi(p)$  et $\varphi_-(p)$ (resp. à $\varphi(p)$  et $\varphi_+(p)$, resp. $\varphi_+(p)$  et $\varphi_-(p)$)
 
+\subsection{ Démonstration du théorème}
 
 \ifwhole
  \end{document}

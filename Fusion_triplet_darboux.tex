@@ -1,7 +1,7 @@
 
 \newif\ifwhole
 
-\wholetrue
+%\wholetrue
 % Ajouter \wholetrue si on compile seulement ce fichier
 
 \ifwhole
@@ -11,20 +11,29 @@
 \input{enonce}
 
 \fi
+Dans cette section, nous allons définir puis étudier les "triplets de Darboux". Pour commencer, nous allons démontrer une généralisation de l'égalité \ref{} de l'introduction :
 
 \begin{Prop}
-Soit $E$ un espace de dimension 2 et $L_1 : E \to \R^3$ une application linéaire injective. Soit $L_2 : E \to \R^3$ une application linéaire telle que $\forall u \in E,  L_1(u) \cdot L_2(u) =0$. Alors il existe un unique $h \in \R^3$ tel que $L_2=h \times L_1$ \;$(*)$
+Soit $E$ un espace de dimension 2 et $L_1 : E \to \R^3$ une application linéaire injective. Soit $L_2 : E \to \R^3$ une application linéaire telle que 
+	\[\forall u \in E,  L_1(u) \cdot L_2(u) =0
+\]
+. Alors il existe un unique $h \in \R^3$ tel que : 
+\begin{equation}\label{defo_infin} L_2=h \times L_1 \end{equation}
 \end{Prop}
 
 \begin{proof}
 Soit $\Bcal=(w_1=L_1(v_1),w_2=L_1(v_2))$ une base orthonormée de $Im(L_1)$ (qui est de dimension 2 par le théorème du rang). Posons $u_1=L_2(v_1)$ et $u_2=L_2(v_2)$. \\
-Trouver un $h$ vérifiant $(*)$ est équivalent à trouver un $h$ vérifiant les égalités $\begin{cases}u_1=h \times w_1 \\ u_2=h \times w_2\end{cases}$.\\ En utilisant la première équation, on voit qu'un $h$ vérifiant $(*)$ est de la forme $w_1 \times u_1+\lambda w_1$, $\lambda \in \R$ et grâce à la deuxième, $h$ est de la forme $w_2 \times u_2+\mu w_2$, $\mu \in \R$ (grâce à la formule du double produit vectoriel $\forall u,v,w \in \R^3, (u \times v) \times w=(u \cdot w) v-(v\cdot w) u$). 
+Trouver un $h$ vérifiant \ref{defo_infin} est équivalent à trouver un $h$ vérifiant les égalités $\begin{cases}u_1=h \times w_1 \\ u_2=h \times w_2\end{cases}$.\\ En utilisant la première équation, on voit qu'un $h$ vérifiant \ref{defo_infin} est de la forme $w_1 \times u_1+\lambda w_1$, $\lambda \in \R$ et grâce à la deuxième, $h$ est de la forme $w_2 \times u_2+\mu w_2$, $\mu \in \R$ (grâce à la formule du double produit vectoriel $\forall u,v,w \in \R^3, (u \times v) \times w=(u \cdot w) v-(v\cdot w) u$). 
 Si $h$ est de ses deux formes, alors en faisant le produit scalaire avec $w_1$, on obtient que $\lambda=(w_1,w_2,u_2)$ où $(\cdot,\cdot,\cdot)$ est le produit triple. \\
 Réciproquement, \\
-$(w_1 \times u_1+\lambda w_1) \times w_2= w_1 \cdot w_2\; u_1-u_1\cdot  w_2\; w_1+\lambda w_1 \times w_2$.
-On remarque ensuite que : \\
-$0=L_1(v_1+v_2) \cdot L_2(v_1+v_2)=L_1(v_1) \cdot L_2(v_1)+L_1(v_2) \cdot L_2(v_2) +L_1(v_2) \cdot L_2(v_1)+L_1(v_1) \cdot L_2(v_2)=L_1(v_2) \cdot L_2(v_1)+L_1(v_1) \cdot L_2(v_2)$. \\
-C'est-à-dire, $(w_1 \times u_1+\lambda w_1) \times w_2= w_1 \cdot w_2\; u_1+w_1\cdot  u_2\; w_1+\lambda w_1 \times w_2=u_2$
+	\[(w_1 \times u_1+\lambda w_1) \times w_2= w_1 \cdot w_2\; u_1-u_1\cdot  w_2\; w_1+\lambda w_1 \times w_2.
+\]
+On remarque ensuite, en développant $L(v_1+v_2) \cdot L(v_1+v_2)$ que : \\
+	\[0=L_1(v_2) \cdot L_2(v_1)+L_1(v_1) \cdot L_2(v_2)
+\]
+C'est-à-dire, 
+	\[(w_1 \times u_1+\lambda w_1) \times w_2= w_1 \cdot w_2\; u_1+w_1\cdot  u_2\; w_1+\lambda w_1 \times w_2=u_2
+\]
 grâce à la décomposition de  $u_2$ dans la base $w_1,w_2,w_1 \times w_2$ (qui est orthonormée).
 Les mêmes calculs nous montre que $\mu=(w_1,u_1,w_2)$ convient. \\
 L'unicité de $h$ découle du fait que l'ensemble de solution est l'intersection de deux droites non confondues (car $w_1 \neq w_2$).
@@ -44,7 +53,10 @@ On appelera triplet de Darboux un triplet $(f,g,h)$ d'applications lisses $S \to
 
 Maintenant, on va construire de nouveaux triplets de Darboux à partir d'un triplet $(f,g,h)$ donné :  \\
 Si $g$ est aussi une immersion, grâce à la symétrie de la formule $df \cdot dg=0$ alors il existe une application lisse $h^* : S \to \R^3$ telle que $df=h^* \times dg$. On notera $D(f,g,h)$ le triplet $(g,f,h^*)$ qui est de Darboux. \\
-Une autre façon de construire un triplet de Darboux est de poser, comme Darboux lui-même, $\widetilde{g}=g-h \times f$ alors on a $d\widetilde{g}=dg-dh \times f-h \times df=f \times dh$ et donc $(\widetilde{g},h,f)$ est un triplet de Darboux que l'on notera $A(f,g,h)$.
+Une autre façon de construire un triplet de Darboux est de poser, comme Darboux lui-même, $\widetilde{g}:=g-h \times f$ alors on a 
+	\[d\widetilde{g}=dg-dh \times f-h \times df=f \times dh
+\]
+ et donc $(\widetilde{g},h,f)$ est un triplet de Darboux que l'on notera $A(f,g,h)$.
 
 Examinons maintenant l'application $h^*$ : \\
 
@@ -56,17 +68,21 @@ Soit $(f,g,h)$ un triplet de Darboux. Alors $\partial_1 h \times \partial_2 f=\p
 
 \begin{proof}
 En différenciant la 1-forme $dg=h \times df=(h \times \partial_1 f)dx+(h \times \partial_2 f)dy$, on obtient : \\
-$0=(\partial_1 (h \times \partial_1 f)dx + \partial_2 (h \times \partial_1 f) dy )dx+(\partial_1 (h \times \partial_2 f)dx + \partial_2 (h \times \partial_2 f) dy )dy$. \\
+	\[0=(\partial_1 (h \times \partial_1 f)dx + \partial_2 (h \times \partial_1 f) dy )dx+(\partial_1 (h \times \partial_2 f)dx + \partial_2 (h \times \partial_2 f) dy )dy
+\]
 En examinant la partie en $dx \wedge dy$ et en utilisant le lemme de Schwarz, on en déduit le résultat.
 \end{proof}
 
-On peut décomposer $\partial_i h$, $i=1,2$,dans la base $\partial_1 f,\partial_2 f,v_f$ (où $v_f$ engendre $Im(df)^\perp$) : $\partial_i h=\alpha_i \partial_1 f+\beta_i \partial_2 f+\gamma_i v_f$. En prenant le produit scalaire par $\partial_1 f \times \partial_2 f$ des deux côtés puis en utilisant le lemme précédent (et le produit triple), on obtient que $\gamma_i=0$, $i=1,2$ c'est-à-dire $\partial_i h \in Im(df)$. De ce fait, $Im(dh) \subset Im(df)$.
+On peut décomposer $\partial_i h$, $i=1,2$,dans la base $\partial_1 f,\partial_2 f,v_f$ (où $v_f$ engendre $Im(df)^\perp$) : 
+	\[\partial_i h=\alpha_i \partial_1 f+\beta_i \partial_2 f+\gamma_i v_f.
+\]
+ En prenant le produit scalaire par $\partial_1 f \times \partial_2 f$ des deux côtés puis en utilisant le lemme précédent (et le produit triple), on obtient que $\gamma_i=0$, $i=1,2$ c'est-à-dire $\partial_i h \in Im(df)$. De ce fait, $Im(dh) \subset Im(df)$.
 
 Maintenant,grâce à la formule du double produit vectoriel, on obtient  
 	\[df=h^* \times dg=h^* \times (h \times df)=(h^* \cdot df)h-(h^*\cdot h)df
 \]
 Et donc, en prenant le produit vectoriel par $h$ à gauche, on obtient que : 
-	\[dg=h \times df=-(h^* \cdot h) df
+	\[dg=h \times df=-(h^* \cdot h) dg
 \]
 D'où, $h^* \cdot h=-1$ et en réinjectant dans l'équalité précédente, $h^* \cdot df=0$ et en particulier $h^* \cdot dh=0$. Autrement dit, le plan affine tangent à $h(S)$ en $h(p)$ est le plan d'équation $h^*(p) \cdot x+1=0$. Par conséquent, $h^*(p)$ n'est pas défini si ce plan tangent contient $0$. Réciproquement, 
 \begin{Defprop}
@@ -75,7 +91,7 @@ Alors $(g,f,h^*)$ est un triplet de Darboux
 \end{Defprop}
 
 \begin{proof}
-Par définition de $h^*$, on a : $h^* \cdot h=-1$ et $h^* \dot dh=0$. \\
+Par définition de $h^*$, on a : $h^* \cdot h=-1$ et $h^* \cdot dh=0$. \\
 De la même façon que précédemment, on décompose $\partial_i f$ dans la base $\partial_1 h,\partial_2 h, v_h$ ($h$ est une immersion) et en faisant le produit scalaire par $\partial_1 h \times \partial_2 h$ que la partie en $v_h$ est nulle. On en déduit que $Im(df) \subset Im(dh)$ et donc en particulier $df \cdot h^*=0$. En utilisant la formule du produit vectoriel, on obtient : 
 	\[h^* \times dg=h^* \times (h \times df)=(h^* \cdot df)h-(h^* \cdot h)df=df
 \]

@@ -1,0 +1,34 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+
+\fi
+
+\begin{Lemme}\label{deriv_croisee}
+Soit $(f,g,h)$ un triplet de Darboux. Alors $\partial_1 h \times \partial_2 f=\partial_2 h \times \partial_1 f$ 
+(dans des coordonnées locales de $S$).
+\end{Lemme}
+
+\begin{proof}
+En différenciant la 1-forme $dg=h \times df=(h \times \partial_1 f)dx+(h \times \partial_2 f)dy$, on obtient : \\
+$0=(\partial_1 (h \times \partial_1 f)dx + \partial_2 (h \times \partial_1 f) dy )dx+(\partial_1 (h \times \partial_2 f)dx + \partial_2 (h \times \partial_2 f) dy )dy$. \\
+En examinant la partie en $dx \wedge dy$ et en utilisant le lemme de Schwarz, on en déduit le résultat.
+\end{proof}
+
+On peut décomposer $\partial_i h$, $i=1,2$,dans la base $\partial_1 f,\partial_2 f,v_f$ (où $v_f$ engendre $Im(df)^\perp$) : $\partial_i h=\alpha_i \partial_1 f+\beta_i \partial_2 f+\gamma_i v_f$. En prenant le produit scalaire par $\partial_1 f \times \partial_2 f$ des deux côtés puis en utilisant le lemme précédent (et le produit triple), on obtient que $\gamma_i=0$, $i=1,2$ c'est-à-dire $\partial_i h \in Im(df)$. De ce fait, $Im(dh) \subset Im(df)$.
+
+
+
+
+
+\ifwhole
+ \end{document}
+\fi

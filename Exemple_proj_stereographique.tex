@@ -1,0 +1,33 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+\fi
+
+\begin{Ex}
+Supposons que $q$ soit la forme quadratique de signature $(n,0)$ i.e. $q(x_1,\ldots,x_n)=\sum_{i=1}^n x_i^2$. \\
+On peut identifier $\R^n$ à un sous-ensemble de $Q=\{ [s : x :t ] | q(x)=st  \} \subset \R P^{n+1}$ (on notera $N$ la forme quadratique définie par $N(s,x,t)=q(x)-st)$. \\
+Montrons que l'on peut identifier $Q$ à la sphère unité de $\R^{n+1}$. \\
+Soient $H=\{(s,x,t) \in \R \times \R^n \times \R | s+t=0\}$ un hyperplan de $\R^{n+2}$ et $\Bcal=\{e_0-e_{n+1},e_2,\ldots,e_n,e_0+e_{n+1}\}$ une base de $\R^{n+2}$ où $(e_0,\ldots,e_{n+1})$ est la base canonique de $\R^{n+2}$. Ainsi, dans cette base, $H=\{ (y_0,\ldots,y_{n+1})_\Bcal | y_{n+1} =0\}$ et donc, $\R P^{n+1} \setminus H=\{[y_0 : \ldots : y_{n+1}]_\Bcal | y_{n+1} \neq 0\}$. On a une identification naturelle de $\R P^{n+1} \setminus H$ avec $\R^{n+1}$ grâce à l'isomorphisme $\varphi : [y_0 : \ldots : y_{n+1}] \mapsto (y_0/y_{n+1} , \ldots , y_{n}/y_{n+1})$. \\
+Si $y = y_0(e_0-e_{n+1})+\sum_{i=1}^n y_i e_i+y_{n+1} (e_0-e_{n+1}) \in Q$ alors 
+	\[0=N(y)=q(y_1,\ldots,y_n)-(y_0+y_{n+1})(y_0-y_{n+1})=\sum_{i=0}^{n+1} y_i^2-y_{n+1}^2
+\]
+La réciproque est évidemment vraie. \\
+Comme $Q$ est inclus dans $\R P^{n+1} \setminus H$ (car dans le cas contraire, on aurait des points $(s,x,t) \neq 0$ tels que $q(x)=-s^2<0$) ainsi grâce à notre identification de $\R P^{n+1} \setminus H$ avec $\R^{n+1}$, on obtient que $Q$ s'identifie avec la sphère unité.
+La réciproque de l'isomorphisme $\varphi$ est définie de la façon suivante : $\varphi^{-1}(x,s)=[ s : x : 1]_\Bcal$ (dans la base $\Bcal$) et donc $\varphi^{-1}(x,s)=[ s+1 : x : s-1]=[\frac{s+1}{s-1} : x : 1]$. Ainsi, la projection $\pi : [s : x:1] \in Q \setminus \{p\} \mapsto x \in \R^n$ s'identifie, grâce à l'isomorphisme $\varphi$, à la projection stéréographique de $S^n \setminus N$ sur $\R^n$
+\end{Ex}
+
+
+
+
+
+\ifwhole
+ \end{document}
+\fi

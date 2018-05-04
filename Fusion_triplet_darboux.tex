@@ -23,7 +23,7 @@ Soit $E$ un espace de dimension 2 et $L_1 : E \to \R^3$ une application linéaire
 
 \begin{proof}
 Soit $\Bcal=(w_1=L_1(v_1),w_2=L_1(v_2))$ une base orthonormée de $Im(L_1)$ (qui est de dimension 2 par le théorème du rang). Posons $u_1=L_2(v_1)$ et $u_2=L_2(v_2)$. \\
-Trouver un $h$ vérifiant \ref{defo_infin} est équivalent à trouver un $h$ vérifiant les égalités $\begin{cases}u_1=h \times w_1 \\ u_2=h \times w_2\end{cases}$.\\ En utilisant la première équation, on voit qu'un $h$ vérifiant \ref{defo_infin} est de la forme $w_1 \times u_1+\lambda w_1$, $\lambda \in \R$ et grâce à la deuxième, $h$ est de la forme $w_2 \times u_2+\mu w_2$, $\mu \in \R$ (grâce à la formule du double produit vectoriel $\forall u,v,w \in \R^3, (u \times v) \times w=(u \cdot w) v-(v\cdot w) u$). 
+Trouver un $h$ vérifiant \eqref{defo_infin} est équivalent à trouver un $h$ vérifiant les égalités $\begin{cases}u_1=h \times w_1 \\ u_2=h \times w_2\end{cases}$.\\ En utilisant la première équation, on voit qu'un $h$ vérifiant \eqref{defo_infin} est de la forme $w_1 \times u_1+\lambda w_1$, $\lambda \in \R$ et grâce à la deuxième, $h$ est de la forme $w_2 \times u_2+\mu w_2$, $\mu \in \R$ (grâce à la formule du double produit vectoriel $\forall u,v,w \in \R^3, (u \times v) \times w=(u \cdot w) v-(v\cdot w) u$). 
 Si $h$ est de ses deux formes, alors en faisant le produit scalaire avec $w_1$, on obtient que $\lambda=(w_1,w_2,u_2)$ où $(\cdot,\cdot,\cdot)$ est le produit triple. \\
 Réciproquement, \\
 	\[(w_1 \times u_1+\lambda w_1) \times w_2= w_1 \cdot w_2\; u_1-u_1\cdot  w_2\; w_1+\lambda w_1 \times w_2.
@@ -48,7 +48,7 @@ En particulier, si $f : S \to \R^3$ est une immersion et $g : S \to \R^3$ une ap
 	
 
 \begin{Def}
-On appelera triplet de Darboux un triplet $(f,g,h)$ d'applications lisses $S \to \R^3$ vérifiant l'identité \ref{eq-Darboux}
+On appelera triplet de Darboux un triplet $(f,g,h)$ d'applications lisses $S \to \R^3$ vérifiant l'identité \eqref{eq-Darboux}
 \end{Def}
 
 Maintenant, on va construire de nouveaux triplets de Darboux à partir d'un triplet $(f,g,h)$ donné :  \\

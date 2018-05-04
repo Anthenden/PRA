@@ -24,8 +24,8 @@ On peut relever cette application en une application $\psi : S \to \Ocal\setminu
 \end{itemize}
 On remplacera $S$ par un ensemble adéquat. \\
 Soit $V_p=\R \psi(p) \oplus Im(d_p \psi)$ pour $p \in S$. Dans la section \ref{}, on a expliqué pourquoi cet ensemble est un sous-espace totalement isotrope de dimension 3 et que son projectivisé est l'espace tangent de $\varphi(S)$ en $\varphi(p)$. % cf section 6 \\
-Les deux sous-espaces totalement isotropes maximaux contenant $V_p$ sont de la forme $\Ker(L_{\psi_+(p)})$ et $\Ker(R_{\psi_-(p)})$. On définit ainsi des applications $\varphi : S \to \Ocal \setminus \{0\}$. On en déduit 
-\begin{Propte}
+Les deux sous-espaces totalement isotropes maximaux contenant $V_p$ sont de la forme $\Ker(L_{\psi_+(p)})$ et $\Ker(R_{\psi_-(p)})$. On définit ainsi des applications $\psi_{\pm} : S \to \Ocal \setminus \{0\}$. On en déduit la 
+\begin{Propte}\label{trial_diff1}
 	\begin{equation} \label{psi_+}
 	\psi_+\psi =0 ; \psi_+ d\psi=0
 	\end{equation}
@@ -40,8 +40,8 @@ Les deux sous-espaces totalement isotropes maximaux contenant $V_p$ sont de la f
 	\end{equation}
 \end{Propte}
 \begin{proof}
-Les égalités \ref{psi_+} (resp. \ref{psi_-}) vienent du fait que pour tous $p \in S$ et $h \in T_pS$, $\psi(p),d_p\psi(h) \in \Ker(L_{\psi_+(p)})$ (resp. $\psi(p),d_p\psi(h) \in \Ker(L_{\psi_-(p)})$. L'équation $\ref{+-}$ vient du fait que l'intersection $\Ker(L_{\psi_+(p)})\cap \Ker(R_{\psi_-(p)})$ est de dimension 3.
-Pour l'équation \ref{d+}, on différencie $\psi_+\psi =0$ grâce à la formule de Leibniz : 
+Les égalités \eqref{psi_+} (resp. \eqref{psi_-}) vienent du fait que pour tous $p \in S$ et $h \in T_pS$, $\psi(p),d_p\psi(h) \in \Ker(L_{\psi_+(p)})$ (resp. $\psi(p),d_p\psi(h) \in \Ker(L_{\psi_-(p)})$. L'équation $\ref{+-}$ vient du fait que l'intersection $\Ker(L_{\psi_+(p)})\cap \Ker(R_{\psi_-(p)})$ est de dimension 3.
+Pour l'équation \eqref{d+}, on différencie $\psi_+\psi =0$ grâce à la formule de Leibniz : 
 	\[0=d(\psi_+\psi)=(d\psi_+) \psi+\psi_+ d\psi=(d\psi_+) \psi
 \]
 \end{proof}
@@ -66,19 +66,19 @@ Soient $X,Y,Z$ trois champs de vecteurs tangents de $S$ (vus comme des dérivatio
 \]
 \end{Lemme}
 \begin{proof}
-Comme $V=\R \psi + Im(d\psi)$ est totalement isotrope et que $X\psi,Y \psi \in Im(d\psi)$ alors $\left\langle Y\psi,\psi \right\rangle=0$ et  $\left\langle Y\psi,X\psi \right\rangle=0$ . On en déduit que $XY \psi$ est orthogonale à $\psi$.
+Comme $V=\R \psi + Im(d\psi)$ est totalement isotrope et que $X\psi,Y \psi \in Im(d\psi)$ alors $\left\langle Y\psi,\psi \right\rangle=0$ et  $\left\langle Y\psi,X\psi \right\rangle=0$ . On en déduit que $XY \psi$ est orthogonal à $\psi$.
 En effet,$0=X \left\langle Y\psi,\psi \right\rangle$ puis par l'identité de Leibniz, $\left\langle XY\psi,\psi \right\rangle+\underbrace{\left\langle Y\psi,X\psi \right\rangle}_{=0}=\left\langle XY\psi,\psi \right\rangle$.\\
 De plus, comme $0=X\left\langle Y\psi,Z \psi \right\rangle=\left\langle XY\psi,Z \psi \right\rangle+\left\langle Y\psi,XZ \psi \right\rangle$ et que $\left\langle XY\psi,Z \psi\right\rangle-\left\langle YX\psi,Z \psi\right\rangle=\left\langle [X,Y]\psi,Z \psi\right\rangle=0$ alors $\left\langle XY \psi,Z \psi\right\rangle$ est trilinéaire, symétrique en $X,Y$ et antisymétrique en $Y,Z$. D'après le lemme \ref{tril_nulle}, $\left\langle XY \psi,Z \psi\right\rangle$ est nulle et donc $XY \psi$ est orthogonal avec $Z \psi$. \\
-On en déduit que que $XY \psi$ est orthogonale avec tout élément de $V$ c'est-à-dire est à valeur dans $V^\perp=(\Ker(L_{\psi_+})  \cap Ker(R_{\psi_-})^\perp$. \\
-En utilisant le fait que $(\Ker(f) \cap \Ker(g))^\perp=Im(f^*)+Im(g^*)$  pour des applications linéaires $E \to F$ (où $f^*$ est l'adjoint de $f$) et la proposition \ref{}, on obtient que : 
+On en déduit que que $XY \psi$ est orthogonal avec tout élément de $V$ c'est-à-dire est à valeur dans $V^\perp=(\Ker(L_{\psi_+})  \cap Ker(R_{\psi_-})^\perp$. \\
+En utilisant le fait que $(\Ker(f) \cap \Ker(g))^\perp=Im(f^*)+Im(g^*)$  pour des applications linéaires $E \to F$ (où $f^*$ est l'adjoint de $f$) et la proposition \ref{adjoint}, on obtient que : 
 	\[ V^\perp=Im(L_{\psi_+}^*)+Im(R_{\psi_-}^*)=Im(L_{\overline{\psi_+}})+Im(R_{\overline{\psi_-}})=\overline{\psi_+} \Ocal+\Ocal \overline{\psi_-}
 \]
-Puis, en utilisant la proposition \ref{} (car $\psi_-\psi_+=0$) et le fait que $N(\psi_+)=N(\psi_-)=0$, on déduit que $\psi_+(XY\psi) \in \R \overline{\psi_-}$ et $(XY\psi)\psi_- \in \R \overline{\psi_+}$. \\
+Puis, en utilisant la proposition \ref{rang_1} (car $\psi_-\psi_+=0$) et le fait que $N(\psi_+)=N(\psi_-)=0$, on déduit que $\psi_+(XY\psi) \in \R \overline{\psi_-}$ et $(XY\psi)\psi_- \in \R \overline{\psi_+}$. \\
 
 \end{proof}
 
 
-\begin{Thm}
+\begin{Thm}\label{trial_diff2}
 $(d \psi_-) \psi_+=\psi_- d \psi_+=0$
 \end{Thm}
 
@@ -86,10 +86,10 @@ $(d \psi_-) \psi_+=\psi_- d \psi_+=0$
 Soit $X$ un champ de vecteurs sur $S$ et montrons que $\psi_- X \psi_+$ s'annule en tout point $p \in S$. \\
 Le cas où $X \psi_+(p) =0$ est trivial, on peut donc supposer que $X \psi_+(p) \neq 0$. \\
 Soit $Y$ un champ de vecteur ne s'annulant pas en $p$ tel que $\psi_+(p) (XY\psi)(p)=0$. \\
-D'après les identités \ref{}, on sait que $\psi_+ (Y \psi)=0$ et donc en dérivant cette identité par $X$ en $p$, on obtient : 
+D'après les identités \ref{psi_+}, on sait que $\psi_+ (Y \psi)=0$ et donc en dérivant cette identité par $X$ en $p$, on obtient : 
 	\[0=X (\psi_+ (Y\psi))(p)=X\psi_+(p)(Y\psi)(p)+\psi_+(p)(XY\psi)(p)=X\psi_+(p)(Y\psi)(p)
 \]
-Ainsi, $\psi(p)$ et $Y\psi(p)$ sont dans le noyau $\Ker(L_{X\psi_+(p)})$ mais aussi dans $\Ker(R_{\psi_-(p)})$. On en déduit que leur intersection est de dimension 3 (car de dimension impaire c.f. \ref{}) et donc $\psi_-(p)X\psi_+(p)=0$.
+Ainsi, $\psi(p)$ et $Y\psi(p)$ sont dans le noyau $\Ker(L_{X\psi_+(p)})$ mais aussi dans $\Ker(R_{\psi_-(p)})$. On en déduit que leur intersection est de dimension 3 (car de dimension impaire c.f. \ref{dim_inter}) et donc $\psi_-(p)X\psi_+(p)=0$.
 \end{proof}
 
 On en déduit que pour tout $p \in S$, les points du plan projectif tangent $\tau_p \varphi_+$ (resp. $\tau_p \varphi_-$,resp. $\tau_p \varphi$) sont incidents à $\varphi(p)$  et $\varphi_-(p)$ (resp. à $\varphi(p)$  et $\varphi_+(p)$, resp. $\varphi_+(p)$  et $\varphi_-(p)$)
@@ -129,7 +129,7 @@ $c$ est la transformation projective induite par $\rho$ par la conjugaison de $\
 c(x:s:y:t)&=&\rho^{-1} \circ \overline{\;\cdot\;} \circ \rho(x :s :y :t)=\rho^{-1}\overline{\begin{pmatrix} s & x \\ y &  -t\end{pmatrix}} \\
           &=&\rho^{-1}\begin{pmatrix} -t & -x \\ -y & s\end{pmatrix}=(x :t: y : s)
 \end{eqnarray*}
-On sait,d'après la calcul de $(\varphi_T)_+(=(h,\widetilde{g})_+)$ dans le théorème \ref{} et l'identification par $\rho$ de $(a,b)_+$ avec $\Ker(L_Z)$ où $Z=\begin{pmatrix} a \cdot b& -a \\ -b & 1\end{pmatrix}$ vu dans le théorème \ref{}, que :
+On sait,d'après la calcul de $(\varphi_T)_+(=(h,\widetilde{g})_+)$ dans le théorème \ref{} et l'identification par $\rho$ de $(a,b)_+$ avec $\Ker(L_Z)$ où $Z=\begin{pmatrix} a \cdot b& -a \\ -b & 1\end{pmatrix}$ vu dans la section \ref{Zorn} , que :
 	\[\rho_+((\varphi_T)_+)=\begin{pmatrix} h \cdot \widetilde{g} & -h \\ -\widetilde{g} & 1\end{pmatrix}
 \]
 On peut remarquer que :  
@@ -154,7 +154,7 @@ Si $\varphi : S \to Q$ est une immersion totalement isotrope telle que $\varphi_
 \end{Prop}
 
 \begin{proof}
-D'après la trialité différentielle du théorème \ref{}, $\psi_+,d\psi_+ \in \Ker(L_{\psi_-}) \cap \Ker(R_{\psi}) $. Ce dernier ensemble est un espace vectoriel totalement isotrope de dimension 3 car $\psi\psi_-=0$. On en conclut que $(\varphi_+)_+=\varphi_-$ et $(\varphi_+)_-=\varphi$. En effet, $V:=\Ker(L_{\psi_-}) \cap \Ker(R_{\psi}) $ est inclus dans $\Ker(L_{\psi_-})$ et $\Ker(R_{\psi}) $ ; ces deux espaces sont les deux SETIM contenant $V$. $\Ker(L_{\psi_-})$ est le SETIM correspondant à un rotation de $\SO(4)$ et $\Ker(R_{\psi})$ est le SETIM correspondant à un rotation de $O^-(4)$. \\
+D'après la trialité différentielle de la propriété \ref{trial_diff1} et du théorème \ref{trial_diff2}, $\psi_+,d\psi_+ \in \Ker(L_{\psi_-}) \cap \Ker(R_{\psi}) $. Ce dernier ensemble est un espace vectoriel totalement isotrope de dimension 3 car $\psi\psi_-=0$. On en conclut que $(\varphi_+)_+=\varphi_-$ et $(\varphi_+)_-=\varphi$. En effet, $V:=\Ker(L_{\psi_-}) \cap \Ker(R_{\psi}) $ est inclus dans $\Ker(L_{\psi_-})$ et $\Ker(R_{\psi}) $ ; ces deux espaces sont les deux SETIM contenant $V$. $\Ker(L_{\psi_-})$ est le SETIM correspondant à un rotation de $\SO(4)$ et $\Ker(R_{\psi})$ est le SETIM correspondant à un rotation de $O^-(4)$. \\
 Le même raisonnement fonctionne pour $\varphi_-$.
 \end{proof}
 

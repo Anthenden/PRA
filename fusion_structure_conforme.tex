@@ -31,11 +31,11 @@ Posons $H_af(u,v):=\left[X.df(Y)\right](a)$.
 Cette valeur ne dépend pas des champs de vecteurs $X$ et $Y$ choisis et l'application $H_af:(u,v) \mapsto H_af(u,v)$ est une forme bilinéaire symétrique de $T_aM$.
 \end{Defthm}
 \begin{proof}
-Montrons, tout d'abord, que $\left[X.df(Y)\right](a)=\left[Y.df(X)\right](a)$ $(*)$ : \\
+Montrons, tout d'abord, que \begin{equation}\label{crochet}\left[X.df(Y)\right](a)=\left[Y.df(X)\right](a) \end{equation} 
 $\left[X.df(Y)-Y.df(X)\right](a)=\left[X.df(Y)-Y.df(X)\right](a)=\left[X.L_Y(f)-Y.L_X(f)\right](a)=\left[L_X \circ L_Y-L_Y \circ L_X\right](f)(a)=[X,Y].f(a)=d_af([X,Y](a))=0$. \\
-Le terme à gauche de $(*)$, comme fonction de $X$,  ne dépend que de $X(a)=u$ et de même, le terme à droite de $(*)$,comme fonction de $Y$, ne dépend que de $Y(a)=v$.
+Le terme à gauche de \eqref{crochet}, comme fonction de $X$,  ne dépend que de $X(a)=u$ et de même, le terme à droite de \eqref{crochet},comme fonction de $Y$, ne dépend que de $Y(a)=v$.
 On en déduit que $H_af(u,v)$ ne dépend pas ni de $X$ ni de $Y$ mais seulemenent de $u$ et $v$. \\
-Avec $(*)$, on voit que $H_af$ est symétrique. La bilinéarité est immédiate.
+Avec \eqref{crochet}, on voit que $H_af$ est symétrique. La bilinéarité est immédiate.
 \end{proof}
 L'application $H_af$ est appelé hessienne de $f$ en $a$.
 
@@ -49,7 +49,7 @@ Comme $d_p f_{|H}=(d_p f)_{|T_p H}=0$ alors $p$ est un point critique de $f$ et 
   }$ \\
 	où $\overline{d_pf}$ est l'isomorphisme induit par $d_pf$. \\
 	Autrement dit, $\ff_p=-\overline{d_pf}^{-1} \circ H_pf$. \\
-Si on change l'équation locale de $M$ en $p$ en $g=0$ alors $\Ker(d_pf)=\Ker(d_pg)$ (car $f$ et $g$ correspondent au même hyperplan projectif $H$) et $d_pg=\frac{d_pg(x)}{d_pf(x)} d_pf$ où $d_pf(x) \neq 0$ i.e. $d_pf$ et $d_pg$ ne diffèrent que d'un facteur multiplicatif. On en déduit que la hessienne change du même coefficient (c.f. la formule de la hessienne dans \ref{hessienne}). $\ff_p$ ne dépend donc pas de l'équation locale choisie. On l'appelle deuxième fondamentale de $S$ au point $p$. \\
+Si on change l'équation locale de $M$ en $p$ en $g=0$ alors $\Ker(d_pf)=\Ker(d_pg)$ (car $f$ et $g$ correspondent au même hyperplan projectif $H$) et $d_pg=\frac{d_pg(x)}{d_pf(x)} d_pf$ où $d_pf(x) \neq 0$ i.e. $d_pf$ et $d_pg$ ne diffèrent que d'un facteur multiplicatif. On en déduit que la hessienne change du même coefficient (c.f. la formule de la hessienne dans \ref{Hessienne}). $\ff_p$ ne dépend donc pas de l'équation locale choisie. On l'appelle deuxième fondamentale de $S$ au point $p$. \\
 On peut maintenant définir la structure pseudo-conforme projective de $M$ en $p$ comme l'ensemble des applications bilinéaires $\ff_p \circ \varphi$, où $\varphi : N_pM \to \R$ est un isomorphisme (linéaire). \\
 On va étudier l'exemple de l'hypersurface $M=\{(x,t) \in \R^n \times \R | t=q(x)\} \subset \R^{n+1} \subset \R P^{n+1}$ où $q$ est une forme quadratique non dégénérée de $\R^n$ : \\
 Soit $f: (x,t) \mapsto t-q(x)$. $f=0$ est une équation globale de $M$. La hessienne de $f$ en tout point est $2b$ où $b$ est la forme bilinéaire associée à $f$.

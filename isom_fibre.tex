@@ -1,0 +1,51 @@
+
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+\fi
+
+\begin{Thm}
+
+$E=P(T^* \R P^3)$ est isomorphe à la variété $V$ des drapeaux (points,plan) de $\R P^3$.
+
+\end{Thm}
+
+\begin{proof}
+Soit $p \in \R P ^3$. Les fibres sont $E_p=P(T^*_p \R P^3)$ et $V_p=\{ P \text{ un plan projectif } | p \in P \subset \R P^3\}$. \\
+Soit $\varphi$ l'application qui associe à $\R f \in P(T^*_p \R P^3)$ à $P(\R p \oplus\Ker(f))$. Cette application est bien définie grâce à l'identification $T\R P^3 \simeq TS^3/\{\pm Id\}$ qui permet d'associer $Ker(f)$ à un sous-espace de $\R^4$.Cette application est bijective car :
+\begin{itemize}
+	\item $\varphi$ est surjective. En effet, si $P=P(F)$ est un plan projectif contenant $p$ i.e. $F=\R p \oplus \widetilde{F}$ où $\widetilde{F} \subset p^\perp \simeq T_p \R P^3$  alors l'application $\R f : T_p\R P ^3=\widetilde{F} \oplus \R x$ définie par $f(F)=0$ et $f(x) \neq 0$ convient.
+	\item $\varphi$ est injective. En effet, si $f,g : T_p\R P ^3 \to \R $ sont deux formes linéaires de même noyau $N$ alors, grâce à la décomposition $T_p\R P ^3=N \oplus \R x$, $f=\frac{f(x)}{g(x)}g$ et donc $f$ et $g$ sont dans la même classe projective.
+\end{itemize}
+ 
+\end{proof}
+
+
+\begin{Thm}
+Pour tout $x \in Q_0$, les fibres $\Ical_x$ sont isomorphes, en tant que fibré sur $\R P^3$, à $P(T^* \R P^3)$
+\end{Thm}
+
+\begin{proof}
+Soit $x=x_1 \oplus x_2 \in Q_0$. On peut commencer par remarquer que $\Ical_x$ est l'ensemble des plans projectifs totalement isotropes de $\R P^7$ contenant $x$ ou autrement dit, l'ensemble des (projectivisés des) graphes des applications orthogonales $f : F \to \R^4$, où $F$ est de dimension 3, telle que $f(x_1)=x_2$. La fibration $\pi$ sur $\R P^3$ de $\Ical_x$ est l'application qui associe au graphe de $f : F \to \R^4$ la droite $F^\perp \in \R P^3$. \\
+Nous allons montrer que  $\Ical_x$ est isomorphe au fibré $V$.
+Soit $p \in \R P^3$. La fibre $\Ical_{x,p}=\pi^{-1}(p)$ est l'ensemble des graphes des applications orthogonales $f : p^\perp\to \R^4$. \\
+%On définit $\psi$ qui associe à chaque élément $\Gamma=Graphe(f)$ de $\Ical_{x,p}$ le plan projectif engendré par $p$ et $f(x_1^\perp)$. \\
+%Montrons que $\psi$ est bijective : 
+%\begin{itemize}
+	%\item Soit $\Gamma_1=Graphe(f),\Gamma_2=Graphe(g) \in \Ical_{x,p}$ ayant la même image $P(G)$ par $\psi$. Soit $(p,y,z)$ une base orthonormée de $G$. Alors $(x_1,f^{-1}(y),f^{-1}(z))$ est une base de $p^\perp$ (en corestreingnant $f$).
+%\end{itemize}
+
+\end{proof}
+
+
+
+\ifwhole
+ \end{document}
+\fi

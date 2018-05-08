@@ -1,7 +1,7 @@
 
 \newif\ifwhole
 
-\wholetrue
+%\wholetrue
 % Ajouter \wholetrue si on compile seulement ce fichier
 
 \ifwhole
@@ -13,8 +13,8 @@
 \maketitle
 \fi
 Dans ce texte, on va expliquer comment réaliser la grassmannienne comme variété algébrique projective. \\
-Référence : H2G2 tome II
-\section{Algèbre extérieure}
+%Référence : H2G2 tome II
+\subsection{Algèbre extérieure}
 Soit $E$ un espace vectoriel de dimension finie sur un corps commutatif $k$. \\
 On appelle $p$ème puissance extérieure de $E$ l'espace vectoriel $\bigwedge^p E$,quotient de $E^{\otimes p}$ par le sous-espace vectoriel $\Zcal_p=\Vect(x_{1} \otimes \ldots \otimes x_{p} | x_i \in E,\exists m \neq n, x_{m}=x_{n})$ (par convention, $\bigwedge^0 E=k$). \\
 On note $x_1 \wedge \ldots \wedge x_p$ la classe d'équivalence de $x_1 \otimes \ldots \otimes x_p$. \\
@@ -57,7 +57,7 @@ Soit $W=\Vect(e_1,\ldots,e_m)$. Alors $e_1 \wedge \ldots \wedge e_m$, $f_1 \wedg
 %A droite de l'égalité, $f_1$ apparait partout alors qu'à droite, il n'intervient pas. Ce qui est absurde car $\lambda \neq 0$.
 \end{proof}
 
-\section{Plongement de Plücker}
+\subsection{Plongement de Plücker}
 \begin{Def}[Plongement de Plücker]
 On appelle plongement de Plücker l'application $\psi_{r,n} : G(r,n) \to P(\bigwedge^r k^n)$ qui envoie un sous-espace vectoriel $W$ de dimension $r$ de $k^n$ de base $e_1,\ldots,e_r$ sur $[e_1 \wedge \ldots \wedge e_r]$
 \end{Def}
@@ -93,7 +93,7 @@ Comme les $e_1 \wedge e_{i_{1p}} \wedge \ldots \wedge e_{i_{rp}}$ forment une fa
 En itérant ce processus, on trouve que les scalaires correspondant aux multi-vecteurs contenant $e_j$ pour $j>r$ sont nuls et donc $\Lambda=\lambda e_1 \wedge \ldots \wedge e_r$, ce qu'il fallait démontrer.
 \end{proof}
 
-\subsection{L'image de $\psi_{r,n}$ comme variété algébrique projective}
+\subsubsection{L'image de $\psi_{r,n}$ comme variété algébrique projective}
 Nous allons maintenant montrer que  $\psi_{r,n}(G(r,n))$ est donnée par des équations polynomiales . Pour cela, nous allons introduire quelques notations : 
 
 \begin{Not}

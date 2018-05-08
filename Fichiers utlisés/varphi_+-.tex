@@ -1,0 +1,136 @@
+\newif\ifwhole
+
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+\fi
+\subsection{Les applications $\varphi_\pm$ associées à un triplet de Darboux}
+Soit $S$ une surface et $f : S \to \R^3$ une immersion. Une déformation infinitésimale de $f$ est un champ de vecteurs $g : S \to T\R^3=\R^6$ le long de $f$ i.e. de la forme $f\times \widetilde{g}$ que l'on identifiera avec l'application $\widetilde{g} : S \to \R^3$. Une déformation infinitésimale est dite isométrique si la métrique riemannienne induite par $f_t=f+tg$ et la structure euclidienne de $\R^3$ (i.e. les formes quadratiques $q_t : u \in T_pS  \mapsto |d_pf_t(u)|^2$) est égale à l'ordre 1 à celle induite par $f$ ou autrement dit, 
+$q_t=q_0+o(t)$.
+\begin{Prop}
+Les conditions suivantes sont équivalentes : 
+\begin{enumerate}
+	\item $g$ est une déformation infinitésimale isométrique de $f$
+	\item $\frac{dq_t}{dt}(0)=0$
+	\item $df \cdot dg=0$
+\end{enumerate}
+\end{Prop}
+\begin{proof}
+On obtient $1 \Leftrightarrow 2$ grâce au développement limitée de $q_t$ en 0 et $2 \Leftrightarrow 3$ grâce à l'égalité $df_t=df+2t df\cdot dg+t^2|dg|^2$.
+\end{proof}
+
+Un exemple de déformation infinitésimale isométrique\footnote{On étudie dans l'appendice \ref{} le cas où ce sont les seuls} est une application de la forme $ g:t \mapsto a \times f(t)+b$ où $a,b \in \R^3$.
+
+Soit $g$ une déformation infinitésimale isométrique de $f$. \\
+Considérons maintenant l'application $\varphi=(f,g)$ qui va de $S$ dans $\R^3 \oplus \R^3$ que l'on munira de la forme quadratique $dx\dot dy : (u,v) \mapsto u \cdot v$. Ainsi comme $g$ est une déformation infinitésimale isométrique, l'image de $d_p\varphi=(d_pf,d_pg)$ est totalement isotrope en tout point $p$ de $S$. On dira que $\varphi$ est totalement isotrope pour la métrique $dx \cdot dy$.
+
+
+La totale isotropie de $\varphi$ ne dépendant que de la métrique $dx \cdot dy$, on peut, comme dans la section \ref{} compactifier $R^3 \oplus \R^3$ en la quadrique\footnote{Elles sont toutes isomorphes} de signature (4,4) de $\R P^7$ des zéros de la forme $q(x,s,y,t)=x \cdot y+st$ : 
+	\[Q=\{[x : s : y : t] \in P(\R^3 \times \R \times \R^3 \times \R)  | x \cdot y+st=0\}
+\]
+et considérer $\varphi$ comme une immersion de $S$ dans $Q$ donnée par : $\varphi=[ f : 1 : g : -f \cdot g]$ (car on peut identifier $\R^3 \oplus \R^3$ avec  $\{ [x : 1 : y : -x \cdot y] | x,y \in \R^3\}$). \\
+Ainsi, $g$ est une déformation infinitésimale isométrique de $f$ si, et seulement si, le plan projectif tangent à $\varphi(S)$ en $\varphi(p)$, i.e. $\tau_p \varphi:=P( \psi(p) \oplus Im(d_p \psi))$ est totalement isotrope (où $\psi=(f,1,g,-f \cdot g) : S \to \R^8$). Dans ce cas, $V_p :=\varphi(p) \oplus Im(d_p \psi)$ est contenu dans exactement deux sous-espace totalement isotropes maximaux, un qui est le graphe d'une application de $\SO(4)$ et un qui est le graphe d'une application de $O^-(4)$ (c.f. proposition \ref{completion}) . Ainsi, $\tau_p \varphi$ est contenu dans exactement deux espaces projectifs de dimension 3, un dans $Q_+$ et l'autre dans $Q_-$. Ainsi, on peut définir deux applications $\varphi_\pm : S \to Q_\pm$ qui associe à $p$ l'élément de $Q_\pm$ contenant $\tau_p \varphi$. \\
+Pour alléger les notations, on notera $(a,b)_+$ le graphe de l'application $(x,s) \mapsto (a \times x+bs,-b \cdot x)$  inclus dans $Q$ et $(a,b)_-$ le "graphe tordu " $\{ [x : s: y :t] |y=a \times x+bt, s=-b \cdot x \}$ de $Q_-$
+
+\begin{Thm}
+Les ensembles $\{(a,b)_+ | a,b \in \R^3\}$ et $\{(a,b)_- | a,b \in \R^3\}$ sont des ouverts affines (denses)\footnote{pour la topologie de Zariski, par le plongement de Plücker, c.f. l'appendice \ref{}} de respectivement, $Q_+$ et $Q_-$.
+\end{Thm}
+
+\subsubsection{Calcul de $\varphi_{\pm}$}
+Soient $f :S \to \R^3$ une immersion, $g$ une déformation infinitésimale isométrique de $f$, $\varphi=(f :1 : g : -f\cdot g)$ l'immersion totalement isotrope associée et $h$ l'application vérifiant $dg=h \times df$. 
+
+%$V_p$ est paramétrisé par : 
+	%\[\begin{cases}
+	%x=\lambda f(p)+d_pf(u) \\
+	%s=\lambda\\
+	%y=\lambda g(p)+d_pg(u)=\lambda g(p)+h(p) \times d_pf(u) \\
+	%t=-\lambda f(p) \cdot g(p)-d_p(f \cdot g)(u)=-\lambda f(p) \cdot g(p)-d_pf(u) \cdot (g(p) - f(p) \times h(p))=-\lambda f(p) \cdot g(p)-d_pf(u) \cdot \widetilde{g}(p)
+	%\end{cases}
+%\]
+%pour $p \in S$ et $u \in T_xS$.
+$V_p^\perp$ est l'ensemble des vecteurs orthogonaux à $\psi(p)$ et à $d_p \psi(u)$ pour $u \in T_pS$ pour la forme bilinéaire associée à $q$ qui est donnée par 
+	\[B((x,s,y,t),(x',s',y',t'))=x \cdot y'+x' \cdot y+s \cdot t'+s' \cdot t
+\]
+. 
+Comme 
+	\begin{eqnarray*}
+	d_p \psi&=&(d_p f,0,d_pg,-d_p (f \cdot g))=(d_p f,0,h(p) \times d_pf,d_pf(u) \cdot (g(p) - f(p) \times h(p))) \\
+	&=&(d_p f,0,h(p) \times d_pf,d_pf \cdot \widetilde{g}(p))
+\end{eqnarray*}
+
+on en déduit que les équations de $V_p^\perp$ en $(x,s,y,t)$ sont : 
+\[\begin{cases}
+	0=x \cdot g(p)+f(p) \cdot y-s f(p)\cdot g(p)+t=(x-sf(p)) \cdot g(p)+f(p) \cdot y+t  \\
+	0=x \cdot (h(p) \times d_pf)+df \cdot y-s df \cdot \widetilde{g}=(-h \times x+y-s \widetilde{g}) \times d_p f
+	\end{cases}
+\]
+ou encore, en considérant un élément $v_f$ de $Im(d_pf)^\perp$, 
+\[\begin{cases}
+	t=-(x-sf(p)) \cdot g(p)-f(p) \cdot y \\
+	y=s \widetilde{g}+\lambda v_f+h \times x
+	\end{cases}
+\]
+et donc 
+\[\begin{cases}
+	t=-\widetilde{g} \cdot x-\lambda v_f \cdot f \\
+	y=s \widetilde{g}+\lambda v_f+h \times x
+	\end{cases}
+\]
+pour tout $\lambda \in \R,x \in \R^3,t \in \R$.
+Ainsi, un élément $(x,s,y,t)$ de $V_p^\perp$ vérifie $q(x,s,y,t)=\lambda v_f \cdot(x-sf)$. On en déduit que pour obtenir les deux sous-espaces totalement isotropes maximaux contenant $V_p$, il faut ajouter des équations supplémentaires permettant d'annuler $\lambda v_f \cdot(x-sf)$ car $V_p \subset V_p^\perp$. On obtient donc deux ensembles : 
+ 
+\[V_p^+\begin{cases}
+	t=-\widetilde{g} \cdot x \\
+	y=s \widetilde{g}+h \times x \\
+	(\lambda=0)
+	\end{cases}
+\]
+et 
+\[V_p^-\begin{cases}
+	t=-\widetilde{g} \cdot x \\
+	y=s \widetilde{g}+\lambda v_f+h \times x\\
+	0=v_f \cdot (x-sf)
+	\end{cases}
+\]
+On remarque que $V_p^+=(h,\widetilde{g})_+$. Etudions maintenant $V_p^-$. \\
+Dans la suite, on s'intéressera essentiellement au cas où $v_f \cdot f$ ne s'annule pas en $p$. Dans le cas contraire, $V_p^-$ est donné par : 
+\[V_p^-\begin{cases}
+	t=-\widetilde{g} \cdot x-\lambda f\cdot v_f \\
+	y=s \widetilde{g}+\lambda v_f+h \times x
+	0=v_f \cdot x
+	\end{cases}
+\]
+Supposons maintenant que $v_f \cdot f$ ne s'annule pas en $p$. On peut donc considérer le vecteur $f^*(p)=\frac{-v_f}{v_f\cdot f(p)}$ (qui ne dépend pas du vecteur $v_f$ choisi !).
+Les équations de $V_p^-$ deviennent : 
+\[V_p^-\begin{cases}
+	t=-\widetilde{g} \cdot x-\lambda f\cdot v_f \\
+	y=s \widetilde{g}-\lambda (v_f \cdot f)f^*+h \times x\\
+	s=-f^* \cdot x
+	\end{cases}
+\]
+On peut maintenant éliminer l'équation en $t$ et l'insérer dans les autres : 
+\[V_p^-\begin{cases}
+	y=s \widetilde{g}-(-\widetilde{g} \cdot x-t)f^*+h \times x\\
+	s=-f^* \cdot x
+	\end{cases}
+\]
+En réécrivant ces équations grâce au double produit vectoriel, on obtient : 
+\[V_p^-\begin{cases}
+	y=(h-f^* \times \widetilde{g}) \times x+f^*t\\
+	s=-f^* \cdot x
+	\end{cases}
+\]
+Et ainsi, $V_p^-=(\widetilde{h},f^*)-$ où $\widetilde{h}=h-f^* \times \widetilde{g}$. \\
+
+On remarque que $f^* \cdot f=-1$ et $df \cdot f^*=0$. Ainsi, on en déduit, grâce à la proposition \ref{def_D} que $(\widetilde{g},h,f^*)$ est un triplet de Darboux  et donc $A(\widetilde{g},h,f^*)=(f^*,h-f^* \times \widetilde{g},\widetilde{g})=(f^*,\widetilde{h},\widetilde{g})$
+
+
+
+\ifwhole
+ \end{document}
+\fi

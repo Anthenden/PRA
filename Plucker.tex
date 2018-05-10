@@ -12,28 +12,40 @@
 \title{Plongement de Plücker}
 \maketitle
 \fi
-Dans ce texte, on va expliquer comment réaliser la grassmannienne comme variété algébrique projective. \\
+Dans cette annexe, on va expliquer comment réaliser la grassmannienne comme variété algébrique projective. \\
 %Référence : H2G2 tome II
 \subsection{Algèbre extérieure}
 Soit $E$ un espace vectoriel de dimension finie sur un corps commutatif $k$. \\
-On appelle $p$ème puissance extérieure de $E$ l'espace vectoriel $\bigwedge^p E$,quotient de $E^{\otimes p}$ par le sous-espace vectoriel $\Zcal_p=\Vect(x_{1} \otimes \ldots \otimes x_{p} | x_i \in E,\exists m \neq n, x_{m}=x_{n})$ (par convention, $\bigwedge^0 E=k$). \\
+On appelle $p$ème puissance extérieure de $E$ l'espace vectoriel $\bigwedge^p E$,quotient de $E^{\otimes p}$ par le sous-espace vectoriel 
+	\[\Zcal_p=\Vect(x_{1} \otimes \ldots \otimes x_{p} | x_i \in E,\exists m \neq n, x_{m}=x_{n})
+\]
+ (par convention, $\bigwedge^0 E=k$). \\
 On note $x_1 \wedge \ldots \wedge x_p$ la classe d'équivalence de $x_1 \otimes \ldots \otimes x_p$. \\
-Le passage au quotient conserve les propriétés d'associativité et de $p$-linéarité. De plus, $\forall u,v \in E, u \wedge v=-v \wedge u$ et donc $\forall \sigma \in \Sfrak_r,u_1 \wedge \ldots \wedge u_r=\varepsilon(\sigma)u_{\sigma(1)} \wedge \ldots \wedge u_{\sigma(r)}$  \\
-On appelle algèbre extérieure la somme directe des puissances extérieures : $\bigwedge^* E=\bigoplus_{p \in \N} \bigwedge^p E$. On munit $\bigwedge^* E$ d'une structure d'algèbre graduée grâce au produit : \\ $(x_1 \wedge \ldots x_p,y_1 \wedge \ldots \wedge y_q) \in \bigwedge^p E \times \bigwedge^q E \mapsto x_1 \wedge \ldots \wedge x_p \wedge y_1 \wedge \ldots \wedge y_q \in \bigwedge^{p+q} E$.
+Le passage au quotient conserve les propriétés d'associativité et de $p$-linéarité. De plus, $\forall u,v \in E, u \wedge v=-v \wedge u$ et donc 
+	\[\forall \sigma \in \Sfrak_r,u_1 \wedge \ldots \wedge u_r=\varepsilon(\sigma)u_{\sigma(1)} \wedge \ldots \wedge u_{\sigma(r)} 
+\]
+ \\
+On appelle algèbre extérieure la somme directe des puissances extérieures : 
+	\[\bigwedge^* E=\bigoplus_{p \in \N} \bigwedge^p E\]. 
+	On munit $\bigwedge^* E$ d'une structure d'algèbre graduée grâce au produit : 
+		\[x_1 \wedge \ldots x_p,y_1 \wedge \ldots \wedge y_q) \in \bigwedge^p E \times \bigwedge^q E \mapsto x_1 \wedge \ldots \wedge x_p \wedge y_1 \wedge \ldots \wedge y_q \in \bigwedge^{p+q} E
+	\]
+	.
 
 
 \begin{Lemme}
 $\Zcal_p=\Vect(x_{1} \otimes \ldots \otimes x_{p} | x_i \in E, \{x_1,\ldots,x_p\} \text{ est une famille liée })$
 \end{Lemme}
 \begin{proof}
-Posons $V=\Vect(x_{1} \otimes \ldots \otimes x_{p} | x_i \in E, \{x_1,\ldots,x_p\} \text{ est une famille liée })$. \\
-On a clairement $\Zcal_p \subset V$. Réciproquement, soit $x_1 \wedge \ldots \wedge x_p \in V$ i.e.  $\{x_1,\ldots,x_p\}$ est liée. On a donc un $i\in [\![1,n]\!]$ et des $\lambda_j \in k,j \neq i$ tel que $x_i=\sum_{j \neq i} \lambda_jx_j$ et donc : 
+Posons $V$ le membre à droite de l'égalité. \\
+On a clairement $\Zcal_p \subset V$. \\
+Réciproquement, soit $x_1 \wedge \ldots \wedge x_p \in V$ i.e.  $\{x_1,\ldots,x_p\}$ est liée. On a donc un $i\in [\![1,n]\!]$ et des $\lambda_j \in k,j \neq i$ tel que $x_i=\sum_{j \neq i} \lambda_jx_j$ et donc : 
  $x_1 \wedge \ldots \wedge x_i \wedge \ldots \wedge x_p=\sum_{j \neq i} \lambda_j x_1 \wedge \ldots \wedge x_j \wedge \ldots \wedge x_p \in \Zcal_p$ 
 \end{proof}
 Cela nous permet de voir que $\bigwedge^p E= \{0\}$ si $p>dim(E)$
 
 \begin{Prop}
-Soit $\Bcal=\{e_1,\ldots,e_n\}$ une base de $E$. Pour $p \leq n$,$\{e_{i_1} \wedge \ldots \wedge e_{i_p},1 \leq i_1<\ldots <i_p \leq n\}$ est une base de $\bigwedge^p E$.
+Soit $\Bcal=\{e_1,\ldots,e_n\}$ une base de $E$.\\ Pour $p \leq n$,$\{e_{i_1} \wedge \ldots \wedge e_{i_p},1 \leq i_1<\ldots <i_p \leq n\}$ est une base de $\bigwedge^p E$.
 \end{Prop}
 \begin{proof}
 Comme la famille $\{e_1 \otimes \ldots \otimes e_p|e_i \in \Bcal\}$ est une base de $E^{\otimes p}$ alors le passage au quotient fait que l'espace quotient a comme base $ \{e_1 \wedge \ldots \wedge e_p|e_i \in \Bcal, i \neq j \Rightarrow e_i \neq e_j\}$. En ordonnant les $e_i$; on obtient le résultat. 
@@ -86,8 +98,9 @@ Soit $\Lambda \in \bigwedge^r k^n$ tel que $W=\{ x \in k^n | \Lambda \wedge x=0\
 \begin{proof}
 %Pour montrer ce lemme, on peut tout d'abord remarquer que l'action de $\GL_n(k)$ commute avec $\psi_{r,n}$. $\GL_n(k)$ agit sur $P(\bigwedge^r k^n$ par $P \cdot [e_1 \wedge \ldots \wedge e_r]=[Pe_1 \wedge \ldots \wedge Pe_r]$. De plus, comme $\{Pe_1,\ldots, Pe_r\}$ est une base de $W$ alors $\psi_{r,n}(PW)=P\cdot \psi_{r,n}(W)$. \\
 Soit $\{e_1,\ldots,e_r\}$ une base de $W$. On peut compléter cette base en un base $\{e_1,\ldots,e_n\}$ de $k^n$. \\
-On peut décomposer $\Lambda$ sur la base associée de $\bigwedge^r k^n$ : \\
-$\Lambda=\sum_p \lambda_p e_{i_{1p}} \wedge \ldots \wedge e_{i_{rp}}$. \\
+On peut décomposer $\Lambda$ sur la base associée de $\bigwedge^r k^n$ : 
+	\[\Lambda=\sum_p \lambda_p e_{i_{1p}} \wedge \ldots \wedge e_{i_{rp}}
+\]
 Comme $\Lambda \wedge e_i=0$ alors $\Lambda=\sum_{p,i_{jp} \neq 0} \lambda_p e_1 \wedge e_{i_{1p}} \wedge \ldots \wedge e_{i_{rp}}$. \\
 Comme les $e_1 \wedge e_{i_{1p}} \wedge \ldots \wedge e_{i_{rp}}$ forment une famille libre alors les $\lambda_p$ correspondant sont nulles.
 En itérant ce processus, on trouve que les scalaires correspondant aux multi-vecteurs contenant $e_j$ pour $j>r$ sont nuls et donc $\Lambda=\lambda e_1 \wedge \ldots \wedge e_r$, ce qu'il fallait démontrer.
@@ -102,19 +115,26 @@ Pour tout $I=\{i_1 < \ldots <i_r\} \in I(r,n)$ et $P \in \GL_n(k)$,  $P \cdot [e
 On note, de la même façon, l'action de $\GL_n(k)$ sur la Grassmanienne $G(r,n)$ données par : $P \cdot W=P(W)$.\\
 Pour tout $I,J \subset [\![1,n]\!]$, on note le nombre d'inversion $\iota(I,J)=\{(i,j) \in I \times J | i>j\}$. \\
 Enfin, les polynômes de Plücker $\Pscr_{I,J}$, avec $I \in I(r-1,n)$ et $J=\{j_1 < \ldots < j_r\} \in I(r+1,n)$, sont données par : \\
-$\Pscr_{I,J}(X)=\sum_{i,j_i \notin I} (-1)^{i+\iota(I,j_i)} X_{I \cup \{j_i\}}X_{J \setminus \{j_i\}}$ où $X=(X_K | K \in I(r,n))$
+	\[\Pscr_{I,J}(X)=\sum_{i,j_i \notin I} (-1)^{i+\iota(I,j_i)} X_{I \cup \{j_i\}}X_{J \setminus \{j_i\}}
+	\]
+	 où $X=(X_K | K \in I(r,n))$ sont les indéterminées.
 \end{Not}
 
 \begin{Lemme}
 Soient $W \in G(r,n)$, $\{v_1,\ldots,v_r\}$ une base de $W$ et $P=(v_1,\ldots,v_r) \in \Mcal_{n,r}(k)$. 
-Alors $\psi_{r,n}(W)=\sum_{K=\{k_1<\ldots < k_r\}} \Delta_{K,[\![1,r]\!]}(P) e_{k_1} \wedge \ldots \wedge e_{k_r}$, \\
+Alors 
+	\[\psi_{r,n}(W)=\sum_{K=\{k_1<\ldots < k_r\}} \Delta_{K,[\![1,r]\!]}(P) e_{k_1} \wedge \ldots \wedge e_{k_r},
+\]
+
 où pour $P=(p_{i,j})$, $\Delta_{I,J}(P)$ est le mineur $\det((p_{i,j})_{i \in I,j \in J})$
 \end{Lemme}
 \begin{proof}
 Posons $v_i=(v_i^{(1)},\ldots,v_i^{(n)})$ pour tout $1 \leq i \leq n$. \\
-$v_1 \wedge \ldots \wedge v_r=\sum_{k_1=1}^n \ldots \sum_{k_r=1}^n v_1^{(k_1)}\ldots v_r^{(k_r)} e_{k_1} \wedge \ldots \wedge e_{k_r}$\\
+	\[v_1 \wedge \ldots \wedge v_r=\sum_{k_1=1}^n \ldots \sum_{k_r=1}^n v_1^{(k_1)}\ldots v_r^{(k_r)} e_{k_1} \wedge \ldots \wedge e_{k_r}
+\]
 Par antilinéarité du produit extérieur, \\
-$v_1 \wedge \ldots \wedge v_r=\sum_{K=\{k_1 < \ldots < k_r\}} \left(\sum_{\sigma \in \Sfrak_r} \varepsilon(\sigma) v_{\sigma(1)}^{(k_1)} \ldots v_{\sigma(r)}^{(k_r)} \right) e_{k_1} \wedge \ldots \wedge e_{k_r}$\\
+	\[v_1 \wedge \ldots \wedge v_r=\sum_{K=\{k_1 < \ldots < k_r\}} \left(\sum_{\sigma \in \Sfrak_r} \varepsilon(\sigma) v_{\sigma(1)}^{(k_1)} \ldots v_{\sigma(r)}^{(k_r)} \right) e_{k_1} \wedge \ldots \wedge e_{k_r}
+\]
 \end{proof}
 \begin{Lemme}
 L'action de $\GL_n(k)$ commute avec $\psi_{r,n}$
@@ -129,14 +149,20 @@ $\psi_{r,n}(G(r,n))=\{ v=(v_K)_{K \in I(r,n)} | \forall I \in I(r-1,n),\forall J
 \begin{proof}
 $\subset$ : Soient $w=w_1 \wedge \ldots \wedge w_r \in \psi_{r,n}(G(r,n))$, $A=(a_{ij})$ la matrice $(w_1,\ldots w_r)$, $L_i$ les lignes de $A$, $(\Delta_{K})_{K \in I(r,n)}$ les coordonnées de $W$ dans la base canonique de $\bigwedge^rW$. \\
 Soit $I=\{i_1<\ldots<i_{r-1}$ et $j_i \in [\![1,n]\!]$. On considère $i_1<\ldots<j_i<\ldots <i_r$ où $I \cup j_r$ est écrit dans l'ordre croissant. \\
-$(-1)^{\iota(I,j_i)} \Delta_{I \cup \{v_j\}}=(-1)^{\iota(I,j_i)}\det\begin{pmatrix} L_{i_1} \\ \vdots \\ L_{j_i} \\ \vdots \\ L_{i_{r-1}} \end{pmatrix}=\det\begin{pmatrix} L_{i_1}  \\ \vdots \\ L_{i_{r-1}}\\  L_{j_i} \end{pmatrix}$. \\
-En développant sur la dernière ligne, \\
-$(-1)^{\iota(I,j_i)} \Delta_{I \cup \{v_j\}}=\sum_{r=1}^s (-1)^{r+s}a_{j_i,s} \underbrace{\det((a_{i_l,m})_{1 \leq l \leq r-1,m \neq s})}_{=\Delta_{I,[\![1,r]\!] \setminus \{s\}}(A)=:\delta_s}$. \\
-$\Pscr_{I,J}(w)=\sum_{i,j_i \notin I} (-1)^{i} \Delta_{J \setminus \{j_i\}} \sum_{s=1}^r a_{j_i,s}\delta_s=\sum_{s=1}^r(-1)^r\delta_s\sum_{i=1}^{r+1} (-1)^{i+s} \Delta_{J \setminus \{j_i\}}  a_{j_i,s}$. (on a pu étendre pour tous les éléments de $J$ car les valeurs supplémentaires sont nulles)\\
-De plus, \\
-$0=\det\begin{pmatrix}a_{j_1,1}& \ldots& a_{j_1,s} &a_{j_1,s} & \ldots a_{j_1,r} \\ \vdots&&&& \\ a_{j_{r+1},1}& \ldots& a_{j_{r+1},s} &a_{j_{r+1},s} & \ldots a_{j_{r+1},r} \end{pmatrix}=\sum_{i=1}^{r+1} (-1)^{k+s} \Delta_{J \setminus \{j_i\}}  a_{j_i,s}$ \\
+	\[(-1)^{\iota(I,j_i)} \Delta_{I \cup \{v_j\}}=(-1)^{\iota(I,j_i)}\det\begin{pmatrix} L_{i_1} \\ \vdots \\ L_{j_i} \\ \vdots \\ L_{i_{r-1}} \end{pmatrix}=\det\begin{pmatrix} L_{i_1}  \\ \vdots \\ L_{i_{r-1}}\\  L_{j_i} \end{pmatrix}. 
+\]
+En développant sur la dernière ligne, 
+	\[(-1)^{\iota(I,j_i)} \Delta_{I \cup \{v_j\}}=\sum_{r=1}^s (-1)^{r+s}a_{j_i,s} \underbrace{\det((a_{i_l,m})_{1 \leq l \leq r-1,m \neq s})}_{=\Delta_{I,[\![1,r]\!] \setminus \{s\}}(A)=:\delta_s}. 
+\]
+	\[\Pscr_{I,J}(w)=\sum_{i,j_i \notin I} (-1)^{i} \Delta_{J \setminus \{j_i\}} \sum_{s=1}^r a_{j_i,s}\delta_s=\sum_{s=1}^r(-1)^r\delta_s\sum_{i=1}^{r+1} (-1)^{i+s} \Delta_{J \setminus \{j_i\}}  a_{j_i,s}.
+	\]
+ (on a pu étendre pour tous les éléments de $J$ car les valeurs supplémentaires sont nulles)\\
+De plus, 
+	\[0=\det\begin{pmatrix}a_{j_1,1}& \ldots& a_{j_1,s} &a_{j_1,s} & \ldots a_{j_1,r} \\ \vdots&&&& \\ a_{j_{r+1},1}& \ldots& a_{j_{r+1},s} &a_{j_{r+1},s} & \ldots a_{j_{r+1},r} \end{pmatrix}=\sum_{i=1}^{r+1} (-1)^{k+s} \Delta_{J \setminus \{j_i\}}  a_{j_i,s} 
+\]
 D'où $\Pscr_{I,J}(v)=0$. \\
-$\supset$ : Soit $[v]=[(v_K)_{K \in I(r,n)}] \in P(\bigwedge^r k^n)$ tel que : $\forall I \in I(r-1,n),\forall J \in I(r+1,n), \Pscr_{I,J}(v)=0$. \\
+$\supset$ : Soit $[v]=[(v_K)_{K \in I(r,n)}] \in P(\bigwedge^r k^n)$ tel que : \\
+$\forall I \in I(r-1,n),\forall J \in I(r+1,n), \Pscr_{I,J}(v)=0$. \\
 Soit $L=\{l_1<\ldots <l_r\}$ tel que $v_L \neq 0$. Soit $\sigma \in \Sfrak_n$ tel que $\sigma(l_i)=i$ croissante sur le complémentaire de $L$ et $P_\sigma$ la matrice de permutation associée. 
 En développant les calculs sur le nombre d'inversions, on en déduit que : $\forall I \in I(r-1,n),\forall J \in I(r+1,n), \Pscr_{I,J}(P_\sigma(v))=\Pscr_{\sigma^{-1}(I),\sigma^{-1}(J)}(v)=0$. \\
 Comme $\psi_{r,n}$ commute avec l'action de $\GL_n(k)$ alors on peut supposer $L=\{1,\ldots,r\}$. \\
@@ -153,9 +179,9 @@ On va montrer que $\Delta_K(A)=v_K$ par récurrence sur le nombre d'éléments de $
 	$\Delta_{I \cup \{i\}}=(-1)^{\iota(I,i)}(-1)^{r+i}m_{k_r,i}$\; ( le $(-1)^{\iota(I,i)}$ permet de réordonner la matrice) \\ 
 		où $I=K \setminus \{k_r\}$  \\
 	Comme $Card(L \cap (I\cup \{i\})^c)=s-1$ alors, par hypothèse de récurrence, $v_{I \cup \{i\}}=\Delta_{I \cup \{i\}}$. On a donc: \\
-	$\Delta_K(A)=\sum_{i=1}^{r} (-1)^{r+i} a_{k_r,i}m_{k_r,i}=\sum_{i=1}^{r} (-1)^{r+i}(-1)^{\iota(I,i)}(-1)^{r+i} a_{k_r,i}\Delta_{I \cup \{i\}}$. \\
-	$\Delta_K(A)=\sum_{i=1}^{r} (-1)^{r+i}(-1)^{\iota(I,i)} \Delta_{J \setminus \{i\}}\Delta_{I \cup \{i\}}$ où $J=\{1,\ldots,r,k_r\}$ \\
-	$\Delta_K(A)=(-1)^r\Pscr_{I,J}(v)+ v_Kv_L=v_K$ car $v_L=1$\\
+	$\displaystyle \Delta_K(A)=\sum_{i=1}^{r} (-1)^{r+i} a_{k_r,i}m_{k_r,i}=\sum_{i=1}^{r} (-1)^{r+i}(-1)^{\iota(I,i)}(-1)^{r+i} a_{k_r,i}\Delta_{I \cup \{i\}}$. \\
+	$\displaystyle \Delta_K(A)=\sum_{i=1}^{r} (-1)^{r+i}(-1)^{\iota(I,i)} \Delta_{J \setminus \{i\}}\Delta_{I \cup \{i\}}$ où $J=\{1,\ldots,r,k_r\}$ \\
+	$\displaystyle \Delta_K(A)=(-1)^r\Pscr_{I,J}(v)+ v_Kv_L=v_K$ car $v_L=1$\\
 	Si on note $v_1,v_r$ les colonnes de $A$ alors $v=\psi_{r,n}(\Vect(v_1,\ldots,v_r))$.
 \end{itemize}
 \end{proof}                                                                   

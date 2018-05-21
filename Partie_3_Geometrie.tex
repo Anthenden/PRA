@@ -36,13 +36,19 @@ Soit $\varphi : (u,v) \in S^3 \times S^3 \mapsto (x \mapsto uxv^{-1}=ux\overline
 $\varphi$ est clairement un morphisme de groupes de classe $\Ccal^\infty$ (et bien à valeurs dans $\GL(\H)$ car $\varphi(u,v)$ est bijective d'inverse $\varphi(u^{-1},v^{-1})$)
 Déterminons maintenant son noyau et son image. \\
 \textbf{Noyau de $\varphi$ :} \\
-Soit $(u,v) \in \Ker(\varphi)$. Alors, pour tout $x \in \H$, $uxv^{-1}=x \;(*)$.\\ 
-En particulier, en prenant $x=1$, on a $u=v$. Maintenant, $(*)$ nous dit que $u \in Z(\H)=\R$. Comme $u \in S^3$, on déduit que $u=\pm 1$. \\
+Soit $(u,v) \in \Ker(\varphi)$. Alors, pour tout $x \in \H$, 
+	\begin{equation} \label{calcul_noyau}
+	uxv^{-1}=x 
+\end{equation}
+.\\ 
+En particulier, en prenant $x=1$, on a $u=v$. Maintenant, \eqref{calcul_noyau} nous dit que $u \in Z(\H)=\R$. Comme $u \in S^3$, on déduit que $u=\pm 1$. \\
 Réciproquement, $\pm (1,1) \in \Ker(\varphi)$. \\
 On a donc : $\Ker(\varphi)=\{\pm(1,1)\}$. \\
 \textbf{Image de $\varphi$ :} \\
 Soient $(u,v) \in S^3 \times S^3$ et $x \in \H$.\\
-$|\varphi(u,v)(x)|=|uxv^{-1}|=|u||x||v^{-1}|=|x|$. Ce qui montre que $\varphi(u,v) \in O(4)$ et donc $Im(\varphi) \subset O(4)$.\\
+	\[|\varphi(u,v)(x)|=|uxv^{-1}|=|u||x||v^{-1}|=|x|.
+	\]
+	 Ce qui montre que $\varphi(u,v) \in O(4)$ et donc $Im(\varphi) \subset O(4)$.\\
 On peut affiner cela en disant que, comme $S^3 \times S^3$ est connexe, $Id \in Im(\varphi)$ et $\varphi$ est continu alors $Im(\varphi)$ est inclus dans la composante connexe de $O(4)$ contenant $Id$ i.e. $SO(4)$. On peut donc considérer que l'ensemble d'arrivée de $\varphi$ est $SO(4)$. \\
 Montrons maintenant que $\varphi$ est un difféomorphisme local. Pour cela, il suffit de le montrer en $(1,1)$ (les translations sont des difféomorphismes) et grâce au théorème d'inversion locale, il suffit de montrer que $d_{(1,1)} \varphi : T_{(1,1)} S^3 \times S^3 \to \sfrak\ofrak(4)$ est un isomorphisme. \\
 $\varphi$ étant bilinéaire, on sait que, pour tout $(\delta,\varepsilon) \in T_{(1,1)} S^3 \times S^3=\{ x+y+z+t=0,x'+y'+z'+t'=0\}$,
@@ -96,24 +102,25 @@ Les conditions suivantes sont équivalentes :
 On obtient $1 \Leftrightarrow 2$ grâce au développement limitée de $q_t$ en 0 et $2 \Leftrightarrow 3$ grâce à l'égalité $df_t=df+2t df\cdot dg+t^2|dg|^2$.
 \end{proof}
 
-Un exemple de déformation infinitésimale isométrique\footnote{On étudie dans l'appendice \ref{} le cas où ce sont les seuls} est une application de la forme $ g:t \mapsto a \times f(t)+b$ où $a,b \in \R^3$.
+Un exemple de déformation infinitésimale isométrique\footnote{On étudie dans l'appendice \ref{Darboux-Sauer} le cas où ce sont les seuls} est une application de la forme $ g:t \mapsto a \times f(t)+b$ où $a,b \in \R^3$.
 
 Soit $g$ une déformation infinitésimale isométrique de $f$. \\
 Considérons maintenant l'application $\varphi=(f,g)$ qui va de $S$ dans $\R^3 \oplus \R^3$ que l'on munira de la forme quadratique $dx\dot dy : (u,v) \mapsto u \cdot v$. Ainsi comme $g$ est une déformation infinitésimale isométrique, l'image de $d_p\varphi=(d_pf,d_pg)$ est totalement isotrope en tout point $p$ de $S$. On dira que $\varphi$ est totalement isotrope pour la métrique $dx \cdot dy$.
 
 
-La totale isotropie de $\varphi$ ne dépendant que de la métrique $dx \cdot dy$, on peut, comme dans la section \ref{} compactifier $R^3 \oplus \R^3$ en la quadrique\footnote{Elles sont toutes isomorphes} de signature (4,4) de $\R P^7$ des zéros de la forme $q(x,s,y,t)=x \cdot y+st$ : 
+La totale isotropie de $\varphi$ ne dépendant que de la métrique $dx \cdot dy$, on peut, comme dans la section \ref{Conforme} compactifier $R^3 \oplus \R^3$ en la quadrique\footnote{Elles sont toutes isomorphes} de signature (4,4) de $\R P^7$ des zéros de la forme $q(x,s,y,t)=x \cdot y+st$ : 
 	\[Q=\{[x : s : y : t] \in P(\R^3 \times \R \times \R^3 \times \R)  | x \cdot y+st=0\}
 \]
 et considérer $\varphi$ comme une immersion de $S$ dans $Q$ donnée par : $\varphi=[ f : 1 : g : -f \cdot g]$ (car on peut identifier $\R^3 \oplus \R^3$ avec  $\{ [x : 1 : y : -x \cdot y] | x,y \in \R^3\}$). \\
 Ainsi, $g$ est une déformation infinitésimale isométrique de $f$ si, et seulement si, le plan projectif tangent à $\varphi(S)$ en $\varphi(p)$, i.e. $\tau_p \varphi:=P( \psi(p) \oplus Im(d_p \psi))$ est totalement isotrope (où $\psi=(f,1,g,-f \cdot g) : S \to \R^8$). Dans ce cas, $V_p :=\varphi(p) \oplus Im(d_p \psi)$ est contenu dans exactement deux sous-espace totalement isotropes maximaux, un qui est le graphe d'une application de $\SO(4)$ et un qui est le graphe d'une application de $O^-(4)$ (c.f. proposition \ref{completion}) . Ainsi, $\tau_p \varphi$ est contenu dans exactement deux espaces projectifs de dimension 3, un dans $Q_+$ et l'autre dans $Q_-$. Ainsi, on peut définir deux applications $\varphi_\pm : S \to Q_\pm$ qui associe à $p$ l'élément de $Q_\pm$ contenant $\tau_p \varphi$. \\
-Pour alléger les notations, on notera $(a,b)_+$ le graphe de l'application $(x,s) \mapsto (a \times x+bs,-b \cdot x)$  inclus dans $Q$ et $(a,b)_-$ le "graphe tordu " $\{ [x : s: y :t] |y=a \times x+bt, s=-b \cdot x \}$ de $Q_-$
+Pour alléger les notations, on notera $(a,b)_+$ le graphe de l'application $(x,s) \mapsto (a \times x+bs,-b \cdot x)$  de $Q_+$ et $(a,b)_-$ le "graphe tordu " $\{ [x : s: y :t] |y=a \times x+bt, s=-b \cdot x \}$ de $Q_-$
 
 \begin{Thm}
-Les ensembles $\{(a,b)_+ | a,b \in \R^3\}$ et $\{(a,b)_- | a,b \in \R^3\}$ sont des ouverts affines (denses)\footnote{pour la topologie de Zariski, par le plongement de Plücker, c.f. l'appendice \ref{}} de respectivement, $Q_+$ et $Q_-$.
+Les ensembles $\{(a,b)_+ | a,b \in \R^3\}$ et $\{(a,b)_- | a,b \in \R^3\}$ sont des ouverts affines (denses)\footnote{pour la topologie de Zariski, par le plongement de Plücker, c.f. l'appendice \ref{Plucker}} de respectivement, $Q_+$ et $Q_-$.
 \end{Thm}
 
 \subsubsection{Calcul de $\varphi_{\pm}$}
+\label{Calcul_de_varphi}
 Soient $f :S \to \R^3$ une immersion, $g$ une déformation infinitésimale isométrique de $f$, $\varphi=(f :1 : g : -f\cdot g)$ l'immersion totalement isotrope associée et $h$ l'application vérifiant $dg=h \times df$. 
 
 %$V_p$ est paramétrisé par : 
@@ -173,7 +180,7 @@ On remarque que $V_p^+=(h,\widetilde{g})_+$. Etudions maintenant $V_p^-$. \\
 Dans la suite, on s'intéressera essentiellement au cas où $v_f \cdot f$ ne s'annule pas en $p$. Dans le cas contraire, $V_p^-$ est donné par : 
 \[V_p^-\begin{cases}
 	t=-\widetilde{g} \cdot x-\lambda f\cdot v_f \\
-	y=s \widetilde{g}+\lambda v_f+h \times x
+	y=s \widetilde{g}+\lambda v_f+h \times x \\
 	0=v_f \cdot x
 	\end{cases}
 \]
@@ -197,7 +204,7 @@ En réécrivant ces équations grâce au double produit vectoriel, on obtient :
 	s=-f^* \cdot x
 	\end{cases}
 \]
-Et ainsi, $V_p^-=(\widetilde{h},f^*)-$ où $\widetilde{h}=h-f^* \times \widetilde{g}$. \\
+Et ainsi, $V_p^-=(\widetilde{h},f^*)_-$ où $\widetilde{h}=h-f^* \times \widetilde{g}$. \\
 
 On remarque que $f^* \cdot f=-1$ et $df \cdot f^*=0$. Ainsi, on en déduit, grâce à la proposition \ref{def_D} que $(\widetilde{g},h,f^*)$ est un triplet de Darboux  et donc $A(\widetilde{g},h,f^*)=(f^*,h-f^* \times \widetilde{g},\widetilde{g})=(f^*,\widetilde{h},\widetilde{g})$
 \ifwhole

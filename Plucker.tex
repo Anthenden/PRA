@@ -25,13 +25,12 @@ On note $x_1 \wedge \ldots \wedge x_p$ la classe d'équivalence de $x_1 \otimes \
 Le passage au quotient conserve les propriétés d'associativité et de $p$-linéarité. De plus, $\forall u,v \in E, u \wedge v=-v \wedge u$ et donc 
 	\[\forall \sigma \in \Sfrak_r,u_1 \wedge \ldots \wedge u_r=\varepsilon(\sigma)u_{\sigma(1)} \wedge \ldots \wedge u_{\sigma(r)} 
 \]
- \\
 On appelle algèbre extérieure la somme directe des puissances extérieures : 
-	\[\bigwedge^* E=\bigoplus_{p \in \N} \bigwedge^p E\]. 
+	\[\bigwedge^* E:=\bigoplus_{p \in \N} \bigwedge^p E.\] 
 	On munit $\bigwedge^* E$ d'une structure d'algèbre graduée grâce au produit : 
-		\[x_1 \wedge \ldots x_p,y_1 \wedge \ldots \wedge y_q) \in \bigwedge^p E \times \bigwedge^q E \mapsto x_1 \wedge \ldots \wedge x_p \wedge y_1 \wedge \ldots \wedge y_q \in \bigwedge^{p+q} E
+		\[(x_1 \wedge \ldots x_p,y_1 \wedge \ldots \wedge y_q) \in \bigwedge^p E \times \bigwedge^q E \mapsto x_1 \wedge \ldots \wedge x_p \wedge y_1 \wedge \ldots \wedge y_q \in \bigwedge^{p+q} E
 	\]
-	.
+	
 
 
 \begin{Lemme}
@@ -86,7 +85,7 @@ Soit $W \in G(r,n)$ et $\{e_1,\ldots,e_r\}$ une base de $W$. Alors $W=\{x \in k^
 \end{Prop}
 \begin{proof}
 Posons $E_W=\{x \in k^n |x \wedge (e_1 \wedge \ldots \wedge e_r)=0\}$.
-On remarque aisément que $W$ est un espace vectoriel et que $W \subset E_W$. \\
+On remarque que $E_W$ est un espace vectoriel et que $W \subset E_W$. \\
 Soit $x \in E_W$ ie $x \wedge (e_1 \wedge \ldots \wedge e_r)=0$ et donc $\{x,e_1,\ldots,e_r\}$ est une famille liée. Comme $\{e_1,\ldots,e_r\}$ est une base alors $x \in \Vect(e_1,\ldots,e_r)=W$
 \end{proof}
 L'injectivité de $\psi_{r,n}$ en découle immédiatement. \\

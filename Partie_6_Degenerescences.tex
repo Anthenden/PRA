@@ -1,6 +1,6 @@
 
 \newif\ifwhole
-\wholetrue
+%\wholetrue
 % Ajouter \wholetrue si on compile seulement ce fichier
 
 \ifwhole
@@ -10,17 +10,17 @@
 \input{enonce}
 
 \fi
+Dans les sections précédentes, nous avons étudié le cas où les applications $\varphi_+$ et $\varphi_-$ sont des immersions i.e. de rang 2. Dans cette section, nous allons voir l'interprétation géométrique du cas où il existe un ouvert de $S$ où ces applications sont de rang strictement inférieur à 2. \\
+Dans la suite, on va remplacer $S$ par cet ouvert.
 
 \subsection{$\varphi_\pm$ de rang 0}
 On a vu, dans la sous-section \ref{Calcul_de_varphi}, que $\varphi_+=(h,\widetilde{g})$ et sous réserve d'existence, $\varphi_-=(\widetilde{h},f^*)_-$ où $\widetilde{g}=g-h\times f$, $f^*=\frac{-v_f}{v_f \cdot f}$ et $\widetilde{h}=h-f^* \times \widetilde{g}$.\\
 Ainsi, demander que $\varphi_+$ soit de rang $0$ (i.e. est constante) revient à demander que $h$ et $g-h\times f$ soit constante ou autrement dit, que $g=a \times f+b,a,b  \in \R^3$.\\
 De la même façon, $\varphi_-$ est de rang $0$ si, et seulement si, $\widetilde{h}=h-f^* \times \widetilde{g}$ et $f^*$ sont constantes. On remarque que si $f^*$ est constante alors $Im(d_pf)$ ne dépend pas de $p$. De ce fait, l'image de $f$ est inclus dans ce plan et $g$ est un champ de vecteur normal à ce plan.
 
-\subsection{$\varphi_\pm$ de rang 1}
-blabla
-\subsubsection{$\varphi_+$ de rang 1}
+\subsection{$\varphi_+$ de rang 1}
 Supposons maintenant que la différentielle de $\varphi_+=(h,\widetilde{g})$ (c.f la sous-section \ref{Calcul_de_varphi}) est de rang $1$ en tout point de $S$. Cela revient à demander que $h$ soit de rang 1 car $d\widetilde{g}=h \times df$.
-Comme les espaces $\Ker(d_ph)$ sont de rang constant alors $\Ker(dh):= \bigcup_{x \in S} \{x\} \times \Ker(d_xh)$ est un sous-fibré de $TS$ (voir le théorème 10.34 de \ref{smooth_manifold}). Ainsi, dans des coordonnées locales $(x_1,x_2)$ appropriées, $\partial_1 $ engendre $\Ker(dh)$. On en déduit que 
+Comme les espaces $\Ker(d_ph)$ sont de rang constant alors $\Ker(dh):= \bigcup_{x \in S} \{x\} \times \Ker(d_xh)$ est un sous-fibré de $TS$ (voir le théorème 10.34 de \cite{smooth_manifold}). Ainsi, dans des coordonnées locales $(x_1,x_2)$ appropriées, $\partial_1 $ engendre $\Ker(dh)$. On en déduit que 
 	\[\forall p \in S, \partial_1 h(p)=d_ph(\partial_1)=0
 \]
  et donc comme $\partial_1\widetilde{g}=h \times df$,
@@ -43,7 +43,7 @@ Ainsi, $f$ et $g$ sont réglées. \\
 On en déduit 
 \begin{equation}\varphi(x_1,x_2)=\R(\psi_1(x_2)+x_2 \psi_2(x_2))
 \end{equation}
- où $\psi_1=(f_0,1,g_0,-f_0 \cdot g_0)$ et $\psi_2=(h',0,h \times h',)$ \\
+ où $\psi_1=(f_0,1,g_0,-f_0 \cdot g_0)$ et $\psi_2=(h',0,h \times h',-(f_0,h,h')-g_0 \cdot h')$ \\
 Autrement dit,
 \begin{Thm}
 $\varphi(S)$ est réglée 
@@ -61,7 +61,7 @@ et
 	&=&-(f-x_1)h' \cdot (g-h \times f)=-f_0 \cdot \widetilde{g}
 	\end{eqnarray*}
 
-\subsubsection{$\varphi_-$ de rang 1}
+\subsection{$\varphi_-$ de rang 1}
 
 On va maintenant supposer que $\varphi_-$ est de rang 1 en tout point $p \in S$. \\
 Quitte à translater, on peut supposer que l'origine n'appartient pas aux plans affines tangents de $f(S)$. Ainsi, on a vu, dans la sous-section \ref{Calcul_de_varphi}, que $\varphi_-=(\widetilde{h},f^*)_-$.Comme $\varphi_-$ est de rang 1 et $d \widetilde{h}=\widetilde{g} \times df^*$ alors $df^*$ est de rang $1$ et de la même façon que dans le paragraphe précédent, on peut trouver des coordonnées locales pour que $\partial_1$ engendre $df^*$ et donc $f^*$ ne dépend que de $x_2$. \\
@@ -90,7 +90,7 @@ $f(S)$ est une surface développable
 \end{Thm}
 Autrement dit, $f(S)$ est l'enveloppe d'une famille à un paramètre de plans.
 Ensuite, comme $d\widetilde{h}=\widetilde{g} \times df^*$ alors en évaluant en $\partial_1$, on obtient que $\partial_1 \widetilde{h}=0$ et 
-grâce au lemme \ref{derivee_croisee}, 
+grâce au lemme \ref{deriv_croisee}, 
 	\[\partial_1 \widetilde{h} \times \partial_2 f^*=\partial_2\widetilde{h} \times \partial_1 f^*=0
 \]
  et de ce fait, comme dans les cas précédents, 

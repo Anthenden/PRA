@@ -1,0 +1,165 @@
+
+\newif\ifwhole
+\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+
+\fi
+
+\subsection{$\varphi_\pm$ de rang 0}
+On a vu, dans la sous-section \ref{Calcul_de_varphi}, que $\varphi_+=(h,\widetilde{g})$ et sous réserve d'existence, $\varphi_-=(\widetilde{h},f^*)_-$ où $\widetilde{g}=g-h\times f$, $f^*=\frac{-v_f}{v_f \cdot f}$ et $\widetilde{h}=h-f^* \times \widetilde{g}$.\\
+Ainsi, demander que $\varphi_+$ soit de rang $0$ (i.e. est constante) revient à demander que $h$ et $g-h\times f$ soit constante ou autrement dit, que $g=a \times f+b,a,b  \in \R^3$.\\
+De la même façon, $\varphi_-$ est de rang $0$ si, et seulement si, $\widetilde{h}=h-f^* \times \widetilde{g}$ et $f^*$ sont constantes. On remarque que si $f^*$ est constante alors $Im(d_pf)$ ne dépend pas de $p$. De ce fait, l'image de $f$ est inclus dans ce plan et $g$ est un champ de vecteur normal à ce plan.
+
+\subsection{$\varphi_\pm$ de rang 1}
+blabla
+\subsubsection{$\varphi_+$ de rang 1}
+Supposons maintenant que la différentielle de $\varphi_+=(h,\widetilde{g})$ (c.f la sous-section \ref{Calcul_de_varphi}) est de rang $1$ en tout point de $S$. Cela revient à demander que $h$ soit de rang 1 car $d\widetilde{g}=h \times df$.
+Comme les espaces $\Ker(d_ph)$ sont de rang constant alors $\Ker(dh):= \bigcup_{x \in S} \{x\} \times \Ker(d_xh)$ est un sous-fibré de $TS$ (voir le théorème 10.34 de \ref{smooth_manifold}). Ainsi, dans des coordonnées locales $(x_1,x_2)$ appropriées, $\partial_1 $ engendre $\Ker(dh)$. On en déduit que 
+	\[\forall p \in S, \partial_1 h(p)=d_ph(\partial_1)=0
+\]
+ et donc comme $\partial_1\widetilde{g}=h \times df$,
+	\[\partial_1 \widetilde{g}=\partial_h=0. 
+\]
+	
+	De plus, grâce à la formule du lemme \ref{deriv_croisee},
+	\[\partial_1 f \times \partial_2 h=\partial_2 f \times \partial_1 h=0.
+\]
+Ainsi, $h$ ne dépend que de $x_2$ (on notera dorénavant $h(x_2)$ au lieu de $h(x_1,x_2)$) et $\partial_1 f$ est de la forme $\lambda(x_1,x_2)h'(x_2)$ (car en tout point $(x_1,x_2)$, $\partial_1 f(x_1,x_2)$ est colinéaire avec $h'(x_2)=\partial_2 h(x_1,x_2)$) où $\lambda$ est une fonction qui ne s'annule pas. On peut supposer $\lambda \equiv 1$ quitte à changer les coordonnées locales choisies. En effet, si on pose $x'_1=\int_0^{x_1} \lambda (t,x_2) x_1$ alors 
+	\[\frac{\partial f}{\partial x_1}=\frac{\partial f}{\partial x'_1}\frac{ \partial x'_1}{\partial x_1}+\frac{\partial f}{\partial x'_2}\frac{\partial x_2}{\partial x_1}=\frac{\partial f}{\partial x_1}\frac{\partial x'_1}{\partial x_1}=\lambda(x_1,x_2) \frac{\partial f}{\partial x'_1}
+\]
+On a donc $\partial_1 f=h'$ et en intégrant en $x_1$, on obtient : 
+\begin{equation}f(x_1,x_2)=f_0(x_2)+x_1 h'(x_2)
+\end{equation}
+De la même façon, comme $dg=h \times df$ alors $\partial_1 g=h \times \partial_1 f=h \times h'$ et on obtient, en intégrant cette égalité en $x_1$ : 
+\begin{equation}g(x_1,x_2)=g_0(x_2)+x_1 h(x_2) \times h'(x_2)
+\end{equation}
+Ainsi, $f$ et $g$ sont réglées. \\
+On en déduit 
+\begin{equation}\varphi(x_1,x_2)=\R(\psi_1(x_2)+x_2 \psi_2(x_2))
+\end{equation}
+ où $\psi_1=(f_0,1,g_0,-f_0 \cdot g_0)$ et $\psi_2=(h',0,h \times h',)$ \\
+Autrement dit,
+\begin{Thm}
+$\varphi(S)$ est réglée 
+\end{Thm}
+
+De plus, on peut remarquer que pour tout $x_2$ tel que 
+	\[V(x_2)=\Vect(\psi_1(x_2),\psi_2(x_2),\psi'_1(x_2),\psi_2'(x_2)
+\]
+ soit de dimension 4 alors $V(x_2)=\varphi_+(x_2)=(h(x_2),\widetilde{g}(x_2))_+$. Par exemple, on a $(h,\widetilde{g})_+(f_0,1)=(g_0,-f_0 \cdot g_0)$. En effet, 
+	\[ h \times f_0+\widetilde{g}=h \times (f-x_1 h')+g-h \times f=g-x_1 h \times h'=g_0
+\]
+et 
+	\begin{eqnarray*}
+	-f_0 \cdot g_0&=&-(f-x_1h') \cdot (g-x_1h')=-f \cdot g+x_1 +x_1 f \cdot (h \times h')+x_1 g \cdot h' \\
+	&=&-(f-x_1)h' \cdot (g-h \times f)=-f_0 \cdot \widetilde{g}
+	\end{eqnarray*}
+
+\subsubsection{$\varphi_-$ de rang 1}
+
+On va maintenant supposer que $\varphi_-$ est de rang 1 en tout point $p \in S$. \\
+Quitte à translater, on peut supposer que l'origine n'appartient pas aux plans affines tangents de $f(S)$. Ainsi, on a vu, dans la sous-section \ref{Calcul_de_varphi}, que $\varphi_-=(\widetilde{h},f^*)_-$.Comme $\varphi_-$ est de rang 1 et $d \widetilde{h}=\widetilde{g} \times df^*$ alors $df^*$ est de rang $1$ et de la même façon que dans le paragraphe précédent, on peut trouver des coordonnées locales pour que $\partial_1$ engendre $df^*$ et donc $f^*$ ne dépend que de $x_2$. \\
+On a vu dans le paragraphe \ref{Calcul_de_varphi} que $f^* \cdot f=-1$ et $f^* \cdot df=0$ . De cela, on déduit : 
+	\[0=d(f \cdot f^*)=df^* \cdot f+f^* \cdot df=df^* \cdot f
+\] 
+et, en particulier,
+\[0={f^*}' \cdot f
+\] 
+ Puis, par le double produit vectoriel,  
+	\[ f \times (f^* \times {f^*}')=(f \cdot {f^*}')f^*-(f \cdot f^*){f^*}'=f^*(x_2)
+\]
+Ainsi, en dérivant selon $x_1$,
+\[ \partial_1 f \times (f^* \times f^*)=0
+\]
+En refaisant le calcul du paragraphe précédent, on obtient 
+	 \begin{equation}\label{eq_f_-}f(x_1,x_2)=f_0(x_2)+\mu(x_1,x_2) f^*(x_2) \times (f^*)'(x_2)
+\end{equation}
+où $\mu$ est une fonction telle que $\partial \mu  \neq 0$ (car $f$ est une immersion) et $f_0$ une application telle que $f^* \cdot f=-1$ et $f^* \cdot f_0'=0$. \\
+Cette expression de $f$ et le fait que $f^* \in Im(df)^\perp$ nous permet de voir que l'espace tangent à $f(S)$ en $(x_1,x_2)$ a pour équation 
+	 \[f^*(x_2) \cdot x=f^*(x_2) \cdot f(x_1,x_2)=f^*(x_2) \cdot f_0(x_2)=-1
+ \]
+Ces plans tangents ne dépend que de $x_2$. On en déduit 
+\begin{Thm}
+$f(S)$ est une surface développable
+\end{Thm}
+Autrement dit, $f(S)$ est l'enveloppe d'une famille à un paramètre de plans.
+Ensuite, comme $d\widetilde{h}=\widetilde{g} \times df^*$ alors en évaluant en $\partial_1$, on obtient que $\partial_1 \widetilde{h}=0$ et 
+grâce au lemme \ref{derivee_croisee}, 
+	\[\partial_1 \widetilde{h} \times \partial_2 f^*=\partial_2\widetilde{h} \times \partial_1 f^*=0
+\]
+ et de ce fait, comme dans les cas précédents, 
+	\[ \widetilde{g}(x_1,x_2)=\widetilde{g_0}(x_2)+\lambda(x_1,x_2) {f^*} '(x_2)
+\]
+Cette égalité et $\widetilde{h}=h-f^* \times \widetilde{g}$ nous donne :
+	\begin{equation} \label{eq_h_-}
+	h(x_1,x_2)=h_0(x_2)+\lambda(x_1,x_2) f^*(x_2) \times {f^*}'(x_2) 
+\end{equation}
+où $h_0=\widetilde{h}+f^* \widetilde{g_0}$. \\
+En injectant dans l'égalité $g=\widetilde{g}+h \times f$ et en utilisant les égalités $f^* \cdot f_0=-1$ et $f* '\cdot f_0=0$, on obtient : 
+	\begin{equation}g(x_1,x_2)=g_0(x_2)+\mu(x_1,x_2) h_0(x_2) \times (f^*(x_2) \times {f^*} '(x_2))
+\end{equation}
+
+Comme dans le paragraphe précédent, $\varphi=\R(\psi_1+x_1 \psi_2)$ est réglée et si $V(x_2)$ est de dimension 4 alors $V(x_2)=\varphi_-(x_2)$. Cependant dans la cas où $\varphi_-$ est de rang 1, on peut dire un peu plus : 
+
+\begin{Thm}
+Il existe une transformation projective entre $h$ et $f$
+\end{Thm}
+\begin{proof}
+D'après le lemme \ref{deriv_croisee}, $\partial_1 h \times \partial_2 f=\partial_2 h \times \partial_1 f$. En injectant les égalités \ref{eq_f_-} et \ref{eq_h_-} dans chacun des membres, on obtient 
+	\[\partial_1 h \times \partial_2 f=(\partial_1\lambda f^* \times {f^*} ' )\times(f'_0+\partial_2\mu f^* \times {f^*} '+\mu f^*(x_2) \times {f^*} '')
+\]
+	\[	\partial_2 h \times \partial_1 f=(h'_0+\partial_2\lambda f^* \times {f^*} '+\lambda f^* \times {f^*} '' )\times (\partial_1\mu f^*\times {f^*} ')
+\]
+
+Calculons chaque partie du produit séparément grâce au double produit vectoriel :  
+	\[(f^*(x_2) \times {f^*} ') \times (f^*(x_2) \times {f^*} ''(x_2)=(f^*,{f^*}',{f^*}'') f^*
+\]
+
+	\[ (f^* \times {f^*} ') \times f_0'=-({f^*}' \cdot f_0') f^*
+\]
+	\[(f^* \times {f^*} ') \times h'_0=-(f^* \cdot h_0')f^*
+\]
+Et grâce à l'égalité $d\widetilde{h}=\widetilde{g} \times df^*$,
+	\[f^* \cdot h_0'=0
+\]
+Posons $a=(f^*,{f^*}',{f^*}''),b=f_0' \cdot {f^*} '$ et $c=h_0' \cdot {f^*} '$. \\
+On en déduit l'égalité :
+	\[ \partial_1 \lambda (-bf^*)+\partial_1 \lambda \mu af^*=c \partial_1 \mu f^*-a \lambda \partial_1 \mu f^*
+\]
+ou encore
+	\[ a\partial_1(\lambda\mu)=b \partial_1 \lambda +c \partial \mu
+\] 
+Ensuite, en intégrant par rapport à $x_1$, on a
+	\[ a\lambda \mu=b \lambda +c\mu +d
+\] où $d$ est une fonction en $x_2$ \\
+On en déduit que 
+	\[\lambda=\frac{c \mu+d}{a \mu +b }
+\]
+ce qui est la transformation voulue
+\end{proof}
+
+On va finir cette section sur un théorème de non-dégénérescence de $\varphi_+$ et $\varphi_-$ : 
+
+\begin{Thm}
+Supposons que $S$ est une surface compacte sans bord et que $f : S \to \R^3$ et $g : S \to \R^3$ soient des fonctions analytiques (avec $g$ une déformation infinitésimale isométrique. \\
+Alors l'immersion totalement isotrope $\varphi=(f : 1 : g : -f \cdot g) :S \to Q$ est telle que $\varphi_-$ est de rang 2 et si $\varphi_+$ n'est pas constante alors $\varphi_+$ est aussi de rang 2
+\end{Thm}
+
+\begin{proof}
+S'il existe un ouvert $U$ tel que $f(U)$ est inclus dans un plan $P$ alors par analycité de $f$, $f$ est à valeurs dans ce plan.
+Ainsi $f : S \to P$ est un difféomorphisme mais $f(S)$ est compacte donc à bord (car de même dimension que $P$) mais pas $S$. \\
+$f(S)$ ne peut pas être réglée car elle ne peut pas contenir une droite à cause de sa compacité.
+Ainsi, grâce aux calculs de cette section, $\varphi_+$ et $\varphi$ sont de rang 2.
+
+\end{proof}
+
+
+\ifwhole
+ \end{document}
+\fi

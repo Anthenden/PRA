@@ -1,0 +1,53 @@
+
+\newif\ifwhole
+
+%\wholetrue
+% Ajouter \wholetrue si on compile seulement ce fichier
+
+\ifwhole
+ \documentclass[a4page,10pt]{article}
+     \input{entete}
+ \begin{document}
+\input{enonce}
+\fi
+
+Dans ce mémoire, nous allons étudier l'article \cite{2017arXiv170901383S} de B.Sévennec qui donne une interprétation géométrique d'une construction faite par G.Darboux dans \cite{Darb}. \\
+Soient $S$ une surface, $f : S \to \R^3$ une immersion. \\
+On s'intéressera aux déformations isométriques infinitésimales de $f$ qui sont les applications $g : S \to \R^3$ telles que la métrique riemannienne induite par $f_\varepsilon=f+\varepsilon g$ est la même que celle induite par $f$ i.e. 
+	\[ \forall p \in S, d_p f_\varepsilon=d_p f+ o(\varepsilon)
+\]
+Autrement dit, ce sont les applications $g : S \to \R^3$ telle que : 
+\begin{equation} \label{dii}
+	 \forall p \in S, \forall u \in T_p S, d_pf(u) \cdot d_p g(u)=0
+\end{equation}
+La donnée d'un tel couple $(f,g)$ permet de définir une troisième application $h :S \to \R^3$ (car $f$ est une immersion) telle que :
+	\[ \forall p \in S, \forall u \in T_p S,  d_p g(u)=h(p) \times d_pf(u) 
+\]
+On obtient alors ce que l'on appelle un triplet de Darboux $(f,g,h)$. \\
+A partir d'un tel triplet, on peut en construire deux autres de la façon suivante : \\
+En premier lieu, si on pose $\widetilde{g}=g-h \times f$, 
+	\[d\widetilde{g}=f \times dh
+\]
+(en sous-entendant les arguments) et donc $(h,\widetilde{g},f)$ est un triplet de Darboux. \\
+Ensuite, si on suppose que $g$ est aussi une immersion alors il existe une application $h^*$ telle que 
+	\[ df=h^* \times dg
+\]
+ou, autrement dit, $(g,f,h^*)$ est un triplet de Darboux. \\
+On a donc défini deux applications sur les triplets de Darboux (qui vérifie des conditions que l'on détaillera plus tard) deux opérations $A : (f,g,h) \mapsto  (h,\widetilde{g},f)$ et $D : (f,g,h) \mapsto (g,f,h^*)$.
+Le but de ce mémoire est de détailler l'action de ses deux applications et en particulier, de démontrer que 
+\begin{Thm}[Darboux]
+$(D \circ A)^6=Id$ 
+\end{Thm}
+et ainsi montrer que le groupe engendré par $A$ et $D$ est le groupe diédral à 12 éléments.\\
+
+Nous allons commencer dans la section \ref{Partie_1} par détailler les constructions de l'introduction. Dans la partie \ref{Conforme} puis dans partie \ref{Partie_3}, nous allons montrer que $\R^6$ muni de la métrique $dx \cdot dy$ se compactifie dans la quadrique $Q$ de signature (4,4) de $\R P^7$ de façon conforme et ainsi, comme la condition \ref{dii} ne dépend que de la structure (pseudo-)conforme de la métrique $dx \cdot dy$, alors les couples $(f,g)$ deviennent une application $\varphi=[f : 1 : g: -f \cdot g] : S \to Q$ totalement isotrope dont le plan projectif tangent $P(\varphi(p) \oplus Im(d_p \psi))$ (où $\psi=(f , 1 , g, -f \cdot g)$) est totalement isotrope.
+Comme ce plan projectif est inclus dans exactement deux (projectivisés de) sous-espaces totalement isotropes maximaux, on peut définir deux applications $\varphi_\pm$, qui associe à $p$ un de ses deux sous-espaces, que l'on explicitera. Ces applications sont bien définies car on peut séparer les sous-espaces totalement isotropes maximaux en deux sous-ensembles, ceux qui sont les graphes des applications de $SO(4)$ que l'on notera $Q_+$ et celle de $O^-(4)$ que l'on notera $Q_-$. \\
+Dans la partie \ref{Octonions}, nous allons introduire sur $\R^4 \oplus \R^4$ une structure d'algèbre qui rend la forme quadratique $q : (u,v) \mapsto u \cdot v$ multiplicative, l'algèbre des octonions déployés. Cela nous permettra de montrer que l'on peut définir sur $Q,Q_+$ et $Q_-$ une structure d'incidence très symétrique.  Cette symétrie nous permettra, dans la partie \ref{Partie_5} de montrer que les applications $\varphi,\varphi_+$ et $\varphi$ jouent des rôles identiques (trialité différentielle) et ce qui nous permettra de montrer le théorème de Darboux. On finira par donner une interprétation géométrique des cas de dégénérescence i.e. les cas où les applications $\varphi_+$ ou $\varphi_-$ sont de rang $< 2$.
+
+
+
+
+
+\ifwhole
+ \end{document}
+\fi

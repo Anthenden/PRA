@@ -13,8 +13,8 @@
 
 Dans ce mémoire, nous allons étudier l'article \cite{2017arXiv170901383S} de B.Sévennec qui donne une interprétation géométrique d'une construction faite par G.Darboux dans \cite{Darb}. \\
 Soient $S$ une surface, $f : S \to \R^3$ une immersion. \\
-On s'intéressera aux déformations isométriques infinitésimales de $f$ qui sont les applications $g : S \to \R^3$ telles que la métrique riemannienne induite par $f_\varepsilon=f+\varepsilon g$ est la même que celle induite par $f$ i.e. 
-	\[ \forall p \in S, d_p f_\varepsilon=d_p f+ o(\varepsilon)
+On s'intéressera aux déformations isométriques infinitésimales de $f$ qui sont les applications $g : S \to \R^3$ telles que la première forme fondamentale induite par $f_\varepsilon=f+\varepsilon g$ est la même que celle induite par $f$ à l'ordre 1 i.e. 
+	\[ \forall p \in S, |d_p f_\varepsilon|^2=|d_p f|^2+ o(\varepsilon)
 \]
 Autrement dit, ce sont les applications $g : S \to \R^3$ telle que : 
 \begin{equation} \label{dii}
@@ -45,7 +45,9 @@ Comme ce plan projectif est inclus dans exactement deux (projectivisés de) sous-
 Dans la partie \ref{Octonions}, nous allons introduire sur $\R^4 \oplus \R^4$ une structure d'algèbre qui rend la forme quadratique $q : (u,v) \mapsto u \cdot v$ multiplicative, l'algèbre des octonions déployés. Cela nous permettra de montrer que l'on peut définir sur $Q,Q_+$ et $Q_-$ une structure d'incidence très symétrique.  Cette symétrie nous permettra, dans la partie \ref{Partie_5} de montrer que les applications $\varphi,\varphi_+$ et $\varphi$ jouent des rôles identiques (trialité différentielle) et ce qui nous permettra de montrer le théorème de Darboux. On finira par donner une interprétation géométrique des cas de dégénérescence i.e. les cas où les applications $\varphi_+$ ou $\varphi_-$ sont de rang $< 2$.
 
 
-
+\subsection*{Convention et notations}
+Dans tout ce mémoire, les variétés et les applications seront supposés de classe $\Ccal^\infty$. \\
+Pour un espace vectoriel $E$, on notera $P(E)$ son projectivisé et si $E=\R^{n+1}$, on le notera $\R P^n$ (voir l'appendice \ref{esp_proj} pour les définitions)
 
 
 \ifwhole

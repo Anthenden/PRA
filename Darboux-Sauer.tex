@@ -19,7 +19,7 @@ On dit qu'une immersion $f : S \to \R^3$ est infinitésimalement rigide si toute 
 Une immersion $f :S \to \R^3$ est infinitésimalement rigide si, et seulement si, toute immersion totalement isotrope $\varphi : S \to Q$ relevant $f$, i.e. telle que $\pi \circ \varphi =f : S \to \R^3$ est telle que $\varphi_+$ est constante.
 \end{Lemme}
 \begin{proof}
-$\Rightarrow : $ Déjà fait. \\
+$\Rightarrow : $ Fait en \ref{rang_0} \\
 $\Leftarrow : $ Soit $\varphi =(f : 1 : g: -f\cdot g) : S \to Q$ telle que $df \cdot dg=0$ et $\varphi_+$ est constante. \\
 Alors il existe $h :S \to \R^3$ telle que $dg=h \times df$. \\
 Grâce à la formule du produit triple,
@@ -34,13 +34,15 @@ Comme $\varphi_+$ est constante alors $h$ et $g+f \times h$ aussi, c'est-à-dire,
 La rigidité infinétésimale est projectivement invariante : si $f : S \to \R^3 \subset \R P^3$ est une immersion, et $A \in \PGL_4(\R)=Aut(\R P^3)$ est une transformation projective telle que $A \circ f(S) \subset \R^3$, alors $A \circ f$ est infinitésimalement rigide si, et seulement si, $f$ l'est.
 \end{Thm}
 \begin{proof}
-On peut commencer par remarquer qu'il suffit de montrer qu'un sens car il suffit de rempacer $A$ $A^{-1}$ pour montrer l'autre sens. \\
+On peut commencer par remarquer qu'il suffit de montrer qu'un sens car il suffit de remplacer $A$ par $A^{-1}$ pour montrer l'autre sens. \\
 $\PGL_4(\R)$ agit sur $\R P^7$ par 
 	\[A \cdot (u : v)=( Au : {}^t A^{-1} v)
 \]
  où $u,v \in \R^4, A \in \PGL_4(\R)$. \\
 Cette action laisse stable $Q$ : 
- $\forall (u:v) \in Q, \forall A \in \PGL_4(\R),q(A\cdot (u:v))=q(Au : {}^t A^{-1} v)=Au \cdot {}^t A^{-1} v=u\cdot v=0$. 
+ 
+	 \[\forall (u:v) \in Q, \forall A \in \PGL_4(\R),q(A\cdot (u:v))=q(Au : {}^t A^{-1} v)=Au \cdot {}^t A^{-1} v=u\cdot v=0
+ \]
 Elle laisse stable aussi $P_1=P(\R^4 \oplus 0)$ et $P_2=P(0 \oplus \R^4)$. \\
 Cette action commute avec $\pi_1 : Q \setminus P_2 \to P_1$ (sur $Q \setminus P_2$) : 
 	\[\forall (u:v) \in Q, \forall A \in \PGL_4(\R),\pi_1(A \cdot (u,v))=(Au : 0)=A(u \oplus 0)=A(\pi(u : v)).

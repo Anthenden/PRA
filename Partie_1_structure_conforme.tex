@@ -19,29 +19,32 @@ Un champ de vecteurs sur $M$ est une application $X : U \subset M \to TM$ telle 
 $.
 \end{Def}
 \begin{Def}
-On associe à un champ de vecteur $X$ sur $M$ la dérivation $L_X : f \in \Ccal^\infty(M)  \mapsto (x \mapsto X\cdot f(x):=d_xf(X(x))) \in \Ccal^\infty(M)$.
+On associe à un champ de vecteur $X$ sur $M$ la dérivation $L_X : f \in \Ccal^\infty(M)  \mapsto (x \mapsto (X\cdot f)(x):=d_xf(X(x))) \in \Ccal^\infty(M)$.
 \end{Def}
 \begin{Def}
-On appelle crochet de deux champs de vecteurs $X$ et $Y$ le champ de vecteur associé à $L_X \circ L_Y-L_Y \circ L_X$.
+On appelle crochet de deux champs de vecteurs $X$ et $Y$ le champ de vecteur $[X,Y]$ associé à $L_X \circ L_Y-L_Y \circ L_X$.
 \end{Def}
 
 \begin{Defthm}\label{Hessienne}
 Soit $f : M \to \R$ une application lisse. Soit $a \in M$ tel que $d_af=0$. Soient $u,v \in T_aM$ et $X$ et $Y$ deux champs de vecteurs tels que $X(a)=u$ et $Y(a)=v$. \\
-Posons $H_af(u,v):=\left[X.df(Y)\right](a)$.
+Posons $H_af(u,v):=\left(X \cdot df(Y)\right)(a)$.
 Cette valeur ne dépend pas des champs de vecteurs $X$ et $Y$ choisis et l'application $H_af:(u,v) \mapsto H_af(u,v)$ est une forme bilinéaire symétrique de $T_aM$.
 \end{Defthm}
 \begin{proof}
-Montrons, tout d'abord, que \begin{equation}\label{crochet}\left[X.df(Y)\right](a)=\left[Y.df(X)\right](a) \end{equation} 
-$\left[X.df(Y)-Y.df(X)\right](a)=\left[X.df(Y)-Y.df(X)\right](a)=\left[X.L_Y(f)-Y.L_X(f)\right](a)=\left[L_X \circ L_Y-L_Y \circ L_X\right](f)(a)=[X,Y].f(a)=d_af([X,Y](a))=0$. \\
+Montrons, tout d'abord, que \begin{equation}\label{crochet}\left(X \cdot df(Y)\right)(a)=\left(Y \cdot df(X)\right)(a) \end{equation}
+ 
+\begin{eqnarray*}\left(X \cdot df(Y)-Y \cdot df(X)\right)(a)&=&\left(L_X \circ L_Y-L_Y \circ L_X\right)(f)(a) \\
+&=&=[X,Y]\cdot f(a)=d_af([X,Y](a))=0
+\end{eqnarray*}
 Le terme à gauche de \eqref{crochet}, comme fonction de $X$,  ne dépend que de $X(a)=u$ et de même, le terme à droite de \eqref{crochet},comme fonction de $Y$, ne dépend que de $Y(a)=v$.
-On en déduit que $H_af(u,v)$ ne dépend pas ni de $X$ ni de $Y$ mais seulemenent de $u$ et $v$. \\
+On en déduit que $H_af(u,v)$ ne dépend ni de $X$ ni de $Y$ mais seulement de $u$ et $v$. \\
 Avec \eqref{crochet}, on voit que $H_af$ est symétrique. La bilinéarité est immédiate.
 \end{proof}
 L'application $H_af$ est appelé hessienne de $f$ en $a$.
 
 \subsection{Structure pseudo-conforme projective sur une variété}
 Soient $M$ une hypersurface de $\R P^n$, $p \in M$ et une équation locale $f=0$ de $M$ au voisinage de $p$ ($f$ est une submersion en $p$ i.e. $d_pf \neq 0$). \\
-En calculant dans les cartes de $\R P^n$, on peut voir que $T_pM$ coïncide avec $T_p H$ où $H$ est l'hyperplan $\Ker(d_pf)$ auquel on a rajouté ses points à l'infini. \\
+En calculant dans les cartes de $\R P^n$, on peut voir que $T_pM$ coïncide avec $T_p H$ où $H$ est l'hyperplan projectif donné par $\Ker(d_pf)$. \\
 Comme $d_p f_{|H}=(d_p f)_{|T_p H}=0$ alors $p$ est un point critique de $f$ et donc on peut définir une hessienne sur $T_p H \times T_p H=T_p M \times T_p M$. On définit $\ff_p$ comme l'application faisant commuter le diagramme suivant : \\
   $\xymatrix{
     T_pM \times T_pM\ar[r]^{-H_pf}  \ar[rd]_{\ffdiag_p} & \R  \\
@@ -49,30 +52,32 @@ Comme $d_p f_{|H}=(d_p f)_{|T_p H}=0$ alors $p$ est un point critique de $f$ et 
   }$ \\
 	où $\overline{d_pf}$ est l'isomorphisme induit par $d_pf$. \\
 	Autrement dit, $\ff_p=-\overline{d_pf}^{-1} \circ H_pf$. \\
-Si on change l'équation locale de $M$ en $p$ en $g=0$ alors $\Ker(d_pf)=\Ker(d_pg)$ (car $f$ et $g$ correspondent au même hyperplan projectif $H$) et $d_pg=\frac{d_pg(x)}{d_pf(x)} d_pf$ où $d_pf(x) \neq 0$ i.e. $d_pf$ et $d_pg$ ne diffèrent que d'un facteur multiplicatif. On en déduit que la hessienne change du même coefficient (c.f. la formule de la hessienne dans \ref{Hessienne}). $\ff_p$ ne dépend donc pas de l'équation locale choisie. On l'appelle deuxième fondamentale de $S$ au point $p$. \\
+Si on change l'équation locale de $M$ en $p$ en $g=0$ alors $\Ker(d_pf)=\Ker(d_pg)$ (car $f$ et $g$ correspondent au même hyperplan projectif $H$) et $d_pg=\frac{d_pg(x)}{d_pf(x)} d_pf$ où $d_pf(x) \neq 0$ i.e. $d_pf$ et $d_pg$ ne diffèrent que d'un facteur multiplicatif. On en déduit que la hessienne change du même coefficient (c.f. la formule de la hessienne dans \ref{Hessienne}). $\ff_p$ ne dépend donc pas de l'équation locale choisie. On l'appelle deuxième forme fondamentale de $S$ au point $p$. \\
 On peut maintenant définir la structure pseudo-conforme projective de $M$ en $p$ comme l'ensemble des applications bilinéaires $\ff_p \circ \varphi$, où $\varphi : N_pM \to \R$ est un isomorphisme (linéaire). \\
+\begin{Ex}
 On va étudier l'exemple de l'hypersurface $M=\{(x,t) \in \R^n \times \R | t=q(x)\} \subset \R^{n+1} \subset \R P^{n+1}$ où $q$ est une forme quadratique non dégénérée de $\R^n$ : \\
-Soit $f: (x,t) \mapsto t-q(x)$. $f=0$ est une équation globale de $M$. La hessienne de $f$ en tout point est $2b$ où $b$ est la forme bilinéaire associée à $f$.
-On peut identifier $M$ avec $\R^n$ grâce à la projection $(x,t) \mapsto x$ puis $N_pM$ avec $\{0_{\R^n}\} \times \R$. Avec cette identification, $\ff_p=(0,2b)$ en tout point $p$ de $M$. La structure pseudo-conforme projective de $M$ en tout point est $\{ (0,2\lambda b) | \lambda \in \R^*\}$. \\
+Soit $f: (x,t) \mapsto t-q(x)$. L'équation $f=0$ est une équation globale de $M$. La hessienne de $f$ en tout point est $-2b$ où $b$ est la forme bilinéaire associée à $f$.
+On peut identifier $M$ avec $\R^n$ grâce à la projection $(x,t) \mapsto x$ puis $N_pM$ avec $\{0_{\R^n}\} \times \R$. Avec cette identification, $\ff_p=(0,2b)$ en tout point $p$ de $M$. La structure pseudo-conforme projective de $M$ en tout point est $\{ (0,2\lambda b) | \lambda \in \R^*\}$. 
+\end{Ex}
 
 \subsection{Compactification}
 
 
-On peut compactifier $M$ en ajoutant ses points à l'infini. On obtient alors la quadrique projective (lisse) $Q=\{ [s : x : t] | q(x)-st=0\}\subset \R P^{n+1}$ (par construction, $Q=\{[1 : x : t ] | q(x)=t  \} \cup \{[0 : x : 1 ] | q(x)=0  \}=M \cup \{[0 : x : 1 ] | q(x)=0  \}$). Cette compactification est conforme dans le sens où il existe un isomorphisme $\varphi$ tel que le diagramme suivant commute : \\
+On peut compactifier $M$ en ajoutant ses points à l'infini. On obtient alors la quadrique projective (lisse) $Q=\{ [s : x : t] \mid q(x)-st=0\}\subset \R P^{n+1}$ (par construction, $Q=\{[1 : x : t ] \mid q(x)=t  \} \cup \{[0 : x : 1 ] \mid q(x)=0  \}=M \cup \{[0 : x : 1 ] \mid q(x)=0  \}$). Cette compactification est conforme dans le sens où il existe un isomorphisme $\varphi$ tel que le diagramme suivant commute : \\
 
 $\xymatrix@!C{
     T_pM \times T_pM\ar[r]^{d_p i \times d_p i}  \ar[d]_{\ffdiag_p^M} & T_{i(p)}Q \times T_{i(p)}Q \ar[d]_{\ffdiag_p^Q}  \\
     N_pM \ar[r]^\varphi & N_{i(p)}Q
   }$ \\
 	où $i: M \hookrightarrow Q$ est l'inclusion et $\ff^M,\ff^Q$ sont les deuxièmes formes fondamentales de $M$, $Q$.
-	Ici, $\varphi$ est l'identité. \\
-	En résumé, on peut compactifier $\R^r \oplus \R^s$ muni de la métrique $dx^2-dy^2$ en une quadrique projective lisse, dont la forme quadratique est de signature $(r+1,s+1)$, dans $\R P^{r+s+1}$ en conservant la structure pseudo-conforme projective.
+	Ici, $\varphi$ est l'inclusion. \\
+	En résumé, on peut compactifier $\R^r \oplus \R^s$ muni de la forme quadratique $(u,v) \in \R^r \times \R^s \mapsto |u|^2-|v|^2$ en une quadrique projective lisse, dont la forme quadratique est de signature $(r+1,s+1)$, dans $\R P^{r+s+1}$ en conservant la structure pseudo-conforme projective.
 
 \begin{Ex}
 Supposons que $q$ soit la forme quadratique de signature $(n,0)$ i.e. $q(x_1,\ldots,x_n)=\sum_{i=1}^n x_i^2$. \\
-On peut identifier $\R^n$ à un sous-ensemble de $Q=\{ [s : x :t ] | q(x)=st  \} \subset \R P^{n+1}$ (on notera $N$ la forme quadratique définie par $N(s,x,t)=q(x)-st)$. \\
+On peut identifier $\R^n$ à un sous-ensemble de $Q=\{ [s : x :t ] \mid q(x)=st  \} \subset \R P^{n+1}$ (on notera $N$ la forme quadratique définie par $N(s,x,t)=q(x)-st)$. \\
 Montrons que l'on peut identifier $Q$ à la sphère unité de $\R^{n+1}$. \\
-Soient $H=\{(s,x,t) \in \R \times \R^n \times \R | s+t=0\}$ un hyperplan de $\R^{n+2}$ et $\Bcal=\{e_0-e_{n+1},e_2,\ldots,e_n,e_0+e_{n+1}\}$ une base de $\R^{n+2}$ où $(e_0,\ldots,e_{n+1})$ est la base canonique de $\R^{n+2}$. Ainsi, dans cette base, $H=\{ (y_0,\ldots,y_{n+1})_\Bcal | y_{n+1} =0\}$ et donc, $\R P^{n+1} \setminus H=\{[y_0 : \ldots : y_{n+1}]_\Bcal | y_{n+1} \neq 0\}$. On a une identification naturelle de $\R P^{n+1} \setminus H$ avec $\R^{n+1}$ grâce à l'isomorphisme $\varphi : [y_0 : \ldots : y_{n+1}] \mapsto (y_0/y_{n+1} , \ldots , y_{n}/y_{n+1})$. \\
+Soient $H=\{(s,x,t) \in \R \times \R^n \times \R | s+t=0\}$ un hyperplan de $\R^{n+2}$ et $\Bcal=\{e_0-e_{n+1},e_2,\ldots,e_n,e_0+e_{n+1}\}$ une base de $\R^{n+2}$ où $(e_0,\ldots,e_{n+1})$ est la base canonique de $\R^{n+2}$. Ainsi, dans cette base, $H=\{ (y_0,\ldots,y_{n+1})_\Bcal | y_{n+1} =0\}$ et donc, $\R P^{n+1} \setminus H=\{[y_0 : \ldots : y_{n+1}]_\Bcal \mid y_{n+1} \neq 0\}$. On a une identification naturelle de $\R P^{n+1} \setminus H$ avec $\R^{n+1}$ grâce à l'isomorphisme $\varphi : [y_0 : \ldots : y_{n+1}] \mapsto (y_0/y_{n+1} , \ldots , y_{n}/y_{n+1})$. \\
 Si $y = y_0(e_0-e_{n+1})+\sum_{i=1}^n y_i e_i+y_{n+1} (e_0-e_{n+1}) \in Q$ alors 
 	\[0=N(y)=q(y_1,\ldots,y_n)-(y_0+y_{n+1})(y_0-y_{n+1})=\sum_{i=0}^{n+1} y_i^2-y_{n+1}^2
 \]

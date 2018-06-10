@@ -24,14 +24,14 @@ On peut relever cette application en une application $\psi : S \to \Ocal\setminu
 	où $\varphi^* S^7=\{(x,y) \in S \times S^7 | \varphi(x)=\pi(y) \}$
 \end{itemize}
 On remplacera $S$ par un ensemble adéquat. \\
-Soit $V_p=\R \psi(p) \oplus Im(d_p \psi)$ pour $p \in S$. Dans la section \ref{Partie_2}, on a expliqué pourquoi cet ensemble est un sous-espace totalement isotrope de dimension 3 et que son projectivisé est l'espace tangent de $\varphi(S)$ en $\varphi(p)$. % cf section 6 \\
+Soit $V_p=\R \psi(p) \oplus Im(d_p \psi)$ pour $p \in S$. Dans la sous-section \ref{V_p}, on a expliqué pourquoi cet ensemble est un sous-espace totalement isotrope de dimension 3 et que son projectivisé est l'espace tangent de $\varphi(S)$ en $\varphi(p)$. % cf section 6 \\
 Les deux sous-espaces totalement isotropes maximaux contenant $V_p$ sont de la forme $\Ker(L_{\psi_+(p)})$ et $\Ker(R_{\psi_-(p)})$. On définit ainsi des applications $\psi_{\pm} : S \to \Ocal \setminus \{0\}$. On en déduit la 
-\begin{Propte}\label{trial_diff1}
+\begin{Propte}[trialité différentielle - Début]\label{trial_diff1}
 	\begin{equation} \label{psi_+}
 	\psi_+\psi =0 ; \psi_+ d\psi=0
 	\end{equation}
 	\begin{equation} \label{psi_-}
-	\psi_-\psi =0 ; \psi_- d\psi=0
+	\psi\psi_- =0 ;  (d\psi)\psi_-=0
 	\end{equation}
 	\begin{equation} \label{+-}
 	\psi_-\psi_+ =0 
@@ -40,8 +40,9 @@ Les deux sous-espaces totalement isotropes maximaux contenant $V_p$ sont de la f
 	(d\psi_+)\psi =0 
 	\end{equation}
 \end{Propte}
+On identifie ici $T_x \Ocal \setminus \{0\}$ avec $\Ocal$ en tout point $x \in \Ocal$. Ainsi, $d_x \varphi$, $d_x \varphi_+$ et $d_x \varphi_+$ sont à valeurs dans $\Ocal$
 \begin{proof}
-Les égalités \eqref{psi_+} (resp. \eqref{psi_-}) vienent du fait que pour tous $p \in S$ et $h \in T_pS$, $\psi(p),d_p\psi(h) \in \Ker(L_{\psi_+(p)})$ (resp. $\psi(p),d_p\psi(h) \in \Ker(L_{\psi_-(p)})$. L'équation $\ref{+-}$ vient du fait que l'intersection $\Ker(L_{\psi_+(p)})\cap \Ker(R_{\psi_-(p)})$ est de dimension 3.
+Les égalités \eqref{psi_+} (resp. \eqref{psi_-}) vienent du fait que pour tous $p \in S$ et $h \in T_pS$, $\psi(p),d_p\psi(h) \in \Ker(L_{\psi_+(p)})$ (resp. $\psi(p),d_p\psi(h) \in \Ker(R_{\psi_-(p)})$. L'équation $\ref{+-}$ vient du fait que l'intersection $\Ker(L_{\psi_+(p)})\cap \Ker(R_{\psi_-(p)})$ est de dimension 3.
 Pour l'équation \eqref{d+}, on différencie $\psi_+\psi =0$ grâce à la formule de Leibniz : 
 	\[0=d(\psi_+\psi)=(d\psi_+) \psi+\psi_+ d\psi=(d\psi_+) \psi
 \]
@@ -79,7 +80,7 @@ Puis, en utilisant la proposition \ref{rang_1} (car $\psi_-\psi_+=0$) et le fait
 \end{proof}
 
 
-\begin{Thm}\label{trial_diff2}
+\begin{Thm}[trialité différentielle - Fin]\label{trial_diff2}
 $(d \psi_-) \psi_+=\psi_- d \psi_+=0$
 \end{Thm}
 
@@ -112,14 +113,14 @@ $\begin{array}{ccccc}
 \end{array}$ ; \\
 Puis $\theta_\pm = \rho^{-1}\circ \rho$ identifie $Q_{\pm}$ avec $Q$.
 
-Pour un triplet de Darboux $T=(f,g,h)$, on notera $\varphi_T$ l'application $(f : 1 : g : -f \dot g)$. 
+Pour un triplet de Darboux $T=(f,g,h)$, on notera $\varphi_T$ l'application $(f : 1 : g : -f \cdot g)$. 
 
 Nous allons commencer par étudier comment les transformations $A$ et $D$ sur les triplets induit une transformation $a$ et $d$ sur les applications $\varphi$. Ensuite, grâce aux identifications faites juste précédemment, on étudiera l'itération des opérations $(\cdot)_\pm$ sur $\varphi$. Ce qui nous permettra de décrire le groupe engendré par $a$ et $d$.
 
 \begin{Lemme}\label{lem_calcul}
 Soit $T=(f,g,h)$ un triplet de Darboux avec $f$ une immersion. Alors,
 	\begin{equation}\label{eq}
-	\theta_+ \circ (\varphi_T)_+=(h:-h \cdot \widetilde{g} : \widetilde{g} : 1)=c \circ \varphi_T
+	\theta_+ \circ (\varphi_T)_+=(h:-h \cdot \widetilde{g} : \widetilde{g} : 1)=c \circ \varphi_{A(T)}
 \end{equation}
 où $c : \Ocal \to \Ocal$ est l'application définie par : $c(x:s:y:t)=(x : t: y :s)$
 \end{Lemme}
@@ -130,7 +131,7 @@ $c$ est la transformation projective induite par $\rho$ par la conjugaison de $\
 c(x:s:y:t)&=&\rho^{-1} \circ \overline{\;\cdot\;} \circ \rho(x :s :y :t)=\rho^{-1}\overline{\begin{pmatrix} s & x \\ y &  -t\end{pmatrix}} \\
           &=&\rho^{-1}\begin{pmatrix} -t & -x \\ -y & s\end{pmatrix}=(x :t: y : s)
 \end{eqnarray*}
-On sait,d'après la calcul de $(\varphi_T)_+(=(h,\widetilde{g})_+)$ dans le théorème \ref{} et l'identification par $\rho$ de $(a,b)_+$ avec $\Ker(L_Z)$ où $Z=\begin{pmatrix} a \cdot b& -a \\ -b & 1\end{pmatrix}$ vu dans la section \ref{Zorn} , que :
+On sait,d'après la calcul de $(\varphi_T)_+(=(h,\widetilde{g})_+)$ dans la sous-section \ref{Calcul_de_varphi} et l'identification par $\rho$ de $(a,b)_+$ avec $\Ker(L_Z)$ où $Z=\begin{pmatrix} a \cdot b& -a \\ -b & 1\end{pmatrix}$ vu dans la section \ref{Zorn} , que :
 	\[\rho_+((\varphi_T)_+)=\begin{pmatrix} h \cdot \widetilde{g} & -h \\ -\widetilde{g} & 1\end{pmatrix}
 \]
 On peut remarquer que :  
@@ -145,13 +146,13 @@ Il existe des applications $a$ et $d$ de l'ensemble des immersions totalement is
 \end{Prop}
 
 \begin{proof}
-$a=c \circ \theta_+ \circ \varphi_+$ et $d : (x : s :y :t) \mapsto (y : s : x :t)$ conviennent.
+$a=c \circ \theta_+ \circ (\cdot)_+$ et $d : (x : s :y :t) \mapsto (y : s : x :t)$ conviennent.
 \end{proof}
 
 Dans la suite, on identifiera $Q$ et $Q_\pm$ et sous-entendra les applications $\theta_\pm$.
 
 \begin{Prop}\label{composition}
-Si $\varphi : S \to Q$ est une immersion totalement isotrope telle que $\varphi_+$ soit une immersion, on a $\varphi_{++}=\varphi_-$ et $\varphi_{+-}=\varphi$. De même, si $\varphi$ est une immersion, on a $\varphi_{--}=\varphi_+$ et $\varphi_{-+}=\varphi$
+Si $\varphi : S \to Q$ est une immersion totalement isotrope telle que $\varphi_+$ soit une immersion, on a $\varphi_{++}=\varphi_-$ et $\varphi_{+-}=\varphi$. De même, si $\varphi_-$ est une immersion, on a $\varphi_{--}=\varphi_+$ et $\varphi_{-+}=\varphi$
 \end{Prop}
 
 \begin{proof}
@@ -159,7 +160,7 @@ D'après la trialité différentielle de la propriété \ref{trial_diff1} et du théor
 Le même raisonnement fonctionne pour $\varphi_-$.
 \end{proof}
 
-De la même, on montre que si $\sigma$ est un anti-automorphisme de $\Zcal$ (c'est-à-dire $\forall x,y \in \Zcal, \sigma(xy)=\sigma(y)\sigma(x)$ alors $(\sigma \circ \varphi)_+=c \circ \varphi_-$ et si c'est un automorphisme, $(\sigma \circ \varphi)_+=c \circ \varphi_+$. Maintenant, on peut montrer le
+De la même, on montre que si $\sigma$ est un anti-automorphisme de $\Zcal$ (c'est-à-dire $\forall x,y \in \Zcal, \sigma(xy)=\sigma(y)\sigma(x)$ alors $(\sigma \circ \varphi)_+=\sigma \circ \varphi_-$ et si c'est un automorphisme, $(\sigma \circ \varphi)_+=\sigma \circ \varphi_+$. Maintenant, on peut montrer le
 
 \begin{Thm}[Darboux]
 La transformation $(D \circ A)^6$ est l'identité sur l'ensemble des immersions totalement isotropes $\varphi : S \to Q$ telles que $\varphi_{\pm}$ sont aussi des immersions
@@ -169,16 +170,16 @@ La transformation $(D \circ A)^6$ est l'identité sur l'ensemble des immersions t
 Soit $T=(f,g,h)$ un triplet de Darboux telle que $(\varphi_T)_{\pm}$ sont aussi des immersions. \\
 On notera $\varphi_T$ par $\varphi$. \\
 En utilisant les propositions \ref{transformation} et \ref{composition} et la remarque que l'on a faite avant l'énoncé du théorème,on obtient :
-	\[d \circ a(\varphi)=\sigma \circ c \circ \varphi_+ ; (d \circ a)^2(\varphi)=\varphi_- ; (d \circ a)^3(\varphi)=\sigma \circ c \circ \varphi
+	\[d \circ a(\varphi)=d \circ c \circ \varphi_+ ; (d \circ a)^2(\varphi)=\varphi_- ; (d \circ a)^3(\varphi)=d \circ c \circ \varphi
 \]
-\[(d \circ a)^4(\varphi)= \varphi_+ ; (d \circ a)^5(\varphi)=\sigma \circ c \circ \varphi_- ; (d \circ a)^6(\varphi)=\varphi
+\[(d \circ a)^4(\varphi)= \varphi_+ ; (d \circ a)^5(\varphi)=d \circ c \circ \varphi_- ; (d \circ a)^6(\varphi)=\varphi
 \]
 \end{proof}
 Ainsi le groupe engendré par $a$ et $d$ est le groupe diédral à 12 éléments. Les six autres éléments sont :
 
-\[a(\varphi)=c \circ \varphi_+  ; a \circ d \circ a(\varphi)=\sigma \circ \varphi_- ; a \circ (d \circ a)^2(\varphi)=c \circ \varphi ; 
+\[a(\varphi)=c \circ \varphi_+  ; a \circ d \circ a(\varphi)=d \circ \varphi_- ; a \circ (d \circ a)^2(\varphi)=c \circ \varphi ; 
 \]
-\[a \circ (d \circ a)^3(\varphi)=\varphi_+ ; a \circ (d \circ a)^4(\varphi)= c \circ \varphi_- ; d=a \circ (d \circ a)^5(\varphi)=\sigma \circ \varphi ; 
+\[a \circ (d \circ a)^3(\varphi)=\varphi_+ ; a \circ (d \circ a)^4(\varphi)= c \circ \varphi_- ; d=a \circ (d \circ a)^5(\varphi)=d \circ \varphi ; 
 \]
 
 

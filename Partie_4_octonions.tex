@@ -18,9 +18,9 @@ Dans les parties précédentes, nous avons étudié les immersions totalement isotro
 
 
 \subsection{Généralités}
-L'algèbre des octonions déployés $\Ocal$ est l'espace vectoriel $\R^8=\H \oplus \H$ muni du produit $(a,b)\times (c,d)=(ac+db^*,a^*d+cb)$ où $(a+bi+cj+dk)^*=a-bi-cj-dk$. On notera par $\ell$ l'élément $(0,1)$. $\Ocal$ est donc l'algèbre engendrée par $\H$ et $\ell$. De plus, on remarque que $\ell^2=1$. \\
+L'algèbre des octonions déployés $\Ocal$ est l'espace vectoriel $\R^8=\H \oplus \H$ muni du produit $(a,b)\times (c,d)=(ac+db^*,a^*d+cb)$ où $(a+bi+cj+dk)^*=a-bi-cj-dk$. On notera par $\ell$ l'élément $(0,1)$. L'algèbre $\Ocal$ est donc l'algèbre engendrée par $\H$ et $\ell$. De plus, on remarque que $\ell^2=1$. \\
 
-Par l'analogie avec la construction des complexes\footnote{la construction générale est appelé "construction de Cayley-Dickson"}, on peut définir une conjugaison $(a_0+a_1 i+a_2 j +a_3 k+a_4 \ell+a_5 i \ell+a_6 j \ell+a_7 k \ell)^*=a_0-a_1 i-a_2 j -a_3 k-a_4 \ell-a_5 i \ell-a_6 j \ell-a_7 k \ell$ ou encore en écrivant avec les quaternions, $(a,b)^*=(a^*,-b)$. 
+Par analogie avec la construction des complexes\footnote{la construction générale est appelé "construction de Cayley-Dickson"}, on peut définir une conjugaison $(a_0+a_1 i+a_2 j +a_3 k+a_4 \ell+a_5 i \ell+a_6 j \ell+a_7 k \ell)^*=a_0-a_1 i-a_2 j -a_3 k-a_4 \ell-a_5 i \ell-a_6 j \ell-a_7 k \ell$ ou encore en écrivant avec les quaternions, $(a,b)^*=(a^*,-b)$. 
 
 En faisant les calculs, on remarque que la conjugaison inverse les produits i.e. $\forall x,y \in \Ocal, (xy)^*=y^*x^*$, autrement dit, c'est un anti-automorphisme de $\Ocal$\\
 On peut ensuite définir la forme quadratique $N : (a,b) \in \Ocal \mapsto (a,b)(a,b)^*=(a,b)^*(a,b)=(|a|^2-|b|^2,0) \in \R$. 
@@ -198,7 +198,7 @@ $a\Ocal$ et $\Ocal b$ ne sont égaux que dans le cas trivial $a=b=0$
 Si $a\Ocal=\Ocal b$ alors pour tout $x \in \Ocal$, $xb \in  a\Ocal $. D'après le lemme \ref{appartenance}, $a^*(xb)=0$ et donc $2\left\langle a,x\right\rangle b=2\left\langle a^*,x^*\right\rangle b=a^*(xb)+x^*(ab)=x^*(ab)$. On obtient donc l'égalité $\Ocal (ab)=\R b$. Si $ab \neq 0$ alors le membre de gauche est de dimension 4 tandis que celui de droite est de dimension 1. On en déduit que $ab=0$ et donc $b=0$ (car $\Ocal (ab)=\R b$) et $a=0$ car $a\Ocal=\Ocal b$   \\
 \end{proof}
 
- La démonstration du théorème \ref{Classification SETIM} et cette proposition nous montrent que chacun des deux familles correspond à $Q_+$ et $Q_-$. Plus précisément, comme le graphe de l'identité est égal à $(1,1)\Ocal$ alors $Q_+=\{a\Ocal ,a \neq 0,N(a)=0\}$ et $Q_-=\{b\Ocal,b \neq 0,N(b)=0\}$. Etudions maitenant le rapport qui existe entre les relations d'incidences entre $Q,Q_+,Q_-$ et cette écriture de leurs éléments. \\
+ La démonstration du théorème \ref{Classification SETIM} et cette proposition nous montrent que chacun des deux familles correspond à $Q_+$ et $Q_-$. Plus précisément, comme le graphe de l'identité est égal à $(1,1)\Ocal$ alors $Q_+=\{a\Ocal ,a \neq 0,N(a)=0\}$ et $Q_-=\{\Ocal b,b \neq 0,N(b)=0\}$. Etudions maitenant le rapport qui existe entre les relations d'incidences entre $Q,Q_+,Q_-$ et cette écriture de leurs éléments. \\
 Rappelons, tout d'abord, que $\Gamma_+ \in Q_+$ est incident à $\Gamma_- \in Q_-$ (et vice-versa) si leur intersection est maximale, c'est-à-dire si $\Gamma_+ \cap \Gamma_-$ est un plan projectif (ou encore que cette intersection est de dimension 3 dans $\R^8$) et $x \in Q$ est incident à $\Gamma_{\pm} \in Q_\pm$ si $x \in \Gamma_\pm$. Cette dernière relation a déjà été examiné dans le lemme \ref{appartenance}, ie si $\Gamma_+=a_+\Ocal $ (resp. $\Gamma_-=\Ocal a_-) $  alors $a$ est incident à $\Gamma_{\pm}$ si, et seulement si, $a_+^*a=0$  (resp. $aa_-^*=0$). Discutons maintenant du dernier cas, 
 
 \begin{Thm} \label{dim_inter}
@@ -243,7 +243,7 @@ On peut transporter la (pseudo)-norme de $\Ocal$ à $\Zcal$ en posant $N(\varphi(
 
 On va maintenant traduire les espaces $(u,v)_-$ et $(u,v)_+$ avec les matrices de Zorn : \\ %A réécrire
 Tout d'abord, rappelons que $(u,v)_-=\{ (x,s,y,t) | x \in \R^3,t \in \R,y=u\times x+vt, s=-v \cdot x\}$. De ces deux égalités, on peut en obtenir deux autres : $su-(u \cdot v)x-y \times v=0$ et $y \cdot u+tu \cdot v=0$ i.e. \\$(x,s,y,t) \in (u,v)_-$ si, et seulement si, $\begin{pmatrix} s & x \\ y & -t \end{pmatrix} \times \begin{pmatrix} 1 & u \\ v & -u \cdot v \end{pmatrix}=0$.\\
- De la même façon,\\ $(x,s,y,t) \in (u,v)_-$ si, et seulement si, $\begin{pmatrix} u \cdot v & -u \\ -v & 1 \end{pmatrix}\times\begin{pmatrix} s & x \\ y & -t \end{pmatrix} =0$ \\
+ De la même façon,\\ $(x,s,y,t) \in (u,v)_+$ si, et seulement si, $\begin{pmatrix} u \cdot v & -u \\ -v & 1 \end{pmatrix}\times\begin{pmatrix} s & x \\ y & -t \end{pmatrix} =0$ \\
 (on peut remarquer que la matrice $\begin{pmatrix} u \cdot v & -u \\ -v & 1 \end{pmatrix}$ est la matrice conjuguée (par transport de celle de $\Ocal$) de $\begin{pmatrix} 1 & u \\ v &-u \cdot v  \end{pmatrix}$). \\
 Plus généralement, on peut identifier les éléments $(x:s:y:t)$ de $Q$ aux annulateurs à gauche (resp. à droite) de $Z=\begin{pmatrix} s & x \\ y & -t \end{pmatrix}$ dans $Q_+$ (resp. $Q_-$) (on remarque $N(Z)=0$ et donc ce sont bien des SETIM).On notera ces annulateurs $\Ker(L_Z)$ (resp. $\Ker(R_Z)$) où $L_Z$ est la multiplication à gauche par $Z$ et $R_Z$ est la multiplication à droite par $Z$. \\
 On a l'analogue des formules de la section précédente dans l'algèbre des octonions déployés : 

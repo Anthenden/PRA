@@ -12,22 +12,22 @@
 \fi
 \label{Partie_3}
 \subsection{ Géométrie de $Q$ }
- On note $\R^{4,4}$ l'espace $\R^4 \oplus \R^4$ muni de la forme quadratique de signature $(4,4)$ définie par $q(x,y)=|x|^2-|y|^2$. La quadrique $Q$, définie dans la section \ref{} est la variété des droites isotropes de $\R^{4,4}$. \\
+ On note $\R^{4,4}$ l'espace $\R^4 \oplus \R^4$ muni de la forme quadratique de signature $(4,4)$ définie par $q(x,y)=|x|^2-|y|^2$. La quadrique $Q \subset \R P^7$, définie dans la section \ref{Conforme} est la variété des droites isotropes de $\R^{4,4}$. \\
 Nous allons, tout d'abord, étudier la variété $M$ des sous-espaces totalement isotropes maximaux de $\R^{4,4}$ puis la structure d'incidence que cette variété a avec $Q$. 
 
 \begin{Thm}
-Soit $F \subset \R^4 \oplus \R^4$ un sous-espace vectoriel totalement isotrope de dimension $k \leq 4$. Alors $E$ est le graphe d'une application orthogonale $\widetilde{E} \to \R^4$ où $\widetilde{F}$ est un sous-espace vectoriel de $\R^4$ de dimension $k$. \\
+Soit $F \subset \R^4 \oplus \R^4$ un sous-espace vectoriel totalement isotrope de dimension $k \leq 4$. Alors $F$ est le graphe d'une application orthogonale $\widetilde{F} \to \R^4$ où $\widetilde{F}$ est un sous-espace vectoriel de $\R^4$ de dimension $k$. \\
 Réciproquement, tout graphe d'une application orthogonale est totalement isotrope.   
 \end{Thm}
 
 \begin{proof}
-Soient $x \oplus y, x \oplus y' \in F$ Alors leur différence $0 \oplus (y-y')$ est dans $F$. Par conséquent, $|y-y'|=0$ et donc $y=y'$. \\
-On peut donc définir une application $f : \widetilde{E} \subset \R^4 \to \R^4$ définie de la façon suivante : \\
+Soient $x \oplus y$, $x \oplus y' \in F$ Alors leur différence $0 \oplus (y-y')$ est dans $F$. Par conséquent, $|y-y'|=0$ et donc $y=y'$. \\
+On peut donc définir une application $f : \widetilde{F} \subset \R^4 \to \R^4$ définie de la façon suivante : \\
 Si $x \oplus y \in F$ alors $f(x):=y$.  \\
-On peut, de plus, remarquer que $\widetilde{E}$ est un espace vectoriel et que $f$ est une application linéaire orthogonale (car $|x|=|f(x)|$, par orthogonalité de $F$) injective et dont le graphe est $F$ (par construction). Par conséquent, $k=\dim(F)=\rg(f)=\dim(\widetilde{E})$. \\
+On peut, de plus, remarquer que $\widetilde{F}$ est un espace vectoriel et que $f$ est une application linéaire orthogonale (car $|x|=|f(x)|$, par orthogonalité de $F$) injective et dont le graphe est $F$ (par construction). Par conséquent, $k=\dim(F)=\rg(f)=\dim(\widetilde{F})$. \\
 Réciproquement, si $Q$ est une application orthogonale, $\forall x \in \widetilde{E}, q(x,Q(x))=|x|-|Q(x)|=0$
 \end{proof}
-En particulier, les sous-espaces vectoriels totalement isotropes maximaux sont les graphes des éléments de $O(4)$. Ainsi, la variété $M$ a deux composantes connexes : le projectivisé des graphes des applications de $\SO(4)$ et le projectivisé des graphes des applications de $O^-(4)$ que l'on peut idenfier aux composantes connexes de $O(4)$.
+En particulier, les sous-espaces vectoriels totalement isotropes maximaux sont les graphes des éléments de $O(4)$. Ainsi, la variété $M$ a deux composantes connexes : le projectivisé des graphes des applications de $\SO(4)$ et le projectivisé des graphes des applications de $O^-(4)$ que l'on peut identifier avec les composantes composantes connexes de $O(4)$.
 \begin{Thm}
 $SO(4) \simeq S^3 \times S^3/\{\pm(1,1)\}$ (en tant que groupes de Lie)  
 \end{Thm}
@@ -40,8 +40,7 @@ Soit $(u,v) \in \Ker(\varphi)$. Alors, pour tout $x \in \H$,
 	\begin{equation} \label{calcul_noyau}
 	uxv^{-1}=x 
 \end{equation}
-.\\ 
-En particulier, en prenant $x=1$, on a $u=v$. Maintenant, \eqref{calcul_noyau} nous dit que $u \in Z(\H)=\R$. Comme $u \in S^3$, on déduit que $u=\pm 1$. \\
+En particulier, en prenant $x=1$, on a $u=v$. Maintenant, \eqref{calcul_noyau} nous dit que $u$ est dans le centre de $\H$ qui est $\R$. Comme $u \in S^3$, on déduit que $u=\pm 1$. \\
 Réciproquement, $\pm (1,1) \in \Ker(\varphi)$. \\
 On a donc : $\Ker(\varphi)=\{\pm(1,1)\}$. \\
 \textbf{Image de $\varphi$ :} \\
@@ -62,10 +61,10 @@ Par connexité de $\SO(4)$, $Im(\varphi)=\SO(4)$.\\
 La continuité de l'application quotient $\overline{\varphi}$ vient de la définition de topologie quotient et montrons la continuité de sa réciproque. \\
 Soit $U$ un ouvert de $S^3 \times S^3 /\{\pm(1,1)\}$. On veut montrer que $\overline{\varphi}(U)$ est un ouvert de $\SO(4)$. \\
 Par surjectivité de $\pi$, $\overline{\varphi}(U)=\overline{\varphi}(\pi\circ\pi^{-1}(U))$ et donc $\overline{\varphi}(U)=\varphi(\pi^{-1}(U))$. Comme $\varphi$ est un difféomorphisme local et que $\pi^{-1}(U)$ est un ouvert (par définition de la topoogie quotient) alors $\varphi(U)$ est un ouvert. \\
-Le caractère $\Ccal^\infty$ vient du fait que $\varphi$ est $\Ccal^\infty$ et que la différentielle de $\varphi$ est inversible.
+%Le caractère $\Ccal^\infty$ vient du fait que $\varphi$ est $\Ccal^\infty$ et que la différentielle de $\varphi$ est inversible.
 \end{proof}
 
-Grâce à l'identification $S^3 \times S^3 /\{\pm(1,1)\}$ avec la quadrique projective $Q=\{ [u:v] \in \R P^7 | |u|=|v|\}$ (qui se fait en remarquant que $Q \ni [u:v]=\left[\frac{u}{|u|},\frac{v}{|v|} \right]$) et au résultat précédent alors $SO(4)$ s'identifie à $Q$ (comme variété différentiable). Comme, de plus, $O^-(4)$ s'identifie aussi à $\SO(4)$ (on prend un matrice $\gamma$ de $O^-(4)$ et on a $SO(4)=\gamma O^-(4)$) alors $Q$ contient deux familles $Q_\pm$ d'espaces projectifs  de dimension 3 qui sont deux copies de $Q$. 
+Grâce à l'identification $S^3 \times S^3 /\{\pm(1,1)\}$ avec la quadrique projective $Q=\{ [u:v] \in \R P^7 | |u|=|v|\}$ (qui se fait en remarquant que $Q \ni [u:v]=\left[\frac{u}{|u|},\frac{v}{|v|} \right]$) et au résultat précédent alors $SO(4)$ s'identifie à $Q$ (comme variété différentiable). Comme, de plus, $O^-(4)$ s'identifie aussi à $\SO(4)$ (on prend un matrice $\gamma$ de $O^-(4)$ et on a $SO(4)=\gamma O^-(4)$) alors $Q$ contient deux familles $Q_+$et $Q_-$, qui sont, respectivement la famille des projectivisés des graphes des applications de $\SO(4)$ et ceux de $O^-(4)$ qui sont elles-mêmes deux copies de $Q$. 
 On peut ainsi définir une structure d'incidence entre $Q,Q_+$ et $Q_-$. Rappelons tout d'abord ce qu'est une structure d'incidence : 
 \begin{Def}
 Une structure d'incidence est un triplet $(\Pcal, \Dcal, \Ical)$ où 
@@ -75,9 +74,9 @@ Une structure d'incidence est un triplet $(\Pcal, \Dcal, \Ical)$ où
 	\item $\Ical$ est un sous-ensemble de $\Pcal \times \Dcal$ tel que, pour tout $D \in \Dcal$, il existe au moins deux éléments $x \in \Dcal$ tels que $(x,D) \in \Ical$. $\Ical$ est appelé relation d'incidence.
 \end{itemize}
 \end{Def}
-Par exemple, comme le suggère la terminologie, si on considère $\Ical=\R^2$ et $\Dcal$ l'ensemble des droites de $\R^2$ alors l'appartenance définit une relation d'incidence. \\
+Par exemple, comme le suggère la terminologie, si on considère $\Pcal=\R^2$ et $\Dcal$ l'ensemble des droites de $\R^2$ alors l'appartenance définit une relation d'incidence. \\
 
-Dans le cas de $Q$, $Q_+$ et $Q_-$, on dira qu'un élément $x \in Q$ est incident à un sous-espace totalement isotrope maximal $F_\pm$ de $Q_\pm$ si $x \in F_\pm$. C'est bien une relation d'incidence $|Q_+|,|Q_-|>2$ et il existe au moins deux sous-espaces totalement isotropes maximaux qui contiennent $x$ (on complète $\{x\}$ en une base de quatre vecteurs isotropes). Un élément de $F$ de $Q_+$ est incident à un élément de $G$ de $Q_-$ (et réciproquement) si leur intersection est maximale i.e. est un plan projectif (c'est bien une relation d'incidence car si $F=\Vect((x_i,f(x_i)),i=1..4) \in Q_+$ alors $G=\Vect((x_1,-f(x_1)),(x_i,f(x_i)),i=2..4)$ et $G'=\Vect((x_2,-f(x_2)),(x_i,f(x_i)),i=1,3,4)$ sont dans $Q_-$ et sont d'intersection maximale avec $F$). \\
+Dans le cas de $Q$, $Q_+$ et $Q_-$, on dira qu'un élément $x \in Q$ est incident à un sous-espace totalement isotrope maximal $F_\pm$ de $Q_\pm$ si $x \in F_\pm$.Ici, on a $\Pcal=Q$ et $\Dcal=Q_\pm$. C'est bien une relation d'incidence $|Q_+|,|Q_-|>2$ et il existe au moins deux sous-espaces totalement isotropes maximaux qui contiennent $x$ (on complète $\{x\}$ en une base de quatre vecteurs isotropes). Un élément $F$ de $Q_+$ est incident à un élément de $G$ de $Q_-$ (et réciproquement) si leur intersection est maximale i.e. est un plan projectif. On a bien une relation d'incidence pour $\Pcal=Q_+$ et $\Dcal=Q_-$ (et réciproquement) car si $F=\Vect((x_i,f(x_i)),i=1..4) \in Q_+$ alors $G=\Vect((x_1,-f(x_1)),(x_i,f(x_i)),i=2..4)$ et $G'=\Vect((x_2,-f(x_2)),(x_i,f(x_i)),i=1,3,4)$ sont dans $Q_-$ et sont d'intersection maximale avec $F$). \\
 Réciproquement, 
 
 \begin{Prop} \label{completion}
@@ -88,7 +87,8 @@ Soient $f : \widetilde{E} \to \R^4$ l'application orthogonale dont le graphe est
 Il existe deux, et seulement deux, vecteurs complétant $\Bcal$ en une base orthonormée de $\R^4$. En effet, $\widetilde{E}^\perp$ est de dimension 1 et donc a deux générateurs unitaires opposés. $f$ a deux prolongements en une application orthogonale de $O(4)$, un dans $\SO(4)$ et un dans $O^-(4)$.
 \end{proof}
 \subsection{Les applications $\varphi_\pm$ associées à un triplet de Darboux}
-Soit $S$ une surface et $f : S \to \R^3$ une immersion. Une déformation infinitésimale de $f$ est un champ de vecteurs $g : S \to T\R^3=\R^6$ le long de $f$ i.e. de la forme $f\times \widetilde{g}$ que l'on identifiera avec l'application $\widetilde{g} : S \to \R^3$. Une déformation infinitésimale est dite isométrique si la métrique riemannienne induite par $f_t=f+tg$ et la structure euclidienne de $\R^3$ (i.e. les formes quadratiques $q_t : u \in T_pS  \mapsto |d_pf_t(u)|^2$) est égale à l'ordre 1 à celle induite par $f$ ou autrement dit, 
+\label{V_p}
+Soit $S$ une surface et $f : S \to \R^3$ une immersion. Une déformation infinitésimale de $f$ est un champ de vecteurs $g : S \to T\R^3=\R^6$ le long de $f$ i.e. de la forme $(f,\widetilde{g})$ que l'on identifiera avec l'application $\widetilde{g} : S \to \R^3$. Une déformation infinitésimale est dite isométrique si la première forme fondamentale induite par $f_t=f+tg$ (i.e. les formes quadratiques $q_t : u \in T_pS  \mapsto |d_pf_t(u)|^2$) est égale à l'ordre 1 à celle induite par $f$ ou autrement dit, 
 $q_t=q_0+o(t)$.
 \begin{Prop}
 Les conditions suivantes sont équivalentes : 
@@ -105,15 +105,21 @@ On obtient $1 \Leftrightarrow 2$ grâce au développement limitée de $q_t$ en 0 et
 Un exemple de déformation infinitésimale isométrique\footnote{On étudie dans l'appendice \ref{Darboux-Sauer} le cas où ce sont les seuls} est une application de la forme $ g:t \mapsto a \times f(t)+b$ où $a,b \in \R^3$.
 
 Soit $g$ une déformation infinitésimale isométrique de $f$. \\
-Considérons maintenant l'application $\varphi=(f,g)$ qui va de $S$ dans $\R^3 \oplus \R^3$ que l'on munira de la forme quadratique $dx\dot dy : (u,v) \mapsto u \cdot v$. Ainsi comme $g$ est une déformation infinitésimale isométrique, l'image de $d_p\varphi=(d_pf,d_pg)$ est totalement isotrope en tout point $p$ de $S$. On dira que $\varphi$ est totalement isotrope pour la métrique $dx \cdot dy$.
+Considérons maintenant l'application $\varphi=(f,g)$ qui va de $S$ dans $\R^3 \oplus \R^3$ que l'on munira de la forme quadratique $\widetilde{q} : (u,v) \mapsto u \cdot v$. Ainsi comme $g$ est une déformation infinitésimale isométrique, l'image de $d_p\varphi=(d_pf,d_pg)$ est totalement isotrope en tout point $p$ de $S$. On dira que $\varphi$ est totalement isotrope pour $\widetilde{q}$.
 
 
-La totale isotropie de $\varphi$ ne dépendant que de la métrique $dx \cdot dy$, on peut, comme dans la section \ref{Conforme} compactifier $R^3 \oplus \R^3$ en la quadrique\footnote{Elles sont toutes isomorphes} de signature (4,4) de $\R P^7$ des zéros de la forme $q(x,s,y,t)=x \cdot y+st$ : 
-	\[Q=\{[x : s : y : t] \in P(\R^3 \times \R \times \R^3 \times \R)  | x \cdot y+st=0\}
+La totale isotropie de $\varphi$ ne dépendant que de la forme $\widetilde{q}$, on peut, comme dans la section \ref{Conforme} compactifier $\R^3 \oplus \R^3$ en la quadrique\footnote{Elles sont toutes isomorphes} de signature (4,4) de $\R P^7$ des zéros de la forme $q(x,s,y,t)=x \cdot y+st$ : 
+	\[Q=\{[x : s : y : t] \in P(\R^3 \times \R \times \R^3 \times \R)  | x \cdot y+st=0\} \subset \R P^7
 \]
 et considérer $\varphi$ comme une immersion de $S$ dans $Q$ donnée par : $\varphi=[ f : 1 : g : -f \cdot g]$ (car on peut identifier $\R^3 \oplus \R^3$ avec  $\{ [x : 1 : y : -x \cdot y] | x,y \in \R^3\}$). \\
-Ainsi, $g$ est une déformation infinitésimale isométrique de $f$ si, et seulement si, le plan projectif tangent à $\varphi(S)$ en $\varphi(p)$, i.e. $\tau_p \varphi:=P( \psi(p) \oplus Im(d_p \psi))$ est totalement isotrope (où $\psi=(f,1,g,-f \cdot g) : S \to \R^8$). Dans ce cas, $V_p :=\varphi(p) \oplus Im(d_p \psi)$ est contenu dans exactement deux sous-espace totalement isotropes maximaux, un qui est le graphe d'une application de $\SO(4)$ et un qui est le graphe d'une application de $O^-(4)$ (c.f. proposition \ref{completion}) . Ainsi, $\tau_p \varphi$ est contenu dans exactement deux espaces projectifs de dimension 3, un dans $Q_+$ et l'autre dans $Q_-$. Ainsi, on peut définir deux applications $\varphi_\pm : S \to Q_\pm$ qui associe à $p$ l'élément de $Q_\pm$ contenant $\tau_p \varphi$. \\
-Pour alléger les notations, on notera $(a,b)_+$ le graphe de l'application $(x,s) \mapsto (a \times x+bs,-b \cdot x)$  de $Q_+$ et $(a,b)_-$ le "graphe tordu " $\{ [x : s: y :t] |y=a \times x+bt, s=-b \cdot x \}$ de $Q_-$
+Ainsi, $g$ est une déformation infinitésimale isométrique de $f$ si, et seulement si, le plan projectif tangent à $\varphi(S)$ en $\varphi(p)$, i.e. $\tau_p \varphi:=P( \varphi(p) \oplus Im(d_p \psi))$ est totalement isotrope (où $\psi=(f,1,g,-f \cdot g) : S \to \R^8$). \\
+En effet, $d_p \psi=(d_pf,0,d_pg,-d_p (f\cdot g)) $ est de norme nulle si, et seulement $d_p f \cdot d_p g=0$ et de même pour $\psi(p)+d_p \psi=(f(p)+d_p f,1,g(p)+d_p g, -f(p= \cdot g(p)-d_p (f \cdot g)$. En effet, 
+	\begin{eqnarray*}(f(p)+d_p f) \cdot g(p)+d_p g&=&f(p) \cdot g(p)+f(p) \cdot d_p g+g(p) \cdot d_p f+ d_pf \cdot d_p g \\
+	&=&f \cdot g+d_p (f \cdot g)+d_pf \cdot d_p g
+	\end{eqnarray*}
+
+Dans ce cas, $V_p :=\varphi(p) \oplus Im(d_p \psi)$ est contenu dans exactement deux sous-espace totalement isotropes maximaux, un qui est le graphe d'une application de $\SO(4)$ et un qui est le graphe d'une application de $O^-(4)$ (c.f. proposition \ref{completion}) . Ainsi, $\tau_p \varphi$ est contenu dans exactement deux espaces projectifs de dimension 3, un dans $Q_+$ et l'autre dans $Q_-$. Ainsi, on peut définir deux applications $\varphi_\pm : S \to Q_\pm$ qui associe à $p$ l'élément de $Q_\pm$ contenant $\tau_p \varphi$. \\
+Pour alléger les notations, on notera $(a,b)_+$ l'ensemble  $\{ [x : s: y :t] \mid y=a \times x+bs, t=-b \cdot x \}$ qui est le graphe de l'application $(x,s) \mapsto (a \times x+bs,-b \cdot x)$  de $Q_+$ et $(a,b)_-$ le "graphe tordu " $\{ [x : s: y :t] \mid y=a \times x+bt, s=-b \cdot x \}$ de $Q_-$ qui sont des ensembles qui sont clairement dans les ensembles $Q_+$ et $Q_-$
 
 \begin{Thm}
 Les ensembles $\{(a,b)_+ | a,b \in \R^3\}$ et $\{(a,b)_- | a,b \in \R^3\}$ sont des ouverts affines (denses)\footnote{pour la topologie de Zariski, par le plongement de Plücker, c.f. l'appendice \ref{Plucker}} de respectivement, $Q_+$ et $Q_-$.
@@ -134,8 +140,7 @@ Soient $f :S \to \R^3$ une immersion, $g$ une déformation infinitésimale isométr
 %pour $p \in S$ et $u \in T_xS$.
 $V_p^\perp$ est l'ensemble des vecteurs orthogonaux à $\psi(p)$ et à $d_p \psi(u)$ pour $u \in T_pS$ pour la forme bilinéaire associée à $q$ qui est donnée par 
 	\[B((x,s,y,t),(x',s',y',t'))=x \cdot y'+x' \cdot y+s \cdot t'+s' \cdot t
-\]
-. 
+\] 
 Comme 
 	\begin{eqnarray*}
 	d_p \psi&=&(d_p f,0,d_pg,-d_p (f \cdot g))=(d_p f,0,h(p) \times d_pf,d_pf(u) \cdot (g(p) - f(p) \times h(p))) \\
@@ -145,7 +150,7 @@ Comme
 on en déduit que les équations de $V_p^\perp$ en $(x,s,y,t)$ sont : 
 \[\begin{cases}
 	0=x \cdot g(p)+f(p) \cdot y-s f(p)\cdot g(p)+t=(x-sf(p)) \cdot g(p)+f(p) \cdot y+t  \\
-	0=x \cdot (h(p) \times d_pf)+df \cdot y-s df \cdot \widetilde{g}=(-h \times x+y-s \widetilde{g}) \times d_p f
+	0=x \cdot (h(p) \times d_pf)+df \cdot y-s df \cdot \widetilde{g}=(-h \times x+y-s \widetilde{g}) \cdot d_p f
 	\end{cases}
 \]
 ou encore, en considérant un élément $v_f$ de $Im(d_pf)^\perp$, 
